@@ -1,0 +1,45 @@
+/* 
+  Localizable.strings
+  ZappMerchantLib
+
+  Created by Alexandru Maimescu on 8/26/15.
+  Copyright 2016 IPCO 2012 Limited
+ 
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+ 
+  http://www.apache.org/licenses/LICENSE-2.0
+ 
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+*/
+
+"com.zapp.view.tellMeMoreFooterMessage" = "What is Pay by Bank app?";
+
+"com.zapp.mcom.codeInstructionsTitle"   = "Pay on another device";
+"com.zapp.mcom.getZappCodeTitle"        = "Pay with another device";
+"com.zapp.mcom.getZappCodeMessage"      = "Tap the button below if your mobile banking app is on another device";
+
+"com.zapp.mcom.openBankAppMessage"              = "Tap the button below to open your mobile banking app and log in to complete your purchase";
+"com.zapp.mcom.openBankAppButtonTitle"          = "Open banking app";
+"com.zapp.mcom.openBankAppButtonTitleCustom"    = "Open Pingit";
+"com.zapp.mcom.openBankAppTitle"                = "Pay on this device";
+
+"com.zapp.ecom.codeInstructionsTitle"   = "Pay on another device";
+"com.zapp.ecom.noBankAppWarningMessage" = "None of the apps on this device currently support Pay by Bank app.";
+"com.zapp.ecom.noBankAppAdviceMessage"  = "Follow the steps below to complete this puchase on another device:";
+"com.zapp.ecom.noBankAppAdviceMessage2" = "Follow the steps on the right to complete this puchase on another device:";
+
+"com.zapp.view.codeInstructionsStep1"       = "Pick up your phone or tablet";
+"com.zapp.view.codeInstructionsStep1Bold"   = "Pick";
+"com.zapp.view.codeInstructionsStep2"       = "Log in to your mobile banking app";
+"com.zapp.view.codeInstructionsStep2Bold"   = "Log in";
+"com.zapp.view.codeInstructionsStep3"       = "Select Pay by Bank app";
+"com.zapp.view.codeInstructionsStep3Bold"   = "Select";
+"com.zapp.view.codeInstructionsStep4A"      = "Enter the";
+"com.zapp.view.codeInstructionsStep4B"      = "below";
+"com.zapp.view.codeInstructionsStep4Bold"   = "Enter";
