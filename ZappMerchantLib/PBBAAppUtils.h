@@ -22,7 +22,7 @@
 #import "PBBAPopupViewController.h"
 
 /**
- *  PPBBA App Utils class with helper methods.
+ *  The utils class with helper methods.
  */
 @interface PBBAAppUtils : NSObject
 

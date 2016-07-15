@@ -31,7 +31,14 @@ validateTools
 
 # Run tests
 echo "[GENERATE DOCS]"
-jazzy --objc --umbrella-header "ZappMerchantLib/ZappMerchantLib.h" --framework-root "." --sdk iphonesimulator
+jazzy \
+	--objc \
+	--umbrella-header "ZappMerchantLib/ZappMerchantLib.h" \
+	--framework-root "." \
+	--sdk iphonesimulator \
+	--copyright "IPCO 2012 Limited" \
+	-g "https://github.com/vocalinkzapp/ZappMerchantLib-R2-iOS" \
+	-e "ZappMerchantLib/PBBAAnimatable.h","ZappMerchantLib/PBBAUIElementAppearance.h"
 
 echo "[OPEN DOCSET]"
 open "docs/index.html"
