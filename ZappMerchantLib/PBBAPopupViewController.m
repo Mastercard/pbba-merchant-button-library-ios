@@ -317,6 +317,11 @@ static UIEdgeInsets const kScreenMargins = {0, 20, 0, 20};
                         completion:(dispatch_block_t)completion
 {
     [self dismissViewControllerAnimated:YES completion:^{
+        
+        if ([self.delegate respondsToSelector:@selector(pbbaPopupViewControllerDidCloseByUser:)]) {
+            [self.delegate pbbaPopupViewControllerDidCloseByUser:self];
+        }
+        
         if (completion) completion();
     }];
 }

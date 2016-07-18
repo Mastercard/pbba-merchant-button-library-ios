@@ -49,7 +49,13 @@ static NSDictionary *sPBBACustomConfig = nil;
 + (BOOL)isCFIAppAvailable
 {
     NSURL *urlToCheck = [NSURL URLWithString:kPBBACFIAppUrlScheme];
-    return [[UIApplication sharedApplication] canOpenURL:urlToCheck];
+    BOOL cfiAppAvailable = [[UIApplication sharedApplication] canOpenURL:urlToCheck];
+    
+    if (!cfiAppAvailable) {
+        [self saveFlagValue:NO forKey:kPBBARememberCFIAppLaunchKey];
+    }
+    
+    return cfiAppAvailable;
 }
 
 + (BOOL)openBankingApp:(NSString *)secureToken
@@ -64,7 +70,12 @@ static NSDictionary *sPBBACustomConfig = nil;
 
 + (void)registerCFIAppLaunch
 {
-    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kPBBARememberCFIAppLaunchKey];
+    [self saveFlagValue:YES forKey:kPBBARememberCFIAppLaunchKey];
+}
+
++ (void)saveFlagValue:(BOOL)value forKey:(NSString *)key
+{
+    [[NSUserDefaults standardUserDefaults] setBool:value forKey:key];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 

@@ -295,6 +295,7 @@ currentPBBATitleView = _currentPBBATitleView;
 
     if (enabled) {
         [self stopAnimating];
+        [self.activityTimer invalidate];
         [UIView animateWithDuration:0.2 animations:^{
             self.backgroundColor = self.originalBackgroundColor;
         }];
