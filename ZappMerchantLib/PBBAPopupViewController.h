@@ -39,6 +39,13 @@
 @optional
 
 /**
+ *  Inform delegate that user has decided to close the popup by pressing the close button.
+ *
+ *  @param pbbaPopupViewController The instance of popup view controller.
+ */
+- (void)pbbaPopupViewControllerDidCloseByUser:(nonnull PBBAPopupViewController *)pbbaPopupViewController;
+
+/**
  *  Inform delegate that PBBAPopupViewController will appear on the screen.
  *
  *  @param pbbaPopupViewController The instance of popup view controller.

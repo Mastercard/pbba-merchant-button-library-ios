@@ -177,7 +177,7 @@ typedef NS_ENUM(NSInteger, PBBAPopupEComLayoutType) {
 /**
  *  Force coordinator to automatically update the layout.
  *
- *  @discussion The coordinator will decide to which layout to switch according to the current state of transaction / payment request.
+ *  The coordinator will decide to which layout to switch according to the current state of transaction / payment request.
  */
 - (void)updateLayout;
 

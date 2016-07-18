@@ -28,6 +28,7 @@ describe(@"For PBBAAppUtils class", ^{
     NSString *validBRN = @"ABCABC";
     NSString *validSecureToken = @"123456789";
     UIViewController *validPresenter = [UIViewController new];
+    PBBAPopupViewController *validPopupVC = [PBBAPopupViewController new];
     
     __block UIViewController *mockPresenter;
     __block PBBAPopupViewController *mockPBBAPopupViewController;
@@ -96,18 +97,26 @@ describe(@"For PBBAAppUtils class", ^{
     
     it(@"a call to showPBBAPopup:secureToken:brn:delegate: should succeed for valid parameters", ^{
         
+        [[mockPresenter should] receive:@selector(presentedViewController) andReturn:nil withCount:2];
         [[mockPresenter should] receive:@selector(presentViewController:animated:completion:) withArguments:mockPBBAPopupViewController, any(), any()];
-        [[mockPresenter should] receive:@selector(presentedViewController) andReturn:mockPBBAPopupViewController];
+        
+        [PBBAAppUtils showPBBAPopup:mockPresenter secureToken:validSecureToken brn:validBRN delegate:nil];
+    });
+    
+    it(@"a call to showPBBAPopup:secureToken:brn:delegate: should update the presented popup for valid parameters", ^{
+        
+        [[mockPresenter should] receive:@selector(presentedViewController) andReturn:validPopupVC withCount:2];
+        [[mockPresenter shouldNot] receive:@selector(presentViewController:animated:completion:)];
         
         PBBAPopupViewController *presentedVC = [PBBAAppUtils showPBBAPopup:mockPresenter secureToken:validSecureToken brn:validBRN delegate:nil];
         
-        [[presentedVC should] equal:mockPBBAPopupViewController];
+        [[presentedVC should] equal:validPopupVC];
     });
     
     it(@"a call to showPBBAPopup:secureToken:brn:delegate: should not present PBBA popup if there is already presented something", ^{
         
         [[mockPresenter should] receive:@selector(presentViewController:animated:completion:) withArguments:mockPBBAPopupViewController, any(), any()];
-        [[mockPresenter should] receive:@selector(presentedViewController) andReturn:validPresenter];
+        [[mockPresenter should] receive:@selector(presentedViewController) andReturn:validPresenter withCount:2];
         
         PBBAPopupViewController *presentedVC = [PBBAAppUtils showPBBAPopup:mockPresenter secureToken:validSecureToken brn:validBRN delegate:nil];
         
@@ -119,6 +128,8 @@ describe(@"For PBBAAppUtils class", ^{
         [[PBBALibraryUtils should] receive:@selector(shouldLaunchCFIApp) andReturn:theValue(YES)];
         [[PBBALibraryUtils should] receive:@selector(openBankingApp:) andReturn:theValue(YES)];
         
+        [[mockPresenter should] receive:@selector(presentedViewController) andReturn:mockPBBAPopupViewController];
+        [[mockPresenter should] receive:@selector(dismissViewControllerAnimated:completion:)];
         [[mockPresenter shouldNot] receive:@selector(presentViewController:animated:completion:) withArguments:mockPBBAPopupViewController, any(), any()];
         
         PBBAPopupViewController *presentedVC = [PBBAAppUtils showPBBAPopup:mockPresenter secureToken:validSecureToken brn:validBRN delegate:nil];
@@ -143,17 +154,29 @@ describe(@"For PBBAAppUtils class", ^{
     it(@"a call to showPBBAErrorPopup:errorCode:errorTitle:errorMessage:delegate: should succeed for valid parameters", ^{
         
         [[mockPresenter should] receive:@selector(presentViewController:animated:completion:) withArguments:mockPBBAPopupViewController, any(), any()];
-        [[mockPresenter should] receive:@selector(presentedViewController) andReturn:mockPBBAPopupViewController];
+        [[mockPresenter should] receive:@selector(presentedViewController) andReturn:nil withCount:2];
         
-        PBBAPopupViewController *presentedVC = [PBBAAppUtils showPBBAErrorPopup:mockPresenter errorCode:testString errorTitle:testString errorMessage:testString delegate:nil];
+        [PBBAAppUtils showPBBAErrorPopup:mockPresenter errorCode:testString errorTitle:testString errorMessage:testString delegate:nil];
+    });
+    
+    it(@"a call to showPBBAErrorPopup:errorCode:errorTitle:errorMessage:delegate: should update the presented popup for valid parameters", ^{
         
-        [[presentedVC should] equal:mockPBBAPopupViewController];
+        [[mockPresenter shouldNot] receive:@selector(presentViewController:animated:completion:)];
+        [[mockPresenter should] receive:@selector(presentedViewController) andReturn:validPopupVC withCount:2];
+        
+        PBBAPopupViewController *presentedVC = [PBBAAppUtils showPBBAErrorPopup:mockPresenter
+                                                                      errorCode:testString
+                                                                     errorTitle:testString
+                                                                   errorMessage:testString
+                                                                       delegate:nil];
+        
+        [[presentedVC should] equal:validPopupVC];
     });
     
     it(@"a call to showPBBAErrorPopup:errorCode:errorTitle:errorMessage:delegate: should not present PBBA popup if there is already presented something", ^{
         
         [[mockPresenter should] receive:@selector(presentViewController:animated:completion:) withArguments:mockPBBAPopupViewController, any(), any()];
-        [[mockPresenter should] receive:@selector(presentedViewController) andReturn:validPresenter];
+        [[mockPresenter should] receive:@selector(presentedViewController) andReturn:validPresenter withCount:2];
         
         PBBAPopupViewController *presentedVC = [PBBAAppUtils showPBBAErrorPopup:mockPresenter errorCode:testString errorTitle:testString errorMessage:testString delegate:nil];
         

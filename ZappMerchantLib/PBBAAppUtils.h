@@ -29,7 +29,7 @@
 /**
  *  Check if at least one PBBA enabled CFI app is installed on the current device.
  *
- *  @discussion You must whitelist first the 'zapp' scheme in your Info.plist file under the LSApplicationQueriesSchemes key.
+ *  You must whitelist first the 'zapp' scheme in your Info.plist file under the LSApplicationQueriesSchemes key.
  *
  *  @return YES if CFI app is installed.
  */
@@ -46,6 +46,9 @@
 
 /**
  *  Show PBBA popup view controller.
+ *
+ *  It opens the CFI app automatically (without displaying the popup) if the device has CFI app installed and the user has tapped 'Open banking app' button.
+ *  Before opening the CFI app automatically it will also close any instance of error PBBAPopupViewController which is presented.
  *
  *  @param presenter   The presenter controller which will present the popup view controller.
  *  @param secureToken The human friendly transaction retrieval identifier issued by Zapp.

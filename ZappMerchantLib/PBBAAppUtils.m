@@ -46,9 +46,25 @@
     NSAssert(brn.length == 6, @"[PBBAAppUtils] 'brn' length must be 6 characters.");
     
     if ([PBBALibraryUtils shouldLaunchCFIApp]) {
+        
+        // Dismiss any instance of presented error popup before opening the CFI app
+        if ([presenter.presentedViewController isKindOfClass:[PBBAPopupViewController class]]) {
+            [presenter dismissViewControllerAnimated:NO completion:nil];
+        }
+        
         if ([self openBankingApp:secureToken]) {
             return nil;
         }
+    }
+    
+    if ([presenter.presentedViewController isKindOfClass:[PBBAPopupViewController class]]) {
+        PBBAPopupViewController *pbbaPopupVC = (PBBAPopupViewController *) presenter.presentedViewController;
+        [pbbaPopupVC updateWithSecureToken:secureToken
+                                       brn:brn];
+        
+        pbbaPopupVC.delegate = delegate;
+        
+        return pbbaPopupVC;
     }
     
     PBBAPopupViewController *pbbaPopupVC = [[PBBAPopupViewController alloc] initWithSecureToken:secureToken
@@ -65,6 +81,17 @@
 {
     NSAssert(presenter, @"[PBBAAppUtils] 'presenter' is a mandatory parameter.");
     NSAssert(errorMessage, @"[PBBAAppUtils] 'errorMessage' is a mandatory parameter.");
+    
+    if ([presenter.presentedViewController isKindOfClass:[PBBAPopupViewController class]]) {
+        PBBAPopupViewController *pbbaPopupVC = (PBBAPopupViewController *) presenter.presentedViewController;
+        [pbbaPopupVC updateWithErrorCode:errorCode
+                              errorTitle:errorTitle
+                            errorMessage:errorMessage];
+        
+        pbbaPopupVC.delegate = delegate;
+        
+        return pbbaPopupVC;
+    }
     
     PBBAPopupViewController *pbbaPopupVC = [[PBBAPopupViewController alloc] initWithErrorCode:errorCode
                                                                                    errorTitle:errorTitle
