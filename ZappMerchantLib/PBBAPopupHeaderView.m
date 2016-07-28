@@ -39,9 +39,6 @@
         case PBBAPopupHeaderViewTypeError:
             self.logoImageView.image = [UIImage pbba_errorImage];
             break;
-            
-        default:
-            break;
     }
 }
 

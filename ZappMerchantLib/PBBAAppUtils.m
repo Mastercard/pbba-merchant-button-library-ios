@@ -47,16 +47,18 @@
     
     if ([PBBALibraryUtils shouldLaunchCFIApp]) {
         
-        // Dismiss any instance of presented error popup before opening the CFI app
+        // Dismiss any instance of the presented PBBAPopupViewController before opening the CFI app
         if ([presenter.presentedViewController isKindOfClass:[PBBAPopupViewController class]]) {
             [presenter dismissViewControllerAnimated:NO completion:nil];
         }
         
+        // Launch CFI app and exit early
         if ([self openBankingApp:secureToken]) {
             return nil;
         }
     }
     
+    // Update the already presented instance of PBBAPopupViewController instead of recreating it
     if ([presenter.presentedViewController isKindOfClass:[PBBAPopupViewController class]]) {
         PBBAPopupViewController *pbbaPopupVC = (PBBAPopupViewController *) presenter.presentedViewController;
         [pbbaPopupVC updateWithSecureToken:secureToken
@@ -64,9 +66,11 @@
         
         pbbaPopupVC.delegate = delegate;
         
+        // Exit early
         return pbbaPopupVC;
     }
     
+    // Create a new instance of PBBAPopupViewController and try to present it
     PBBAPopupViewController *pbbaPopupVC = [[PBBAPopupViewController alloc] initWithSecureToken:secureToken
                                                                                             brn:brn
                                                                                        delegate:delegate];
@@ -82,6 +86,7 @@
     NSAssert(presenter, @"[PBBAAppUtils] 'presenter' is a mandatory parameter.");
     NSAssert(errorMessage, @"[PBBAAppUtils] 'errorMessage' is a mandatory parameter.");
     
+    // Update the already presented instance of PBBAPopupViewController instead of recreating it
     if ([presenter.presentedViewController isKindOfClass:[PBBAPopupViewController class]]) {
         PBBAPopupViewController *pbbaPopupVC = (PBBAPopupViewController *) presenter.presentedViewController;
         [pbbaPopupVC updateWithErrorCode:errorCode
@@ -90,9 +95,11 @@
         
         pbbaPopupVC.delegate = delegate;
         
+        // Exit early
         return pbbaPopupVC;
     }
     
+    // Create a new instance of PBBAPopupViewController and try to present it
     PBBAPopupViewController *pbbaPopupVC = [[PBBAPopupViewController alloc] initWithErrorCode:errorCode
                                                                                    errorTitle:errorTitle
                                                                                  errorMessage:errorMessage
@@ -106,7 +113,8 @@
 {
     [presenter presentViewController:pbbaPopupVC animated:YES completion:nil];
     
-    return (presenter.presentedViewController == pbbaPopupVC) ? pbbaPopupVC : nil;;
+    // Return nil if the attempt to present the PBBAPopupViewController has failed
+    return (presenter.presentedViewController == pbbaPopupVC) ? pbbaPopupVC : nil;
 }
 
 @end

@@ -41,9 +41,9 @@
 + (UIImage *)pbba_imageNamed:(NSString *)imageName
 {
     NSBundle *bundle = [NSBundle pbba_merchantResourceBundle];
-    imageName = [imageName stringByDeletingPathExtension];
+    NSString *imgName = [imageName stringByDeletingPathExtension];
     
-    return [UIImage imageNamed:imageName inBundle:bundle compatibleWithTraitCollection:nil];;
+    return [UIImage imageNamed:imgName inBundle:bundle compatibleWithTraitCollection:nil];
 }
 
 + (UIImage *)pbba_templateImageNamed:(NSString *)imageName

@@ -97,6 +97,9 @@ static UIEdgeInsets const kScreenMargins = {0, 20, 0, 20};
                          errorTitle:(NSString *)errorTitle
                        errorMessage:(NSString *)errorMessage
 {
+    self.popupCoordinator.secureToken = nil;
+    self.popupCoordinator.brn = nil;
+    
     self.popupCoordinator.errorCode = errorCode;
     self.popupCoordinator.errorTitle = errorTitle;
     self.popupCoordinator.errorMessage = errorMessage;
@@ -314,11 +317,14 @@ static UIEdgeInsets const kScreenMargins = {0, 20, 0, 20};
 }
 
 - (void)popupCoordinatorClosePopup:(PBBAPopupCoordinator *)coordinator
+                         initiator:(PBBAPopupCloseActionInitiator)initiator
+                          animated:(BOOL)animated
                         completion:(dispatch_block_t)completion
 {
-    [self dismissViewControllerAnimated:YES completion:^{
+    [self dismissViewControllerAnimated:animated completion:^{
         
-        if ([self.delegate respondsToSelector:@selector(pbbaPopupViewControllerDidCloseByUser:)]) {
+        if (initiator == PBBAPopupCloseActionInitiatorUser &&
+            [self.delegate respondsToSelector:@selector(pbbaPopupViewControllerDidCloseByUser:)]) {
             [self.delegate pbbaPopupViewControllerDidCloseByUser:self];
         }
         
@@ -339,8 +345,12 @@ static UIEdgeInsets const kScreenMargins = {0, 20, 0, 20};
 {
     PBBAEComViewController *eComVC = [PBBAEComViewController new];
     eComVC.popupCoordinator = coordinator;
-    eComVC.hideNoBankWarningHeader = (ecomLayout == PBBAPopupEComLayoutTypeDefault) ? YES : NO;
     eComVC.brn = self.brn;
+    
+    if (ecomLayout == PBBAPopupEComLayoutTypeDefault) {
+        eComVC.hideNoBankWarningHeader = YES;
+    }
+    
     [self.containerViewController pushViewController:eComVC];
 }
 

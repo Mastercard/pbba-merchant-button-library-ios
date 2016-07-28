@@ -168,7 +168,6 @@ currentPBBATitleView = _currentPBBATitleView;
         case 2:
         case 3:
             return (PBBAThemeType) index;
-            break;
             
         default:
             break;
@@ -187,7 +186,6 @@ currentPBBATitleView = _currentPBBATitleView;
             titleView = [self cobrandedTitleViewWithType:theme];
             break;
         case PBBAThemeTypePayByBankApp:
-        default:
             titleView = self.originalPBBATitleView;
             break;
     }
@@ -229,15 +227,14 @@ currentPBBATitleView = _currentPBBATitleView;
 {    
     if (!self.enabled) return NO;
     
-    if ([self.delegate respondsToSelector:@selector(pbbaButtonDidPress:)]) {
-        if ([self.delegate pbbaButtonDidPress:self]) {
-            
-            self.enabled = NO;
-            [self startActivityTimer];
-            [self startAnimating];
-            
-            return YES;
-        }
+    if ([self.delegate respondsToSelector:@selector(pbbaButtonDidPress:)] &&
+        [self.delegate pbbaButtonDidPress:self]) {
+        
+        self.enabled = NO;
+        [self startActivityTimer];
+        [self startAnimating];
+        
+        return YES;
     }
     
     return NO;
@@ -283,7 +280,9 @@ currentPBBATitleView = _currentPBBATitleView;
     [super setHighlighted:highlighted];
     
     if (self.enabled) {
-        self.backgroundColor = (highlighted) ? self.highlightedBackgroundColor : self.originalBackgroundColor;
+        self.backgroundColor = (highlighted)
+            ? self.highlightedBackgroundColor
+            : self.originalBackgroundColor;
     }
 }
 

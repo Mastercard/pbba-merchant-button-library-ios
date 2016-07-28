@@ -133,8 +133,12 @@
 
 - (IBAction)didPressOpenBankingApp:(id)sender
 {
-    [self.popupCoordinator registerCFIAppLaunch];
-    [self.popupCoordinator openBankingApp];
+    [self.popupCoordinator closePopupAnimated:YES
+                                    initiator:PBBAPopupCloseActionInitiatorSelf
+                                   completion:^{
+                                       [self.popupCoordinator registerCFIAppLaunch];
+                                       [self.popupCoordinator openBankingApp];
+                                   }];
 }
 
 - (IBAction)didPressGetZappCode:(id)sender

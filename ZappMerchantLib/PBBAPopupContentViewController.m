@@ -34,7 +34,9 @@
     
     __weak __typeof__(self) weakSelf = self;
     self.headerView.closeButtonTapHandler = ^{
-        [weakSelf.popupCoordinator closePopupWithCompletion:nil];
+        [weakSelf.popupCoordinator closePopupAnimated:YES
+                                            initiator:PBBAPopupCloseActionInitiatorUser
+                                           completion:nil];
     };
     
     self.footerView.tellMeMoreButtonTapHandler = ^{

@@ -23,10 +23,13 @@
 #import "UIColor+ZPMLib.h"
 #import "PBBAUIElementAppearance.h"
 
+@interface PBBASquiggleView ()
+
+@property (nonatomic, strong) UIImageView *squiggleImageView;
+
+@end
+
 @implementation PBBASquiggleView
-{
-    UIImageView *_squiggleImageView;
-}
 
 #pragma mark - UIView Lifecycle
 
@@ -65,13 +68,27 @@
     
     UIImage *squiggleImage = [UIImage pbba_templateImageNamed:@"squiggle-part-15"];
     NSAssert(squiggleImage, @"ZappPaymentsButton assets not loaded. Make sure that ZappMerchantLib resources are being loaded.");
-    _squiggleImageView = [[UIImageView alloc] initWithImage:squiggleImage];
-    _squiggleImageView.translatesAutoresizingMaskIntoConstraints = NO;
-    _squiggleImageView.contentMode = UIViewContentModeScaleAspectFit;
+    self.squiggleImageView = [[UIImageView alloc] initWithImage:squiggleImage];
+    self.squiggleImageView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.squiggleImageView.contentMode = UIViewContentModeScaleAspectFit;
+    self.squiggleImageView.animationDuration = 2.3f;
     
-    [self addSubview:_squiggleImageView];
+    [self addSubview:self.squiggleImageView];
     
-    _squiggleImageView.animationDuration = 2.3f;
+    NSDictionary *bindedViews = @{@"squiggleImageView": self.squiggleImageView};
+    
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[squiggleImageView]|"
+                                                                 options:0
+                                                                 metrics:nil
+                                                                   views:bindedViews]];
+    
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[squiggleImageView]|"
+                                                                 options:0
+                                                                 metrics:nil
+                                                                   views:bindedViews]];
+    
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
 }
 
 - (void)setAnimationImagesWithCustomColor:(BOOL)custom
@@ -86,29 +103,12 @@
         [animationImages addObject:custom ? [image pbba_tintedWithColor:self.tintColor] : image];
     }
     
-    _squiggleImageView.animationImages = animationImages;
-}
-
-- (void)updateConstraints
-{
-    NSDictionary *bindedViews = @{@"squiggleImageView": _squiggleImageView};
-    
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[squiggleImageView]|"
-                                                                 options:0
-                                                                 metrics:nil
-                                                                   views:bindedViews]];
-    
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[squiggleImageView]|"
-                                                                 options:0
-                                                                 metrics:nil
-                                                                   views:bindedViews]];
-    
-    [super updateConstraints];
+    self.squiggleImageView.animationImages = animationImages;
 }
 
 - (CGSize)intrinsicContentSize
 {
-    CGFloat maxEdge = fmax(_squiggleImageView.image.size.width, _squiggleImageView.image.size.height);
+    CGFloat maxEdge = fmax(self.squiggleImageView.image.size.width, self.squiggleImageView.image.size.height);
     return CGSizeMake(maxEdge, maxEdge);
 }
 
@@ -116,17 +116,17 @@
 
 - (BOOL)isAnimating
 {
-    return [_squiggleImageView isAnimating];
+    return [self.squiggleImageView isAnimating];
 }
 
 - (void)startAnimating
 {
-    [_squiggleImageView startAnimating];
+    [self.squiggleImageView startAnimating];
 }
 
 - (void)stopAnimating
 {
-    [_squiggleImageView stopAnimating];
+    [self.squiggleImageView stopAnimating];
 }
 
 @end
