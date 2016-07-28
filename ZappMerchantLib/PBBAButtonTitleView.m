@@ -21,11 +21,14 @@
 #import "PBBAButtonTitleView.h"
 #import "UIImage+ZPMLib.h"
 
+@interface PBBAButtonTitleView ()
+
+@property (nonatomic, strong) UIImageView *titleImageView;
+@property (nonatomic, strong) PBBASquiggleView *squiggleView;
+
+@end
+
 @implementation PBBAButtonTitleView
-{
-    UIImageView *_titleImageView;
-    PBBASquiggleView *_squiggleView;
-}
 
 #pragma mark - UIView Lifecycle
 
@@ -54,66 +57,63 @@
     
     UIImage *titleImage = [UIImage pbba_templateImageNamed:@"button-title-base"];
     NSAssert(titleImage, @"ZappPaymentsButton assets not loaded. Make sure that ZappMerchantLib resources are being loaded.");
-    _titleImageView = [[UIImageView alloc] initWithImage:titleImage];
-    _titleImageView.translatesAutoresizingMaskIntoConstraints = NO;
-    _titleImageView.contentMode = UIViewContentModeScaleAspectFit;
+    self.titleImageView = [[UIImageView alloc] initWithImage:titleImage];
+    self.titleImageView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.titleImageView.contentMode = UIViewContentModeScaleAspectFit;
     
-    _squiggleView = [[PBBASquiggleView alloc] initWithFrame:CGRectZero];
-    [_titleImageView addSubview:_squiggleView];
+    self.squiggleView = [[PBBASquiggleView alloc] initWithFrame:CGRectZero];
+    [self.titleImageView addSubview:self.squiggleView];
     
-    [self addSubview:_titleImageView];
-}
-
-- (void)updateConstraints
-{
-    NSDictionary *bindedViews = @{@"titleImageView": _titleImageView, @"squiggleView": _squiggleView};
+    [self addSubview:self.titleImageView];
+    
+    NSDictionary *bindedViews = @{@"titleImageView": self.titleImageView, @"squiggleView": self.squiggleView};
     
     // Squiggle view aspect ratio 1:1
-    [_squiggleView addConstraint:[NSLayoutConstraint constraintWithItem:_squiggleView
-                                                              attribute:NSLayoutAttributeHeight
-                                                              relatedBy:NSLayoutRelationEqual
-                                                                 toItem:_squiggleView
-                                                              attribute:NSLayoutAttributeWidth
-                                                             multiplier:1
-                                                               constant:0]];
+    [self.squiggleView addConstraint:[NSLayoutConstraint constraintWithItem:self.squiggleView
+                                                                  attribute:NSLayoutAttributeHeight
+                                                                  relatedBy:NSLayoutRelationEqual
+                                                                     toItem:self.squiggleView
+                                                                  attribute:NSLayoutAttributeWidth
+                                                                 multiplier:1
+                                                                   constant:0]];
     
-
+    
     // Squiggle view height equal to title image view height
-    [_titleImageView addConstraint:[NSLayoutConstraint constraintWithItem:_squiggleView
-                                                                attribute:NSLayoutAttributeHeight
-                                                                relatedBy:NSLayoutRelationEqual
-                                                                   toItem:_titleImageView
-                                                                attribute:NSLayoutAttributeHeight
-                                                               multiplier:1
-                                                                 constant:0]];
+    [self.titleImageView addConstraint:[NSLayoutConstraint constraintWithItem:self.squiggleView
+                                                                    attribute:NSLayoutAttributeHeight
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:self.titleImageView
+                                                                    attribute:NSLayoutAttributeHeight
+                                                                   multiplier:1
+                                                                     constant:0]];
     
     // Maximum height for title image view - keep default
-    NSString *heightExpression = [NSString stringWithFormat:@"V:[titleImageView(<=%f)]", CGRectGetHeight(_titleImageView.bounds)];
-    [_titleImageView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:heightExpression
-                                                                            options:0
-                                                                            metrics:nil
-                                                                              views:bindedViews]];
+    NSString *heightExpression = [NSString stringWithFormat:@"V:[titleImageView(<=%f)]", CGRectGetHeight(self.titleImageView.bounds)];
+    [self.titleImageView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:heightExpression
+                                                                                options:0
+                                                                                metrics:nil
+                                                                                  views:bindedViews]];
     
     // Title image view aspect ratio - keep default
-    CGFloat multiplier = (CGRectGetHeight(_titleImageView.bounds) / CGRectGetWidth(_titleImageView.bounds)) ?: 1;
-    [_titleImageView addConstraint:[NSLayoutConstraint constraintWithItem:_titleImageView
-                                                                attribute:NSLayoutAttributeHeight
-                                                                relatedBy:NSLayoutRelationEqual
-                                                                   toItem:_titleImageView
-                                                                attribute:NSLayoutAttributeWidth
-                                                               multiplier:multiplier
-                                                                 constant:0]];
+    CGFloat multiplier = (CGRectGetHeight(self.titleImageView.bounds) / CGRectGetWidth(self.titleImageView.bounds)) ?: 1;
+    [self.titleImageView addConstraint:[NSLayoutConstraint constraintWithItem:self.titleImageView
+                                                                    attribute:NSLayoutAttributeHeight
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:self.titleImageView
+                                                                    attribute:NSLayoutAttributeWidth
+                                                                   multiplier:multiplier
+                                                                     constant:0]];
     
     // Align squiggle view in title image view
-    [_titleImageView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(-3)-[squiggleView]"
-                                                                 options:0
-                                                                 metrics:nil
-                                                                   views:bindedViews]];
+    [self.titleImageView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(-3)-[squiggleView]"
+                                                                                options:0
+                                                                                metrics:nil
+                                                                                  views:bindedViews]];
     
-    [_titleImageView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[squiggleView]"
-                                                                 options:0
-                                                                 metrics:nil
-                                                                   views:bindedViews]];
+    [self.titleImageView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[squiggleView]"
+                                                                                options:0
+                                                                                metrics:nil
+                                                                                  views:bindedViews]];
     
     // Align title image view in self
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(>=5)-[titleImageView]-(>=5)-|"
@@ -126,7 +126,7 @@
                                                                  metrics:nil
                                                                    views:bindedViews]];
     
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:_titleImageView
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.titleImageView
                                                      attribute:NSLayoutAttributeCenterX
                                                      relatedBy:NSLayoutRelationEqual
                                                         toItem:self
@@ -134,7 +134,7 @@
                                                     multiplier:1
                                                       constant:0]];
     
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:_titleImageView
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.titleImageView
                                                      attribute:NSLayoutAttributeCenterY
                                                      relatedBy:NSLayoutRelationEqual
                                                         toItem:self
@@ -142,20 +142,21 @@
                                                     multiplier:1
                                                       constant:0]];
     
-    [super updateConstraints];
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
 }
 
 - (CGSize)intrinsicContentSize
 {
-    return _titleImageView.intrinsicContentSize;
+    return self.titleImageView.intrinsicContentSize;
 }
 
 - (void)setTintColor:(UIColor *)tintColor
 {
     [super setTintColor:tintColor];
     
-    _squiggleView.tintColor = tintColor;
-    _titleImageView.tintColor = tintColor;
+    self.squiggleView.tintColor = tintColor;
+    self.titleImageView.tintColor = tintColor;
 }
 
 - (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event
@@ -167,17 +168,17 @@
 
 - (void)startAnimating
 {
-    [_squiggleView startAnimating];
+    [self.squiggleView startAnimating];
 }
 
 - (void)stopAnimating
 {
-    [_squiggleView stopAnimating];
+    [self.squiggleView stopAnimating];
 }
 
 - (BOOL)isAnimating
 {
-    return [_squiggleView isAnimating];
+    return [self.squiggleView isAnimating];
 }
 
 @end

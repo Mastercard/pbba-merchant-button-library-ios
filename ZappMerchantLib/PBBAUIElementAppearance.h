@@ -22,6 +22,7 @@
 #define ZappMerchantLib_PBBAUIElementAppearance_h
 
 #import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 /**
  *  Set appearance for UI elements

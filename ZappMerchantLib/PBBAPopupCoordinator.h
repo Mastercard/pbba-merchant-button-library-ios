@@ -21,6 +21,20 @@
 #import <Foundation/Foundation.h>
 
 /**
+ *  The popup close action initiator
+ */
+typedef NS_ENUM(NSInteger, PBBAPopupCloseActionInitiator) {
+    /**
+     *  The popup is closed as result of user action
+     */
+    PBBAPopupCloseActionInitiatorUser,
+    /**
+     *  The popup closes itself
+     */
+    PBBAPopupCloseActionInitiatorSelf
+};
+
+/**
  *  The popup layout type
  */
 typedef NS_ENUM(NSInteger, PBBAPopupLayoutType) {
@@ -90,9 +104,13 @@ typedef NS_ENUM(NSInteger, PBBAPopupEComLayoutType) {
  *  Tell the delegate to close the popup.
  *
  *  @param coordinator The instance of popup coordinator.
+ *  @param initiator   The close action initiator.
+ *  @param animated    The flag which indicates that popup dismissal should be animated.
  *  @param completion  The completion handler.
  */
 - (void)popupCoordinatorClosePopup:(nonnull PBBAPopupCoordinator *)coordinator
+                         initiator:(PBBAPopupCloseActionInitiator)initiator
+                          animated:(BOOL)animated
                         completion:(nullable dispatch_block_t)completion;
 
 /**
@@ -191,9 +209,13 @@ typedef NS_ENUM(NSInteger, PBBAPopupEComLayoutType) {
 /**
  *  Tell coordinator to close the popup.
  *
+ *  @param animated   The flag which indicates that popup dismissal should be animated.
+ *  @param initiator  The close action initiator.
  *  @param completion The completion handler.
  */
-- (void)closePopupWithCompletion:(nullable dispatch_block_t)completion;
+- (void)closePopupAnimated:(BOOL)animated
+                 initiator:(PBBAPopupCloseActionInitiator)initiator
+                completion:(nullable dispatch_block_t)completion;
 
 /**
  *  Open the bank app.

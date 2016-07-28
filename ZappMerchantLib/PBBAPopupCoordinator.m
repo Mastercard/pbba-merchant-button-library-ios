@@ -110,9 +110,6 @@
         case PBBAPopupLayoutTypeError:
             [self updateToErrorLayout];
             break;
-            
-        default:
-            break;
     }
     
     self.currentPopupLayout = layoutType;
@@ -152,10 +149,12 @@
     }
 }
 
-- (void)closePopupWithCompletion:(dispatch_block_t)completion
+- (void)closePopupAnimated:(BOOL)animated
+                 initiator:(PBBAPopupCloseActionInitiator)initiator
+                completion:(dispatch_block_t)completion
 {
-    if ([self.delegate respondsToSelector:@selector(popupCoordinator:updateToEComLayout:)]) {
-        [self.delegate popupCoordinatorClosePopup:self completion:completion];
+    if ([self.delegate respondsToSelector:@selector(popupCoordinatorClosePopup:initiator:animated:completion:)]) {
+        [self.delegate popupCoordinatorClosePopup:self initiator:initiator animated:animated completion:completion];
     }
 }
 

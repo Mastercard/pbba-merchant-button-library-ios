@@ -51,19 +51,12 @@ static CGFloat const kFinalScale = 1.0;
     switch (self.animationType) {
         case PBBAPopupAnimationTypePresention:
             return kDefaultPresentationDuration;
-            break;
         case PBBAPopupAnimationTypeDismissal:
             return kDefaultDismissalDuration;
-            break;
         case PBBAPopupAnimationTypeContentTransition:
             return kDefaultContentTransitionDuration;
-            break;
         case PBBAPopupAnimationTypeScaleAspectFit:
             return kDefaultScaleAspectFitDuration;
-            break;
-            
-        default:
-            break;
     }
     
     return 0;
