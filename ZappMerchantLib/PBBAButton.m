@@ -78,16 +78,6 @@ currentPBBATitleView = _currentPBBATitleView;
     return self;
 }
 
-- (void)willMoveToWindow:(UIWindow *)newWindow
-{
-    [super willMoveToWindow:newWindow];
-    
-    // Invalidate activity timer if button is removed from view hierarcy
-    if (newWindow == nil) {
-        [self.activityTimer invalidate];
-    }
-}
-
 - (void)setup
 {
     [self addTarget:self action:@selector(tapControl) forControlEvents:UIControlEventTouchUpInside];
