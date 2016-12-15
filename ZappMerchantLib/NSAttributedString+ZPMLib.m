@@ -18,6 +18,8 @@
 //  limitations under the License.
 //
 
+#import "NSAttributedString+ZPMLib.h"
+
 @implementation NSAttributedString (ZPMLib)
 
 + (NSAttributedString *)pbba_highlightFragments:(NSArray *)fragments

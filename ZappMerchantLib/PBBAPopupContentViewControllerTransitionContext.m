@@ -22,7 +22,7 @@
 
 @interface PBBAPopupContentViewControllerTransitionContext ()
 
-@property (nonatomic, weak) UIView *containerView;
+@property (nonatomic, strong) UIView *containerView;
 @property (nonatomic, assign) UIModalPresentationStyle presentationStyle;
 @property (nonatomic, strong) NSDictionary<NSString *, UIViewController *> *viewControllers;
 

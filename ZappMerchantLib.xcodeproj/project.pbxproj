@@ -207,7 +207,6 @@
 		A2D12A8419640BE30064590B /* UIImage+ZPMLib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ZPMLib.m"; sourceTree = "<group>"; };
 		A76635CC188D3AB300D6C26C /* libZappMerchantLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libZappMerchantLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A76635CF188D3AB300D6C26C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		A76635D3188D3AB300D6C26C /* ZappMerchantLib-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZappMerchantLib-Prefix.pch"; sourceTree = "<group>"; };
 		A76635D4188D3AB300D6C26C /* ZappMerchantLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZappMerchantLib.h; sourceTree = "<group>"; };
 		A76635DC188D3AB300D6C26C /* ZappMerchantLibTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZappMerchantLibTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A76635E7188D3AB300D6C26C /* ZappMerchantLibTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ZappMerchantLibTests-Info.plist"; sourceTree = "<group>"; };
@@ -275,7 +274,6 @@
 		CDC4373918D305F5004DBB05 /* ZappMerchantLibResources.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZappMerchantLibResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDC4373D18D305F5004DBB05 /* ZappMerchantLibResources-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ZappMerchantLibResources-Info.plist"; sourceTree = "<group>"; };
 		CDC4373F18D305F5004DBB05 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		CDC4374118D305F5004DBB05 /* ZappMerchantLibResources-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZappMerchantLibResources-Prefix.pch"; sourceTree = "<group>"; };
 		CDC4374518D306E8004DBB05 /* PBBAButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBBAButton.h; sourceTree = "<group>"; };
 		CDC4374618D306E8004DBB05 /* PBBAButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBBAButton.m; sourceTree = "<group>"; };
 		CDCA596C1D35410E002308C9 /* PBBATestEnvironment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PBBATestEnvironment.h; sourceTree = "<group>"; };
@@ -399,17 +397,8 @@
 				CD8CCE5E1C88478800F27CC2 /* Categories */,
 				CD8CCE441C883F9300F27CC2 /* UI Elements */,
 				A76635D4188D3AB300D6C26C /* ZappMerchantLib.h */,
-				A76635D2188D3AB300D6C26C /* Supporting Files */,
 			);
 			path = ZappMerchantLib;
-			sourceTree = "<group>";
-		};
-		A76635D2188D3AB300D6C26C /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				A76635D3188D3AB300D6C26C /* ZappMerchantLib-Prefix.pch */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		A76635E5188D3AB300D6C26C /* ZappMerchantLibTests */ = {
@@ -624,7 +613,6 @@
 			children = (
 				CDC4373D18D305F5004DBB05 /* ZappMerchantLibResources-Info.plist */,
 				CDC4373E18D305F5004DBB05 /* InfoPlist.strings */,
-				CDC4374118D305F5004DBB05 /* ZappMerchantLibResources-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1186,11 +1174,9 @@
 		A76635F0188D3AB300D6C26C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CURRENT_PROJECT_VERSION = "";
 				DSTROOT = /tmp/ZappMerchantLib.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ZappMerchantLib/ZappMerchantLib-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -1210,12 +1196,10 @@
 		A76635F1188D3AB300D6C26C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = "";
 				DSTROOT = /tmp/ZappMerchantLib.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ZappMerchantLib/ZappMerchantLib-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -1239,8 +1223,6 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ZappMerchantLib/ZappMerchantLib-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1265,8 +1247,6 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ZappMerchantLib/ZappMerchantLib-Prefix.pch";
 				GCC_WARN_UNDECLARED_SELECTOR = NO;
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "ZappMerchantLibTests/ZappMerchantLibTests-Info.plist";
@@ -1370,12 +1350,10 @@
 		CDA96C411C4E95C5002C64E0 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = "";
 				DSTROOT = /tmp/ZappMerchantLib.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ZappMerchantLib/ZappMerchantLib-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -1440,8 +1418,6 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ZappMerchantLib/ZappMerchantLib-Prefix.pch";
 				GCC_WARN_UNDECLARED_SELECTOR = NO;
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "ZappMerchantLibTests/ZappMerchantLibTests-Info.plist";
@@ -1460,8 +1436,6 @@
 				COMBINE_HIDPI_IMAGES = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ZappMerchantLibResources/ZappMerchantLibResources-Prefix.pch";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = "ZappMerchantLibResources/ZappMerchantLibResources-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
@@ -1481,8 +1455,6 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ZappMerchantLibResources/ZappMerchantLibResources-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1507,8 +1479,6 @@
 				COMBINE_HIDPI_IMAGES = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ZappMerchantLibResources/ZappMerchantLibResources-Prefix.pch";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = "ZappMerchantLibResources/ZappMerchantLibResources-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";

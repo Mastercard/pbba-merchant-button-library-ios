@@ -56,6 +56,8 @@
 
 - (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection
 {
+    [super traitCollectionDidChange:previousTraitCollection];
+    
     if (self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClassCompact) {
         self.noBankAppAdviceMessage = PBBALocalizedString(@"com.zapp.ecom.noBankAppAdviceMessage");
     } else {

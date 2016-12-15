@@ -25,7 +25,7 @@ static UIEdgeInsets const kScreenMargins = {20, 0, 20, 0};
 
 @interface PBBAPopupScaleAspectFitAnimationContext ()
 
-@property (nonatomic, weak) UIView *containerView;
+@property (nonatomic, strong) UIView *containerView;
 @property (nonatomic, weak) PBBAPopupContainerController *popupContainerController;
 @property (nonatomic, assign) UIModalPresentationStyle presentationStyle;
 @property (nonatomic, strong) NSDictionary<NSString *, UIViewController *> *viewControllers;

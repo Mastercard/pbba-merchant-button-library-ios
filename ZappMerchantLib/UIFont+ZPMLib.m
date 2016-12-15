@@ -19,6 +19,8 @@
 //
 
 #import <CoreText/CoreText.h>
+#import <UIKit/UIKit.h>
+
 #import "NSBundle+ZPMLib.h"
 
 static NSString * const kZPMBoldFont        = @"SourceSansPro-Bold";

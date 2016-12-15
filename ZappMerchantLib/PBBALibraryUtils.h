@@ -46,6 +46,13 @@ extern NSString * _Nonnull const kPBBACustomThemeKey;
 + (void)setPBBACustomConfig:(nonnull NSDictionary *)config;
 
 /**
+ *  Set a custom PBBA scheme used to launch the CFI app.
+ *
+ *  @param customScheme The custom PBBA scheme.
+ */
++ (void)setPBBACustomScheme:(nonnull NSString *)customScheme;
+
+/**
  *  Check if at least one PBBA enabled CFI app is installed on the current device.
  *
  *  @return YES if CFI app is installed.

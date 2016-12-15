@@ -44,7 +44,7 @@
  *
  *  @param pbbaPopupViewController The instance of popup view controller.
  */
-- (void)pbbaPopupViewControllerDidCloseByUser:(nonnull PBBAPopupViewController *)pbbaPopupViewController;
+- (void)pbbaPopupViewControllerDidCloseByUser:(nonnull PBBAPopupViewController *)pbbaPopupViewController NS_SWIFT_NAME(pbbaPopupViewControllerDidCloseByUser(_:));
 
 /**
  *  Inform delegate that PBBAPopupViewController will appear on the screen.
@@ -163,6 +163,6 @@
  */
 - (nonnull instancetype)updateWithErrorCode:(nullable NSString *)errorCode
                                  errorTitle:(nullable NSString *)errorTitle
-                               errorMessage:(nonnull NSString *)errorMessage;
+                               errorMessage:(nonnull NSString *)errorMessage NS_SWIFT_NAME(update(withErrorCode:errorTitle:errorMessage:));
 
 @end
