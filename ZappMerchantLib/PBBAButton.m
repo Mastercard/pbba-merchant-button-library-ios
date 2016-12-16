@@ -24,9 +24,21 @@
 #import "UIColor+ZPMLib.h"
 #import "UIImage+ZPMLib.h"
 
+/**
+ *  PBBA Button themes.
+ */
 typedef NS_ENUM(NSInteger, PBBAThemeType) {
+    /**
+     *  The default PBBA theme.
+     */
     PBBAThemeTypePayByBankApp = 1,
+    /**
+     *  The co-branded light Pingit theme.
+     */
     PBBAThemeTypePingitLight = 2,
+    /**
+     *  The co-branded dark Pingit theme.
+     */
     PBBAThemeTypePingitDark = 3
 };
 

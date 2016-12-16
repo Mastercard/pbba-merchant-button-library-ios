@@ -25,5 +25,5 @@ function validateTools() {
 	done
 }
 
-infer -r -- xcodebuild -project ZappMerchantLib.xcodeproj -scheme ZappMerchantLib -configuration Debug -sdk iphonesimulator
+infer -- xcodebuild clean build -project ZappMerchantLib.xcodeproj -scheme ZappMerchantLib -configuration Debug -sdk iphonesimulator
 
