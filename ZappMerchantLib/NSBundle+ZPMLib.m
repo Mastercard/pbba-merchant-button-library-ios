@@ -19,6 +19,7 @@
 //
 
 #import "PBBAButton.h"
+#import "PBBALibraryUtils.h"
 
 static NSString * const kMerchantLibResourcesBundle = @"ZappMerchantLibResources";
 
@@ -39,3 +40,28 @@ static NSString * const kMerchantLibResourcesBundle = @"ZappMerchantLibResources
 }
 
 @end
+
+NSString * PBBALocalizedString(NSString *key) {
+    
+    NSDictionary *customConfig = [PBBALibraryUtils pbbaCustomConfig];
+    PBBACFIAppNameType cfiAppNameType = PBBACFIAppNameTypeDefault;
+    
+    // Apply a custom generic name for CFI if the theme is PBBA
+    PBBAThemeType themeType = [customConfig[kPBBACustomThemeKey] integerValue];
+    if (themeType == PBBAThemeTypePBBA && customConfig[kPBBACFIAppNameKey]) {
+        cfiAppNameType = [customConfig[kPBBACFIAppNameKey] integerValue];
+    }
+    
+    // Load Pingit specific text value
+    NSString *loadedString;
+    if (cfiAppNameType == PBBACFIAppNameTypePingit) {
+        loadedString = NSLocalizedStringFromTableInBundle(key, @"Localizable-Pingit", [NSBundle pbba_merchantResourceBundle], nil);
+    }
+    
+    // If the specific override was not loaded then load the default string value
+    if (loadedString == nil || [loadedString isEqualToString:key]) {
+        loadedString = NSLocalizedStringFromTableInBundle(key, nil, [NSBundle pbba_merchantResourceBundle], nil);
+    }
+    
+    return loadedString;
+};

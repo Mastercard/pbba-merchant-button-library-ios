@@ -24,24 +24,6 @@
 #import "UIColor+ZPMLib.h"
 #import "UIImage+ZPMLib.h"
 
-/**
- *  PBBA Button themes.
- */
-typedef NS_ENUM(NSInteger, PBBAThemeType) {
-    /**
-     *  The default PBBA theme.
-     */
-    PBBAThemeTypePayByBankApp = 1,
-    /**
-     *  The co-branded light Pingit theme.
-     */
-    PBBAThemeTypePingitLight = 2,
-    /**
-     *  The co-branded dark Pingit theme.
-     */
-    PBBAThemeTypePingitDark = 3
-};
-
 static NSTimeInterval const kPBBAButtonActivityTimerTimeInterval = 10;
 
 @interface PBBAButton ()
@@ -128,7 +110,7 @@ currentPBBATitleView = _currentPBBATitleView;
 
 - (void)styleForTheme:(PBBAThemeType)theme
 {
-    if (theme == PBBAThemeTypePayByBankApp) {
+    if (theme == PBBAThemeTypePBBA) {
         self.backgroundColor = [UIColor pbba_buttonBackgroundColor];
         self.foregroundColor = [UIColor pbba_buttonForegroundColor];
         self.highlightedBackgroundColor = [UIColor pbba_buttonHighlightedColor];
@@ -175,7 +157,7 @@ currentPBBATitleView = _currentPBBATitleView;
             break;
     }
     
-    return PBBAThemeTypePayByBankApp;
+    return PBBAThemeTypePBBA;
 }
 
 - (UIView *)pbbaTitleViewForTheme:(PBBAThemeType)theme;
@@ -187,7 +169,7 @@ currentPBBATitleView = _currentPBBATitleView;
         case PBBAThemeTypePingitDark:
             titleView = [self cobrandedTitleViewWithType:theme];
             break;
-        case PBBAThemeTypePayByBankApp:
+        case PBBAThemeTypePBBA:
             titleView = self.originalPBBATitleView;
             break;
     }

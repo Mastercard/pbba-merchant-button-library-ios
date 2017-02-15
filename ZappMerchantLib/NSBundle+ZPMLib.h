@@ -20,7 +20,14 @@
 
 #import <Foundation/Foundation.h>
 
-#define PBBALocalizedString(key) NSLocalizedStringFromTableInBundle(key, nil, [NSBundle pbba_merchantResourceBundle], nil)
+/**
+ *  Load localized string from the library resource bundle.
+ *
+ *  @param key The unique key for the string value.
+ *
+ *  @return The loaded string for given key.
+ */
+NSString * PBBALocalizedString(NSString *key);
 
 @interface NSBundle (ZPMLib)
 

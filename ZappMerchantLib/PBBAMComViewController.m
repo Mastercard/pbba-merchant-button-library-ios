@@ -54,7 +54,7 @@
     
     self.openBankingAppTitle = PBBALocalizedString(@"com.zapp.mcom.openBankAppTitle");
     self.openBankingAppMessage = PBBALocalizedString(@"com.zapp.mcom.openBankAppMessage");
-    self.openBankingAppButtonTitle = [self bankingAppTitle];
+    self.openBankingAppButtonTitle = PBBALocalizedString(@"com.zapp.mcom.openBankAppButtonTitle");
     
     if (self.getZappCodeTitleLabel) {
         self.getZappCodeTitle = PBBALocalizedString(@"com.zapp.mcom.getZappCodeTitle");
@@ -164,25 +164,6 @@
     self.codeInstructionsTitleLabel.textColor = appearance.foregroundColor;
     self.separatorView.backgroundColor = [appearance.foregroundColor colorWithAlphaComponent:0.15f];
     self.separatorView2.backgroundColor = [appearance.foregroundColor colorWithAlphaComponent:0.15f];
-}
-
-- (NSString *)bankingAppTitle
-{
-    NSDictionary *pbbaTheme = [PBBALibraryUtils pbbaCustomConfig];
-    NSUInteger themeIndex = [pbbaTheme[kPBBACustomThemeKey] integerValue];
-    NSString *bankTitle;
-    
-    switch (themeIndex) {
-        case 2:
-        case 3:
-            bankTitle = PBBALocalizedString(@"com.zapp.mcom.openBankAppButtonTitleCustom");
-            break;
-        default:
-            bankTitle = PBBALocalizedString(@"com.zapp.mcom.openBankAppButtonTitle");
-            break;
-    }
-    
-    return bankTitle;
 }
 
 @end

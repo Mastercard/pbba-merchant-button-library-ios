@@ -52,6 +52,8 @@
                                                                                 multiplier:constraint.multiplier
                                                                                   constant:constraint.constant];
                 
+                newConstraint.priority = constraint.priority;
+                
                 [newView addConstraint:newConstraint];
             }
             

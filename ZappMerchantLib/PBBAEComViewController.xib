@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="ipad9_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -33,33 +33,33 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m43-XW-cuT" userLabel="Header View" customClass="PBBAPopupHeaderView">
-                    <rect key="frame" x="0.0" y="0.0" width="768" height="80"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                     <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="80" id="6iI-m7-W7S"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IDo-DJ-hde" userLabel="Content View">
-                    <rect key="frame" x="0.0" y="80" width="768" height="894"/>
+                    <rect key="frame" x="0.0" y="80" width="414" height="606"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X4x-Gz-skz" userLabel="No Bank App Instructions View">
-                            <rect key="frame" x="0.0" y="0.0" width="384" height="894"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="101"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g2q-Ya-Qky" userLabel="No Bank App Instruction View">
-                                    <rect key="frame" x="72" y="396.5" width="240" height="101"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="101"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="None of the apps on this device currently support Pay by Bank app." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E0d-Sd-hBP">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="38"/>
+                                            <rect key="frame" x="25" y="0.0" width="364" height="38"/>
                                             <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="15"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Follow the steps below to complete this puchase on another device:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDc-k3-lgO">
-                                            <rect key="frame" x="0.0" y="63" width="240" height="38"/>
+                                            <rect key="frame" x="25" y="63" width="364" height="38"/>
                                             <fontDescription key="fontDescription" name="SourceSansPro-Semibold" family="Source Sans Pro" pointSize="15"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -137,10 +137,10 @@
                             </variation>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cfK-1R-jYM" userLabel="Code Instructions View Section">
-                            <rect key="frame" x="384" y="0.0" width="384" height="894"/>
+                            <rect key="frame" x="0.0" y="126" width="414" height="480"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAw-AQ-uhR" customClass="PBBACodeInstructionsView">
-                                    <rect key="frame" x="41" y="70.5" width="303" height="783.5"/>
+                                    <rect key="frame" x="25" y="0.0" width="364" height="455"/>
                                     <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="285" id="V6V-rk-AJG"/>
@@ -267,7 +267,7 @@
                         <constraint firstAttribute="bottom" secondItem="X4x-Gz-skz" secondAttribute="bottom" id="4o1-0U-3nl"/>
                         <constraint firstAttribute="trailing" secondItem="cfK-1R-jYM" secondAttribute="trailing" id="9NM-aC-cx1"/>
                         <constraint firstItem="cfK-1R-jYM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="IDo-DJ-hde" secondAttribute="leading" id="Agr-9I-EEg"/>
-                        <constraint firstAttribute="width" relation="lessThanOrEqual" priority="750" constant="325" id="B5x-6b-N3Z"/>
+                        <constraint firstAttribute="width" relation="lessThanOrEqual" priority="751" constant="325" id="B5x-6b-N3Z"/>
                         <constraint firstItem="cfK-1R-jYM" firstAttribute="top" secondItem="X4x-Gz-skz" secondAttribute="bottom" constant="25" id="Byn-FR-HOM"/>
                         <constraint firstItem="cfK-1R-jYM" firstAttribute="leading" secondItem="IDo-DJ-hde" secondAttribute="leading" id="Shh-IZ-YTK"/>
                         <constraint firstItem="X4x-Gz-skz" firstAttribute="top" secondItem="IDo-DJ-hde" secondAttribute="top" id="UsQ-i4-Bab"/>
@@ -302,7 +302,7 @@
                     </variation>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="773-3d-94G" userLabel="Footer View" customClass="PBBAPopupFooterView">
-                    <rect key="frame" x="0.0" y="974" width="768" height="50"/>
+                    <rect key="frame" x="0.0" y="686" width="414" height="50"/>
                     <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="QuH-qg-vIp"/>

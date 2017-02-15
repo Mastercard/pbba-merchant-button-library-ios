@@ -26,7 +26,6 @@
 
 "com.zapp.mcom.openBankAppMessage"              = "Tap the button below to open your mobile banking app and log in to complete your purchase";
 "com.zapp.mcom.openBankAppButtonTitle"          = "Open banking app";
-"com.zapp.mcom.openBankAppButtonTitleCustom"    = "Open Pingit";
 "com.zapp.mcom.openBankAppTitle"                = "Pay on this device";
 
 "com.zapp.ecom.codeInstructionsTitle"   = "Pay on another device";

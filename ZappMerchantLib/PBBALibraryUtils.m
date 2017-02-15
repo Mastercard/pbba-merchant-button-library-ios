@@ -23,6 +23,7 @@
 #import "PBBALibraryUtils.h"
 
 NSString * const kPBBACustomThemeKey = @"pbbaTheme";
+NSString * const kPBBACFIAppNameKey = @"cfiAppName";
 
 static NSString * const kPBBACustomConfigFileName       = @"pbbaCustomConfig";
 static NSString * const kPBBACFIAppUrlScheme            = @"zapp://";
