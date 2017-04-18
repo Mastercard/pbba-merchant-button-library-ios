@@ -1,9 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,11 +17,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view autoresizesSubviews="NO" contentMode="center" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="sJi-Lh-nok" userLabel="Content View">
-                    <rect key="frame" x="0.0" y="8" width="325" height="146"/>
+                    <rect key="frame" x="0.0" y="8.5" width="325" height="144.5"/>
                     <subviews>
                         <view alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kHx-1j-DoG" userLabel="bandOne">
-                            <rect key="frame" x="0.0" y="0.0" width="3" height="21"/>
-                            <color key="backgroundColor" red="1" green="0.33725490200000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <rect key="frame" x="0.0" y="0.0" width="3" height="20.5"/>
+                            <color key="backgroundColor" red="1" green="0.33725490200000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="3" id="j31-4w-jj6"/>
                             </constraints>
@@ -26,11 +30,11 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yB2-cW-R68" userLabel="stepOneLabel">
-                            <rect key="frame" x="15" y="0.0" width="310" height="21"/>
+                            <rect key="frame" x="15" y="0.0" width="310" height="20.5"/>
                             <attributedString key="attributedText">
                                 <fragment content="Pick">
                                     <attributes>
-                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <font key="NSFont" size="16" name="SourceSansPro-Semibold"/>
                                         <integer key="NSLigature" value="0"/>
                                         <font key="NSOriginalFont" size="16" name="SourceSansPro-Semibold"/>
@@ -45,7 +49,7 @@
                                 </fragment>
                                 <fragment content=" up your phone or tablet">
                                     <attributes>
-                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <font key="NSFont" size="16" name="SourceSansPro-Regular"/>
                                         <integer key="NSLigature" value="0"/>
                                         <font key="NSOriginalFont" size="16" name="SourceSansPro-Regular"/>
@@ -65,8 +69,8 @@
                             </userDefinedRuntimeAttributes>
                         </label>
                         <view alpha="0.5" contentMode="scaleToFill" verticalHuggingPriority="248" translatesAutoresizingMaskIntoConstraints="NO" id="IFR-rQ-GJI" userLabel="bandTwo">
-                            <rect key="frame" x="0.0" y="27" width="3" height="21"/>
-                            <color key="backgroundColor" red="1" green="0.43137254899999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <rect key="frame" x="0.0" y="26.5" width="3" height="20.5"/>
+                            <color key="backgroundColor" red="1" green="0.43137254899999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="3" id="OoG-gb-ok1"/>
                             </constraints>
@@ -75,11 +79,11 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="IsQ-jQ-CHz" userLabel="stepTwoLabel" colorLabel="IBBuiltInLabel-Yellow">
-                            <rect key="frame" x="15" y="27" width="310" height="21"/>
+                            <rect key="frame" x="15" y="26.5" width="310" height="20.5"/>
                             <attributedString key="attributedText">
                                 <fragment content="Log in">
                                     <attributes>
-                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <font key="NSFont" size="16" name="SourceSansPro-Semibold"/>
                                         <integer key="NSLigature" value="0"/>
                                         <font key="NSOriginalFont" size="16" name="SourceSansPro-Semibold"/>
@@ -94,7 +98,7 @@
                                 </fragment>
                                 <fragment content=" to your mobile banking app">
                                     <attributes>
-                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <font key="NSFont" size="16" name="SourceSansPro-Regular"/>
                                         <integer key="NSLigature" value="0"/>
                                         <font key="NSOriginalFont" size="16" name="SourceSansPro-Regular"/>
@@ -114,8 +118,8 @@
                             </userDefinedRuntimeAttributes>
                         </label>
                         <view alpha="0.75" contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="5No-Xq-gHN" userLabel="bandThree">
-                            <rect key="frame" x="0.0" y="54" width="3" height="21"/>
-                            <color key="backgroundColor" red="1" green="0.43137254899999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <rect key="frame" x="0.0" y="53" width="3" height="20.5"/>
+                            <color key="backgroundColor" red="1" green="0.43137254899999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="3" id="e2T-RY-OKt"/>
                             </constraints>
@@ -124,11 +128,11 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kjZ-Jp-XDF" userLabel="stepThreeLabel">
-                            <rect key="frame" x="15" y="54" width="310" height="21"/>
+                            <rect key="frame" x="15" y="53" width="310" height="20.5"/>
                             <attributedString key="attributedText">
                                 <fragment content="Select">
                                     <attributes>
-                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <font key="NSFont" size="16" name="SourceSansPro-Semibold"/>
                                         <integer key="NSLigature" value="0"/>
                                         <font key="NSOriginalFont" size="16" name="SourceSansPro-Semibold"/>
@@ -143,7 +147,7 @@
                                 </fragment>
                                 <fragment content=" Pay by Bank app">
                                     <attributes>
-                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <font key="NSFont" size="16" name="SourceSansPro-Regular"/>
                                         <integer key="NSLigature" value="0"/>
                                         <font key="NSOriginalFont" size="16" name="SourceSansPro-Regular"/>
@@ -163,8 +167,8 @@
                             </userDefinedRuntimeAttributes>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C0F-qA-bAM" userLabel="bandFour">
-                            <rect key="frame" x="0.0" y="81" width="3" height="65"/>
-                            <color key="backgroundColor" red="1" green="0.43137254899999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <rect key="frame" x="0.0" y="79.5" width="3" height="65"/>
+                            <color key="backgroundColor" red="1" green="0.43137254899999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="3" id="j6n-N5-1hK"/>
                             </constraints>
@@ -173,11 +177,11 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PEU-sP-vrO" userLabel="stepFourALabel">
-                            <rect key="frame" x="15" y="82" width="61" height="21"/>
+                            <rect key="frame" x="15" y="80" width="61" height="20.5"/>
                             <attributedString key="attributedText">
                                 <fragment content="Enter">
                                     <attributes>
-                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <font key="NSFont" size="16" name="SourceSansPro-Semibold"/>
                                         <integer key="NSLigature" value="0"/>
                                         <font key="NSOriginalFont" size="16" name="SourceSansPro-Semibold"/>
@@ -192,7 +196,7 @@
                                 </fragment>
                                 <fragment content=" the">
                                     <attributes>
-                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <font key="NSFont" size="15" name="SourceSansPro-Regular"/>
                                         <integer key="NSLigature" value="0"/>
                                         <font key="NSOriginalFont" size="15" name="SourceSansPro-Regular"/>
@@ -212,7 +216,7 @@
                             </userDefinedRuntimeAttributes>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="image-code" translatesAutoresizingMaskIntoConstraints="NO" id="jk1-It-BHP" userLabel="stepFourImageView">
-                            <rect key="frame" x="80" y="81" width="55" height="22"/>
+                            <rect key="frame" x="80" y="79.5" width="55" height="22"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="22" id="OLw-CZ-ial"/>
                                 <constraint firstAttribute="width" constant="55" id="s9f-Z4-DDd"/>
@@ -222,11 +226,11 @@
                             </userDefinedRuntimeAttributes>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBW-JN-rW3" userLabel="stepFourBLabel">
-                            <rect key="frame" x="139" y="82" width="186" height="21"/>
+                            <rect key="frame" x="139" y="80" width="186" height="20.5"/>
                             <attributedString key="attributedText">
                                 <fragment content="below">
                                     <attributes>
-                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <font key="NSFont" size="16" name="SourceSansPro-Regular"/>
                                         <integer key="NSLigature" value="0"/>
                                         <font key="NSOriginalFont" size="16" name="SourceSansPro-Regular"/>
@@ -246,15 +250,15 @@
                             </userDefinedRuntimeAttributes>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bkP-WR-0U4" userLabel="zappCodeView" customClass="PBBACodeView">
-                            <rect key="frame" x="15" y="110" width="210" height="36"/>
-                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <rect key="frame" x="15" y="108.5" width="210" height="36"/>
+                            <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" priority="249" constant="36" id="6o6-kH-235"/>
+                                <constraint firstAttribute="height" constant="36" id="6o6-kH-235"/>
                                 <constraint firstAttribute="width" secondItem="bkP-WR-0U4" secondAttribute="height" multiplier="35:6" id="8W3-Cx-jVs"/>
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="yB2-cW-R68" firstAttribute="left" secondItem="kHx-1j-DoG" secondAttribute="right" constant="12" id="0c4-lB-3Mk" userLabel="bandOneStepOneLabelHorizontalSpace"/>
                         <constraint firstItem="jk1-It-BHP" firstAttribute="leading" secondItem="PEU-sP-vrO" secondAttribute="trailing" constant="4" id="0gh-5Y-cV8" userLabel="stepFourALabelStepFourImageViewHorizontalSpace"/>
@@ -281,7 +285,7 @@
                         <constraint firstItem="IFR-rQ-GJI" firstAttribute="top" secondItem="IsQ-jQ-CHz" secondAttribute="top" id="bTw-Rs-WYY" userLabel="bandTwoStepTwoLabelTop"/>
                         <constraint firstAttribute="trailing" secondItem="IsQ-jQ-CHz" secondAttribute="trailing" id="d14-6E-Azm" userLabel="stepTwoLabelTrailing"/>
                         <constraint firstItem="IBW-JN-rW3" firstAttribute="baseline" secondItem="PEU-sP-vrO" secondAttribute="baseline" id="drY-CX-dIS"/>
-                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bkP-WR-0U4" secondAttribute="trailing" id="fuM-Pl-Fx1"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bkP-WR-0U4" secondAttribute="trailing" constant="1" id="fuM-Pl-Fx1"/>
                         <constraint firstItem="IFR-rQ-GJI" firstAttribute="top" secondItem="kHx-1j-DoG" secondAttribute="bottom" constant="6" id="m6f-2M-odu" userLabel="bandOneBottomBandTwoTop"/>
                         <constraint firstItem="IFR-rQ-GJI" firstAttribute="bottom" secondItem="IsQ-jQ-CHz" secondAttribute="bottom" id="mSQ-bm-s47" userLabel="bandTwoStepTwoLabelBottom"/>
                         <constraint firstItem="bkP-WR-0U4" firstAttribute="leading" secondItem="C0F-qA-bAM" secondAttribute="trailing" constant="12" id="nuY-ro-bau" userLabel="bandFourZappCodeVeiewHorizontalSpace"/>
@@ -296,7 +300,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="sJi-Lh-nok" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="CZE-ka-Xig"/>
                 <constraint firstItem="sJi-Lh-nok" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" id="NlU-IZ-6n1"/>
@@ -330,4 +334,9 @@
     <resources>
         <image name="image-code" width="56" height="22"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
 </document>

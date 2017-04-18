@@ -35,6 +35,3 @@ fastlane/screenshots
 
 # Infer reports
 infer-out/
-
-# Jazzy
-docs/

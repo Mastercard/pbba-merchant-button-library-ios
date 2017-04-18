@@ -18,9 +18,12 @@
 //  limitations under the License.
 //
 
+#import <UIKit/UIKit.h>
+
 #import "PBBALibraryUtils.h"
 
 NSString * const kPBBACustomThemeKey = @"pbbaTheme";
+NSString * const kPBBACFIAppNameKey = @"cfiAppName";
 
 static NSString * const kPBBACustomConfigFileName       = @"pbbaCustomConfig";
 static NSString * const kPBBACFIAppUrlScheme            = @"zapp://";
@@ -28,6 +31,7 @@ static NSString * const kPBBAPaymentsInfoURLString      = @"http://www.paybybank
 static NSString * const kPBBARememberCFIAppLaunchKey    = @"com.zapp.bankapp.remembered";
 
 static NSDictionary *sPBBACustomConfig = nil;
+static NSString *sPBBACustomScheme = nil;
 
 @implementation PBBALibraryUtils
 
@@ -46,9 +50,19 @@ static NSDictionary *sPBBACustomConfig = nil;
     sPBBACustomConfig = config;
 }
 
++ (void)setPBBACustomScheme:(NSString *)customScheme
+{
+    sPBBACustomScheme = customScheme;
+}
+
++ (NSString *)pbbaScheme
+{
+    return (sPBBACustomScheme) ? sPBBACustomScheme : kPBBACFIAppUrlScheme;
+}
+
 + (BOOL)isCFIAppAvailable
 {
-    NSURL *urlToCheck = [NSURL URLWithString:kPBBACFIAppUrlScheme];
+    NSURL *urlToCheck = [NSURL URLWithString:[self pbbaScheme]];
     BOOL cfiAppAvailable = [[UIApplication sharedApplication] canOpenURL:urlToCheck];
     
     if (!cfiAppAvailable) {
@@ -61,7 +75,7 @@ static NSDictionary *sPBBACustomConfig = nil;
 + (BOOL)openBankingApp:(NSString *)secureToken
 {
     if (secureToken) {
-        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", kPBBACFIAppUrlScheme, secureToken]];
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", [self pbbaScheme], secureToken]];
         return [[UIApplication sharedApplication] openURL:url];
     }
     

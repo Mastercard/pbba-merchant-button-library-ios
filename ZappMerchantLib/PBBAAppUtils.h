@@ -43,7 +43,7 @@
  *
  *  @return YES if the process of hand-off to CFI app was successful.
  */
-+ (BOOL)openBankingApp:(nonnull NSString *)secureToken;
++ (BOOL)openBankingApp:(nonnull NSString *)secureToken NS_SWIFT_NAME(openBankingApp(secureToken:));
 
 /**
  *  Show PBBA popup view controller.
@@ -61,7 +61,8 @@
 + (nullable PBBAPopupViewController *)showPBBAPopup:(nonnull UIViewController *)presenter
                                         secureToken:(nonnull NSString *)secureToken
                                                 brn:(nonnull NSString *)brn
-                                           delegate:(nullable id<PBBAPopupViewControllerDelegate>)delegate;
+                                           delegate:(nullable id<PBBAPopupViewControllerDelegate>)delegate
+                                            NS_SWIFT_NAME(showPBBAPopup(presenter:secureToken:brn:delegate:));
 
 /**
  *  Show PBBA error popup view controller.
@@ -78,6 +79,7 @@
                                                errorCode:(nullable NSString *)errorCode
                                               errorTitle:(nullable NSString *)errorTitle
                                             errorMessage:(nonnull NSString *)errorMessage
-                                                delegate:(nullable id<PBBAPopupViewControllerDelegate>)delegate;
+                                                delegate:(nullable id<PBBAPopupViewControllerDelegate>)delegate
+                                                NS_SWIFT_NAME(showPBBAErrorPopup(presenter:errorCode:errorTitle:errorMessage:delegate:));
 
 @end

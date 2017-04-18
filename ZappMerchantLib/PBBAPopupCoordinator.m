@@ -18,6 +18,8 @@
 //  limitations under the License.
 //
 
+#import <UIKit/UIKit.h>
+
 #import "PBBAPopupCoordinator.h"
 #import "PBBALibraryUtils.h"
 

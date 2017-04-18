@@ -21,9 +21,54 @@
 #import <Foundation/Foundation.h>
 
 /**
+ *  PBBA Button themes.
+ */
+typedef NS_ENUM(NSInteger, PBBAThemeType) {
+    /**
+     *  The PBBA theme.
+     */
+    PBBAThemeTypePBBA = 1,
+    /**
+     *  The co-branded light Pingit theme.
+     */
+    PBBAThemeTypePingitLight = 2,
+    /**
+     *  The co-branded dark Pingit theme.
+     */
+    PBBAThemeTypePingitDark = 3,
+    /**
+     *  The default theme.
+     */
+    PBBAThemeTypeDefault = PBBAThemeTypePBBA
+};
+
+/**
+ *  PBBA CFI app name used in popup text.
+ */
+typedef NS_ENUM(NSInteger, PBBACFIAppNameType) {
+    /**
+     *  Application independent naming like "your mobile banking app".
+     */
+    PBBACFIAppNameTypePBBA = 1,
+    /**
+     *  The default Pingit app name.
+     */
+    PBBACFIAppNameTypePingit = 2,
+    /**
+     *  The default CFI app name.
+     */
+    PBBACFIAppNameTypeDefault = PBBACFIAppNameTypePBBA
+};
+
+/**
  *  The dictionary key to get the custom PBBA theme value.
  */
 extern NSString * _Nonnull const kPBBACustomThemeKey;
+
+/**
+ *  The dictionary key to get the CFI app name used for popup text.
+ */
+extern NSString * _Nonnull const kPBBACFIAppNameKey;
 
 
 /**
@@ -44,6 +89,13 @@ extern NSString * _Nonnull const kPBBACustomThemeKey;
  *  @param config The custom PBBA branding configuration.
  */
 + (void)setPBBACustomConfig:(nonnull NSDictionary *)config;
+
+/**
+ *  Set a custom PBBA scheme used to launch the CFI app.
+ *
+ *  @param customScheme The custom PBBA scheme.
+ */
++ (void)setPBBACustomScheme:(nonnull NSString *)customScheme;
 
 /**
  *  Check if at least one PBBA enabled CFI app is installed on the current device.
