@@ -30,8 +30,8 @@
 
 "com.zapp.ecom.codeInstructionsTitle"   = "Pay on another device";
 "com.zapp.ecom.noBankAppWarningMessage" = "None of the apps on this device currently support Pay by Bank app.";
-"com.zapp.ecom.noBankAppAdviceMessage"  = "Follow the steps below to complete this puchase on another device:";
-"com.zapp.ecom.noBankAppAdviceMessage2" = "Follow the steps on the right to complete this puchase on another device:";
+"com.zapp.ecom.noBankAppAdviceMessage"  = "Follow the steps below to complete this purchase on another device:";
+"com.zapp.ecom.noBankAppAdviceMessage2" = "Follow the steps on the right to complete this purchase on another device:";
 
 "com.zapp.view.codeInstructionsStep1"       = "Pick up your phone or tablet";
 "com.zapp.view.codeInstructionsStep1Bold"   = "Pick";

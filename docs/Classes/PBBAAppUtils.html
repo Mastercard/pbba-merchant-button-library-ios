@@ -105,7 +105,6 @@
                       <div>
                         <h4>Return Value</h4>
                         <p>YES if CFI app is installed.</p>
-
                       </div>
                     </section>
                   </div>
@@ -152,7 +151,6 @@
                               <td>
                                 <div>
                                   <p>The secure token to retrieve the transaction details.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -162,7 +160,6 @@
                       <div>
                         <h4>Return Value</h4>
                         <p>YES if the process of hand-off to CFI app was successful.</p>
-
                       </div>
                     </section>
                   </div>
@@ -199,7 +196,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">showPBBAPopup</span><span class="p">(</span><span class="nv">presenter</span><span class="p">:</span> <span class="kt">Any</span><span class="o">!</span><span class="p">,</span> <span class="nv">secureToken</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">brn</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/PBBAPopupViewControllerDelegate.html">PBBAPopupViewControllerDelegate</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/PBBAPopupViewController.html">PBBAPopupViewController</a></span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">showPBBAPopup</span><span class="p">(</span><span class="nv">presenter</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="nv">secureToken</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">brn</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/PBBAPopupViewControllerDelegate.html">PBBAPopupViewControllerDelegate</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/PBBAPopupViewController.html">PBBAPopupViewController</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -216,7 +213,6 @@
                               <td>
                                 <div>
                                   <p>The presenter controller which will present the popup view controller.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -229,7 +225,6 @@
                               <td>
                                 <div>
                                   <p>The human friendly transaction retrieval identifier issued by Zapp.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -242,7 +237,6 @@
                               <td>
                                 <div>
                                   <p>The Basket Reference Number for entry in the CFI app on the consumer’s device.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -255,7 +249,6 @@
                               <td>
                                 <div>
                                   <p>The popup view controller delegate.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -265,7 +258,6 @@
                       <div>
                         <h4>Return Value</h4>
                         <p>An instance of PBBAPopupViewController which has been presented.</p>
-
                       </div>
                     </section>
                   </div>
@@ -300,7 +292,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">showPBBAErrorPopup</span><span class="p">(</span><span class="nv">presenter</span><span class="p">:</span> <span class="kt">Any</span><span class="o">!</span><span class="p">,</span> <span class="nv">errorCode</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">errorTitle</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">errorMessage</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/PBBAPopupViewControllerDelegate.html">PBBAPopupViewControllerDelegate</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/PBBAPopupViewController.html">PBBAPopupViewController</a></span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">showPBBAErrorPopup</span><span class="p">(</span><span class="nv">presenter</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="nv">errorCode</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">errorTitle</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">errorMessage</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/PBBAPopupViewControllerDelegate.html">PBBAPopupViewControllerDelegate</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/PBBAPopupViewController.html">PBBAPopupViewController</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -317,7 +309,6 @@
                               <td>
                                 <div>
                                   <p>The presenter controller which will present the popup view controller.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -330,7 +321,6 @@
                               <td>
                                 <div>
                                   <p>The error code to be displayed inside the popup.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -343,7 +333,6 @@
                               <td>
                                 <div>
                                   <p>The error title to be displayed inside the popup.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -356,7 +345,6 @@
                               <td>
                                 <div>
                                   <p>The error message to be displayed inside the popup.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -369,7 +357,6 @@
                               <td>
                                 <div>
                                   <p>The popup view controller delegate.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -379,7 +366,6 @@
                       <div>
                         <h4>Return Value</h4>
                         <p>An instance of PBBAPopupViewController which has been presented.</p>
-
                       </div>
                     </section>
                   </div>
@@ -390,7 +376,7 @@
         </section>
         <section id="footer">
           <p>IPCO 2012 Limited</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.5</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
