@@ -2,14 +2,14 @@
 Pod::Spec.new do |s|
 
   s.name         = "ZappMerchantLib"
-  s.version      = "1.1.1"
-  s.summary      = "Zapp Merchant Library"
+  s.version      = "1.1.2"
+  s.summary      = "The Pay by Bank app Merchant Library for iOS"
 
   s.description  = <<-DESC
-                   ZappMerchantLib is a library for iOS used to integrate Pay by Bank app payments.
+                   The Pay by Bank app Merchant Library for iOS makes it easy for you to add Pay by Bank app as a new payment method.
                    DESC
 
-  s.homepage = "http://www.zapp.co.uk"
+  s.homepage = "http://paybybankapp.co.uk"
   s.license  = "Apache 2.0"
   s.authors  = "Alex Maimescu"
   s.platform = :ios, '8.0'
