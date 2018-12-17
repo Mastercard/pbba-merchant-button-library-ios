@@ -65,7 +65,6 @@
 		CD08D5001B5CEE4A00F53C4F /* PBBAButtonTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD08D4FF1B5CEE4A00F53C4F /* PBBAButtonTitleView.m */; };
 		CD0F4FB11D241C2D002620BF /* PBBACodeInstructionsView.h in Headers */ = {isa = PBXBuildFile; fileRef = CD0F4FB01D241C2D002620BF /* PBBACodeInstructionsView.h */; };
 		CD1B26691E267CA50075CBA2 /* Localizable-Pingit.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD1B26671E267CA50075CBA2 /* Localizable-Pingit.strings */; };
-		CD1B266F1E26A0F20075CBA2 /* pbbaCustomConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD1B266E1E26A0F20075CBA2 /* pbbaCustomConfig.plist */; };
 		CD21761C1D24273000DA032D /* PBBAMComViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = CD2176191D24273000DA032D /* PBBAMComViewController.h */; };
 		CD21761D1D24273000DA032D /* PBBAMComViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD21761A1D24273000DA032D /* PBBAMComViewController.m */; };
 		CD21761E1D24273F00DA032D /* PBBAMComViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD21761B1D24273000DA032D /* PBBAMComViewController.xib */; };
@@ -227,7 +226,6 @@
 		CD08D4FF1B5CEE4A00F53C4F /* PBBAButtonTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBBAButtonTitleView.m; sourceTree = "<group>"; };
 		CD0F4FB01D241C2D002620BF /* PBBACodeInstructionsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBBACodeInstructionsView.h; sourceTree = "<group>"; };
 		CD1B26681E267CA50075CBA2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "en.lproj/Localizable-Pingit.strings"; sourceTree = "<group>"; };
-		CD1B266E1E26A0F20075CBA2 /* pbbaCustomConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = pbbaCustomConfig.plist; sourceTree = "<group>"; };
 		CD2176191D24273000DA032D /* PBBAMComViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBBAMComViewController.h; sourceTree = "<group>"; };
 		CD21761A1D24273000DA032D /* PBBAMComViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBBAMComViewController.m; sourceTree = "<group>"; };
 		CD21761B1D24273000DA032D /* PBBAMComViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PBBAMComViewController.xib; sourceTree = "<group>"; };
@@ -352,7 +350,6 @@
 		A2A01A4E196ED99A00EBBD68 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CD1B266E1E26A0F20075CBA2 /* pbbaCustomConfig.plist */,
 				CD0238C11C8F096D00E06B00 /* Localisation */,
 				CDBA1D071999036D000D4EF8 /* Fonts */,
 			);
@@ -873,7 +870,6 @@
 				CDC4374018D305F5004DBB05 /* InfoPlist.strings in Resources */,
 				CD71EE111D23E42C007135B8 /* Media.xcassets in Resources */,
 				CD660DE61C8D8E96000D550B /* PBBAPopupFooterView.xib in Resources */,
-				CD1B266F1E26A0F20075CBA2 /* pbbaCustomConfig.plist in Resources */,
 				C875F5DC1B623D2000684494 /* SourceSansPro-Regular.otf in Resources */,
 				C875F5DA1B623D2000684494 /* SourceSansPro-Bold.otf in Resources */,
 				C81BAE641B5E39DF00E441B2 /* PBBACodeInstructionsView.xib in Resources */,
