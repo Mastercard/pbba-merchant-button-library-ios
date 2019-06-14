@@ -24,6 +24,7 @@
 
 NSString * const kPBBACustomThemeKey = @"pbbaTheme";
 NSString * const kPBBACFIAppNameKey = @"cfiAppName";
+NSString * const kPBBACFILogosKey = @"showCFILogos";
 
 static NSString * const kPBBACustomConfigFileName       = @"pbbaCustomConfig";
 static NSString * const kPBBACFIAppUrlScheme            = @"zapp://";
@@ -40,8 +41,8 @@ static NSString *sPBBACustomScheme = nil;
     if (sPBBACustomConfig == nil) {
         NSString *path = [[NSBundle mainBundle] pathForResource:kPBBACustomConfigFileName ofType:@"plist"];
         sPBBACustomConfig = [NSDictionary dictionaryWithContentsOfFile:path];
+        [self saveFlagValue:[sPBBACustomConfig [kPBBACFILogosKey] boolValue] forKey:kPBBACFILogosKey];
     }
-    
     return sPBBACustomConfig;
 }
 
@@ -98,15 +99,17 @@ static NSString *sPBBACustomScheme = nil;
     return [[NSUserDefaults standardUserDefaults] boolForKey:kPBBARememberCFIAppLaunchKey];
 }
 
-+ (BOOL)shouldLaunchCFIApp
-{
++ (BOOL)shouldLaunchCFIApp {
     return [self wasCFIAppLaunched] && [self isCFIAppAvailable];
 }
 
-+ (BOOL)openTellMeMoreLink
+
++(BOOL)shouldShowCFILogos
 {
-    NSURL *url = [NSURL URLWithString:kPBBAPaymentsInfoURLString];
-    return [[UIApplication sharedApplication] openURL:url];
+    if ([self pbbaCustomConfig]) {
+        //make sure the configurations are loaded from the Appconfig.plist
+    }
+    return  [[NSUserDefaults standardUserDefaults] boolForKey:kPBBACFILogosKey];
 }
 
 @end

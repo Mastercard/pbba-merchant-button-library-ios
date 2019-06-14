@@ -51,32 +51,12 @@
 
 + (instancetype)pbba_pbbaBrandColor
 {
-    return PBBA_RGBA(255, 105, 30, 1);
+    return PBBA_RGBA(255, 110, 0, 1);
 }
 
 + (instancetype)pbba_overlayColor
 {
     return [UIColor colorWithWhite:1 alpha:0.6];
-}
-
-+ (instancetype)pbba_pingitLightColor
-{
-    return PBBA_RGBA(1, 172, 237, 1);
-}
-
-+ (instancetype)pbba_pingitLightHighlightedColor
-{
-    return PBBA_RGBA(160, 213, 244, 1);
-}
-
-+ (instancetype)pbba_pingitDarkColor
-{
-    return PBBA_RGBA(27, 167, 133, 1);
-}
-
-+ (instancetype)pbba_pingitDarkHighlightedColor
-{
-    return PBBA_RGBA(154, 209, 193, 1);
 }
 
 @end

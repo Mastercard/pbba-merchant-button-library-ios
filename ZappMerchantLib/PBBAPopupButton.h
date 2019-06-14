@@ -19,11 +19,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PBBAAppearance.h"
 
 @interface PBBAPopupButton : UIButton
-
-@property (nonatomic, strong) PBBAAppearance *appearance;
 
 @property (nonatomic, strong) IBOutlet UIImageView *titleImageView;
 

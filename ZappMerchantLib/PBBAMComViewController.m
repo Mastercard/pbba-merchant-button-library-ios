@@ -19,13 +19,11 @@
 //
 
 #import "PBBAMComViewController.h"
-#import "PBBACodeInstructionsView.h"
-#import "PBBAPopupMessageView.h"
 #import "PBBAPopupButton.h"
-#import "PBBACodeInstructions.h"
 #import "PBBALibraryUtils.h"
 #import "PBBAButton.h"
 #import "NSBundle+ZPMLib.h"
+#import "PBBAAppUtils.h"
 
 @interface PBBAMComViewController ()
 
@@ -38,11 +36,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *getZappCodeTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *codeInstructionsTitleLabel;
 
-@property (weak, nonatomic) IBOutlet PBBACodeInstructionsView *codeInstructionsView;
-@property (weak, nonatomic) IBOutlet PBBAPopupMessageView *openBankingAppMessageView;
-
 @property (weak, nonatomic) IBOutlet UIView *separatorView;
 @property (weak, nonatomic) IBOutlet UIView *separatorView2;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIView *topView;
+@property (weak, nonatomic) IBOutlet UIView *openBankAppHolderView;
+@property (weak, nonatomic) IBOutlet UIView *getCodeHolderView;
 
 @end
 
@@ -51,7 +50,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.scrollView.minimumZoomScale = 1.0;
+    self.scrollView.maximumZoomScale = 5.0;
     self.openBankingAppTitle = PBBALocalizedString(@"com.zapp.mcom.openBankAppTitle");
     self.openBankingAppMessage = PBBALocalizedString(@"com.zapp.mcom.openBankAppMessage");
     self.openBankingAppButtonTitle = PBBALocalizedString(@"com.zapp.mcom.openBankAppButtonTitle");
@@ -61,12 +61,22 @@
         self.getZappCodeMessage = PBBALocalizedString(@"com.zapp.mcom.getZappCodeMessage");
     }
     
-    if (self.codeInstructionsView) {
-        self.codeInstructionsTitle = PBBALocalizedString(@"com.zapp.mcom.codeInstructionsTitle");
-        self.codeInstructionsView.instructions = [[PBBACodeInstructions alloc] init];
-        self.codeInstructionsView.brn = self.brn;
-    }
+    _getZappCodeButton.tintColor = [UIColor blackColor];
+    [self.scrollView setContentOffset:self.topView.bounds.origin];
 }
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    self.openBankAppHolderView.shouldGroupAccessibilityChildren = self.getCodeHolderView.shouldGroupAccessibilityChildren = YES;
+
+}
+- (IBAction)openMoreAbout:(id)sender
+{
+    [self.popupCoordinator updateToMoreAboutLayout];
+}
+
 
 - (NSString *)openBankingAppTitle
 {
@@ -81,12 +91,6 @@
 - (NSString *)openBankingAppMessage
 {
     return self.openBankingAppMessageLabel.text;
-}
-
-- (void)setOpenBankingAppMessage:(NSString *)message
-{
-    self.openBankingAppMessageView.message = message;
-    self.openBankingAppMessageLabel.text = message;
 }
 
 - (NSString *)openBankingAppButtonTitle
@@ -119,15 +123,6 @@
     self.getZappCodeMessageLabel.text = message;
 }
 
-- (NSString *)codeInstructionsTitle
-{
-    return self.codeInstructionsTitleLabel.text;
-}
-
-- (void)setCodeInstructionsTitle:(NSString *)title
-{
-    self.codeInstructionsTitleLabel.text = title;
-}
 
 #pragma mark - Actions
 
@@ -142,28 +137,14 @@
 }
 
 - (IBAction)didPressGetZappCode:(id)sender
-{    
+{
     [self.popupCoordinator updateToLayout:PBBAPopupLayoutTypeECom];
 }
 
-#pragma mark - UIAppearance
-
-- (void)setAppearance:(PBBAAppearance *)appearance
+#pragma mark - Scroll View delegates
+- (UIView*)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
-    [super setAppearance:appearance];
-    
-    self.codeInstructionsView.appearance = appearance;
-    self.openBankingAppButton.appearance = appearance;
-    self.getZappCodeButton.appearance = appearance;
-    self.openBankingAppMessageView.appearance = appearance;
-    
-    self.openBankingAppTitleLabel.textColor = appearance.foregroundColor;
-    self.openBankingAppMessageLabel.textColor = appearance.foregroundColor;
-    self.getZappCodeMessageLabel.textColor = appearance.foregroundColor;
-    self.getZappCodeTitleLabel.textColor = appearance.foregroundColor;
-    self.codeInstructionsTitleLabel.textColor = appearance.foregroundColor;
-    self.separatorView.backgroundColor = [appearance.foregroundColor colorWithAlphaComponent:0.15f];
-    self.separatorView2.backgroundColor = [appearance.foregroundColor colorWithAlphaComponent:0.15f];
+    return self.topView;
 }
-
 @end
+

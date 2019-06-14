@@ -22,6 +22,9 @@
 #import <Foundation/Foundation.h>
 #import "PBBAPopupViewController.h"
 
+
+@class PBBABankLogosService;
+
 /**
  *  The utils class with helper methods.
  */
@@ -51,18 +54,27 @@
  *  It opens the CFI app automatically (without displaying the popup) if the device has CFI app installed and the user has tapped 'Open banking app' button.
  *  Before opening the CFI app automatically it will also close any instance of error PBBAPopupViewController which is presented.
  *
- *  @param presenter   The presenter controller which will present the popup view controller.
- *  @param secureToken The human friendly transaction retrieval identifier issued by Zapp.
- *  @param brn         The Basket Reference Number for entry in the CFI app on the consumer’s device.
+ *  @param presenter      The presenter controller which will present the popup view controller.
+ *  @param secureToken    The human friendly transaction retrieval identifier issued by Zapp.
+ *  @param brn            The Basket Reference Number for entry in the CFI app on the consumer’s device.
+ *  @param expiryInterval The time interval defined by the zapp core in order to confirm the payment.
  *  @param delegate    The popup view controller delegate.
  *
  *  @return An instance of PBBAPopupViewController which has been presented.
  */
+
 + (nullable PBBAPopupViewController *)showPBBAPopup:(nonnull UIViewController *)presenter
                                         secureToken:(nonnull NSString *)secureToken
                                                 brn:(nonnull NSString *)brn
                                            delegate:(nullable id<PBBAPopupViewControllerDelegate>)delegate
-                                            NS_SWIFT_NAME(showPBBAPopup(presenter:secureToken:brn:delegate:));
+NS_SWIFT_NAME(showPBBAPopup(presenter:secureToken:brn:delegate:))  DEPRECATED_MSG_ATTRIBUTE("Please use 'showPBBAPopup:secureToken:brn:expiryInterval:delegate:' method instead.");
+
++ (nullable PBBAPopupViewController *)showPBBAPopup:(nonnull UIViewController *)presenter
+                                        secureToken:(nonnull NSString *)secureToken
+                                                brn:(nonnull NSString *)brn
+                                     expiryInterval:(NSUInteger) expiryInterval
+                                           delegate:(nullable id<PBBAPopupViewControllerDelegate>)delegate
+NS_SWIFT_NAME(showPBBAPopup(presenter:secureToken:brn:expiryInterval:delegate:));
 
 /**
  *  Show PBBA error popup view controller.
@@ -81,5 +93,37 @@
                                             errorMessage:(nonnull NSString *)errorMessage
                                                 delegate:(nullable id<PBBAPopupViewControllerDelegate>)delegate
                                                 NS_SWIFT_NAME(showPBBAErrorPopup(presenter:errorCode:errorTitle:errorMessage:delegate:));
+/**
+ *  Show PBBA More About popup view controller.
+ *
+ *  It opens the "More about PBBA" popup, containing bank logos
+ *
+ *  @param presenter       The presenter controller which will present the popup view controller.
+ *  @param logosService    The logos service which will provide the popup with bank logos.
+ *
+ *  @return An instance of PBBAMoreAboutViewController which has been presented.
+ */
++ (nullable PBBAPopupViewController *)showPBBAMoreAboutPopup:(nonnull UIViewController *)presenter
+                                            withLogosService:(PBBABankLogosService*) logosService
+
+NS_SWIFT_NAME(showPBBAMoreAboutPopup(presenter:withLogosService:));
+
+
+typedef enum {
+    PBBACustomButtonTypeMoreAboutAndBankLogos, // link and bank logos
+    PBBACustomButtonTypeBankLogos,// only bank logos
+    PBBACustomButtonTypeMoreAbout, // only link
+    PBBACustomButtonTypeNone, // custom design
+} PBBACustomUXType;
+
+/**
+ *  API to get PBBA integrated button component.
+ *
+ *  @param width for integrated button.
+ *  @param customUXType PBBACustomUXType enum for CustomUXType.
+ *  @return UIVIew instance based on the configurations for PBBA branding logo
+ *   cfi logos and More About button.
+ */
++(UIView*)getCustomUXConfigurationsWithWidth:(CGFloat)width andType:(PBBACustomUXType)customUXType;
 
 @end

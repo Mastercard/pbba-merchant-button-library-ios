@@ -23,10 +23,10 @@
 
 #import "NSBundle+ZPMLib.h"
 
-static NSString * const kZPMBoldFont        = @"SourceSansPro-Bold";
-static NSString * const kZPMLightFont       = @"SourceSansPro-Light";
-static NSString * const kZPMRegularFont     = @"SourceSansPro-Regular";
-static NSString * const kZPMSemiBoldFont    = @"SourceSansPro-Semibold";
+static NSString * const kZPMBoldFont        = @"MarkOffcForMC-Bold";
+static NSString * const kZPMRegularFont     = @"MarkOffcForMC";
+static NSString * const kZPMHeavyFont       = @"MarkOffcForMC-Heavy";
+static NSString * const kZPMMediumFont      = @"MarkOffcForMC-Medium";
 
 
 
@@ -42,11 +42,10 @@ static NSString * const kZPMSemiBoldFont    = @"SourceSansPro-Semibold";
     static dispatch_once_t onceToken;
     
     dispatch_once(&onceToken, ^{
-        
         [self dynamicallyLoadFontNamed:kZPMBoldFont];
-        [self dynamicallyLoadFontNamed:kZPMLightFont];
         [self dynamicallyLoadFontNamed:kZPMRegularFont];
-        [self dynamicallyLoadFontNamed:kZPMSemiBoldFont];
+        [self dynamicallyLoadFontNamed:kZPMMediumFont];
+        [self dynamicallyLoadFontNamed:kZPMHeavyFont];
     });
 }
 
@@ -55,9 +54,9 @@ static NSString * const kZPMSemiBoldFont    = @"SourceSansPro-Semibold";
     return [self pbba_fontWithName:kZPMBoldFont size:size];
 }
 
-+ (UIFont *)pbba_semiBoldFontWithSize:(CGFloat)size
++ (UIFont *)pbba_mediumFontWithSize:(CGFloat)size
 {
-    return [self pbba_fontWithName:kZPMSemiBoldFont size:size];
+    return [self pbba_fontWithName:kZPMMediumFont size:size];
 }
 
 + (UIFont *)pbba_regularFontWithSize:(CGFloat)size
@@ -65,9 +64,9 @@ static NSString * const kZPMSemiBoldFont    = @"SourceSansPro-Semibold";
     return [self pbba_fontWithName:kZPMRegularFont size:size];
 }
 
-+ (UIFont *)pbba_lightFontWithSize:(CGFloat)size
++ (UIFont *)pbba_heavyFontWithSize:(CGFloat)size
 {
-    return [self pbba_fontWithName:kZPMLightFont size:size];
+    return [self pbba_fontWithName:kZPMHeavyFont size:size];
 }
 
 + (UIFont *)pbba_fontWithName:(NSString *)name size:(CGFloat)size
@@ -88,7 +87,7 @@ static NSString * const kZPMSemiBoldFont    = @"SourceSansPro-Semibold";
 
 + (void)dynamicallyLoadFontNamed:(NSString *)name
 {
-    NSURL *url = [[NSBundle pbba_merchantResourceBundle] URLForResource:name withExtension:@"otf"];
+    NSURL *url = [[NSBundle pbba_merchantResourceBundle] URLForResource:name withExtension:@"ttf"];
     NSData *fontData = [NSData dataWithContentsOfURL:url];
     
     if (fontData) {

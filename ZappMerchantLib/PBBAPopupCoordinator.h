@@ -19,6 +19,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PBBABankLogosService.h"
 
 /**
  *  The popup close action initiator
@@ -28,6 +29,10 @@ typedef NS_ENUM(NSInteger, PBBAPopupCloseActionInitiator) {
      *  The popup is closed as result of user action
      */
     PBBAPopupCloseActionInitiatorUser,
+    /**
+     *  The popup closes from More About Screen launched fromIntermediate screen
+     */
+    PBBAPopupCloseActionInitiatorMComLayoutMoreAbout,
     /**
      *  The popup closes itself
      */
@@ -49,7 +54,11 @@ typedef NS_ENUM(NSInteger, PBBAPopupLayoutType) {
     /**
      *  Error layout
      */
-    PBBAPopupLayoutTypeError
+    PBBAPopupLayoutTypeError,
+    /**
+     *  More About layout
+     */
+    PBBAPopupLayoutTypeMoreAbout
 };
 
 /**
@@ -90,6 +99,13 @@ typedef NS_ENUM(NSInteger, PBBAPopupEComLayoutType) {
 - (void)popupCoordinatorUpdateToMComLayout:(nonnull PBBAPopupCoordinator *)coordinator;
 
 /**
+ *  Tell the delegate to update to More About layout.
+ *
+ *  @param coordinator The instance of popup coordinator.
+ */
+- (void)popupCoordinatorUpdateToMoreAboutLayout:(nonnull PBBAPopupCoordinator *)coordinator;
+
+/**
  *  Tell the delegate to update to Error layout.
  *
  *  @param coordinator The instance of popup coordinator.
@@ -120,6 +136,12 @@ typedef NS_ENUM(NSInteger, PBBAPopupEComLayoutType) {
  */
 - (void)popupCoordinatorRetryPaymentRequest:(nonnull PBBAPopupCoordinator *)coordinator;
 
+/**
+ *  Tell the delegate that popup did expire.
+ *
+ *  @param coordinator The instance of popup coordinator.
+ */
+- (void)popupCoordinatorPopupDidExpire:(nonnull PBBAPopupCoordinator *)coordinator;
 @end
 
 
@@ -132,6 +154,11 @@ typedef NS_ENUM(NSInteger, PBBAPopupEComLayoutType) {
  *  The human friendly transaction retrieval identifier issued by Zapp.
  */
 @property (nullable, nonatomic, copy) NSString *secureToken;
+
+/**
+ *  The bank logos service
+ */
+@property (nullable, nonatomic, strong) PBBABankLogosService *logosService;
 
 /**
  *  The Basket Reference Number for entry in the CFI app on the consumer’s device.
@@ -217,6 +244,12 @@ typedef NS_ENUM(NSInteger, PBBAPopupEComLayoutType) {
                  initiator:(PBBAPopupCloseActionInitiator)initiator
                 completion:(nullable dispatch_block_t)completion;
 
+
+/**
+ *  Tell coordinator to notify all about that popup expired.
+ */
+- (void)setPopupExpired;
+
 /**
  *  Open the bank app.
  */
@@ -228,13 +261,13 @@ typedef NS_ENUM(NSInteger, PBBAPopupEComLayoutType) {
 - (void)registerCFIAppLaunch;
 
 /**
- *  Open information page about PBBA payments in browser.
- */
-- (void)openTellMeMoreLink;
-
-/**
  *  Retry the payment request.
  */
 - (void)retryPaymentRequest;
+
+/**
+ *  Open information page about PBBA payments
+ */
+- (void)updateToMoreAboutLayout;
 
 @end

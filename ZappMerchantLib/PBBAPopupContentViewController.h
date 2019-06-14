@@ -19,11 +19,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-#import "PBBAPopupHeaderView.h"
-#import "PBBAPopupFooterView.h"
 #import "PBBAPopupCoordinator.h"
-#import "PBBAAppearance.h"
+#import "PBBABankLogosService.h"
 
 /**
  *  The base class for all popup content view controllers (child view controllers)
@@ -31,28 +28,18 @@
 @interface PBBAPopupContentViewController : UIViewController
 
 /**
- *  The appearance for view controller.
- */
-@property (nonatomic, strong) PBBAAppearance *appearance;
-
-/**
  *  The popup coordinator instance.
  */
 @property (nonatomic, weak) PBBAPopupCoordinator *popupCoordinator;
-
-/**
- *  The header view.
- */
-@property (nonatomic, weak) IBOutlet PBBAPopupHeaderView *headerView;
 
 /**
  *  The content view.
  */
 @property (nonatomic, weak) IBOutlet UIView *contentView;
 
-/**
- *  The footer view.
- */
-@property (nonatomic, weak) IBOutlet PBBAPopupFooterView *footerView;
+- (void) updateForBRN: (NSString*) brn
+    andExpiryInterval: (NSInteger) expiryInterval;
+
+- (void) updateForError: (NSError*) error;
 
 @end

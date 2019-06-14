@@ -19,36 +19,28 @@
 //
 
 #import "PBBAButton.h"
-#import "PBBAButtonTitleView.h"
-#import "PBBALibraryUtils.h"
+#import "PBBABankLogosService.h"
+#import "PBBAButtonMain.h"
+#import "UIView+ZPMLib.h"
+#import "UIFont+ZPMLib.h"
+#import "NSBundle+ZPMLib.h"
 #import "UIColor+ZPMLib.h"
-#import "UIImage+ZPMLib.h"
+#import "PBBAAppUtils.h"
+#import "PBBALibraryUtils.h"
 
-static NSTimeInterval const kPBBAButtonActivityTimerTimeInterval = 10;
+@interface PBBAButton () <PBBAButtonMainDelegate,PBBAPopupViewControllerDelegate>
+@property (nonatomic, strong) PBBABankLogosService* logosService;
+@property (nonatomic, strong) PBBAButtonMain *pbbaMainView;
 
-@interface PBBAButton ()
-
-@property (nonatomic, assign) PBBAThemeType currentThemeType;
-@property (nonatomic, strong) PBBAButtonTitleView *originalPBBATitleView;
-@property (nonatomic, readonly) UIView *currentPBBATitleView;
-
-@property (nonatomic, strong) UIColor *originalBackgroundColor;
-@property (nonatomic, strong) UIColor *highlightedBackgroundColor;
-
-@property (nonatomic, weak) NSTimer *activityTimer;
+@property (nonatomic, readonly) UIView *containerForPBBAView;
 
 @end
 
 @implementation PBBAButton
+@synthesize pbbaMainView = _pbbaMainView,
+containerForPBBAView = _containerForPBBAView;
 
-@synthesize cornerRadius = _cornerRadius,
-borderColor = _borderColor,
-borderWidth = _borderWidth,
-foregroundColor = _foregroundColor,
-secondaryForegroundColor = _secondaryForegroundColor,
-currentPBBATitleView = _currentPBBATitleView;
-
-@dynamic backgroundColor;
+#pragma mark - Initializers
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -72,248 +64,153 @@ currentPBBATitleView = _currentPBBATitleView;
     return self;
 }
 
+
+#pragma mark - Setup
+
 - (void)setup
 {
-    [self addTarget:self action:@selector(tapControl) forControlEvents:UIControlEventTouchUpInside];
-    [self sendActionsForControlEvents:UIControlEventValueChanged];
+    // Get logo URLs
+//     if ([PBBALibraryUtils shouldShowCFILogos]) {
+        self.logosService =  [[PBBABankLogosService alloc] initLogosServiceWithSuccessBlock:nil errorBlock:nil];
+//     }
     
-    self.clipsToBounds = YES;
-    self.userInteractionEnabled = YES;
-    self.isAccessibilityElement = YES;
+    // Setup Constraints
+    self.translatesAutoresizingMaskIntoConstraints = NO;
+    self.containerForPBBAView.translatesAutoresizingMaskIntoConstraints = NO;
     
-    self.accessibilityIdentifier = @"com.zapp.button";
-    self.accessibilityLabel = @"Pay by bank app";
+    // Centrate the layout in the placeholder
+    [self addSubview:self.containerForPBBAView];
+    [self.containerForPBBAView pbba_width:self.containerForPBBAView.frame.size.width];
+    [self.containerForPBBAView pbba_height:self.containerForPBBAView.frame.size.height];
+    [self.containerForPBBAView pbba_centerInSuperview];
     
-    [self addSubview:self.currentPBBATitleView];
+    // Setup font and text
+    [self setupStyle];
     
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.currentPBBATitleView
-                                                     attribute:NSLayoutAttributeCenterY
-                                                     relatedBy:NSLayoutRelationEqual
-                                                        toItem:self
-                                                     attribute:NSLayoutAttributeCenterY
-                                                    multiplier:1
-                                                      constant:0]];
-    
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.currentPBBATitleView
-                                                     attribute:NSLayoutAttributeCenterX
-                                                     relatedBy:NSLayoutRelationEqual
-                                                        toItem:self
-                                                     attribute:NSLayoutAttributeCenterX
-                                                    multiplier:1
-                                                      constant:0]];
-    
+    // Layout view
     [self setNeedsLayout];
     [self layoutIfNeeded];
-    
-    [self styleForTheme:self.currentThemeType];
 }
 
-- (void)styleForTheme:(PBBAThemeType)theme
+
+- (void) setupStyle
 {
-    if (theme == PBBAThemeTypePBBA) {
-        self.backgroundColor = [UIColor pbba_buttonBackgroundColor];
-        self.foregroundColor = [UIColor pbba_buttonForegroundColor];
-        self.highlightedBackgroundColor = [UIColor pbba_buttonHighlightedColor];
-        self.cornerRadius = 4.0f;
-        self.borderWidth = 0;
-    } else if (theme == PBBAThemeTypePingitLight) {
-        self.backgroundColor = [UIColor whiteColor];
-        self.highlightedBackgroundColor = [UIColor pbba_pingitLightHighlightedColor];
-        self.borderColor = [UIColor pbba_pingitLightColor];
-        self.cornerRadius = 5.0f;
-        self.borderWidth = 2.0f;
-    } else if (theme == PBBAThemeTypePingitDark) {
-        self.backgroundColor = [UIColor pbba_pingitDarkColor];
-        self.highlightedBackgroundColor = [UIColor pbba_pingitDarkHighlightedColor];
-        self.cornerRadius = 4.0f;
-        self.borderWidth = 0;
-    }
-    
-    self.originalBackgroundColor = self.backgroundColor;
-}
-
-- (UIView *)currentPBBATitleView
-{
-    if (_currentPBBATitleView == nil) {
-        NSDictionary *pbbaTheme = [PBBALibraryUtils pbbaCustomConfig];
-        NSInteger themeIndex = [pbbaTheme[kPBBACustomThemeKey] integerValue];
-        PBBAThemeType theme = [self themeTypeForIndex:themeIndex];
-        self.currentThemeType = theme;
-        _currentPBBATitleView = [self pbbaTitleViewForTheme:theme];
-    }
-    
-    return _currentPBBATitleView;
-}
-
-- (PBBAThemeType)themeTypeForIndex:(NSInteger)index
-{
-    switch (index) {
-        case 1:
-        case 2:
-        case 3:
-            return (PBBAThemeType) index;
-            
-        default:
-            break;
-    }
-    
-    return PBBAThemeTypePBBA;
-}
-
-- (UIView *)pbbaTitleViewForTheme:(PBBAThemeType)theme;
-{
-    UIView *titleView;
-    
-    switch (theme) {
-        case PBBAThemeTypePingitLight:
-        case PBBAThemeTypePingitDark:
-            titleView = [self cobrandedTitleViewWithType:theme];
-            break;
-        case PBBAThemeTypePBBA:
-            titleView = self.originalPBBATitleView;
-            break;
-    }
-    
-    return titleView;
-}
-
-- (PBBAButtonTitleView *)originalPBBATitleView
-{
-    if (_originalPBBATitleView == nil) {
-        _originalPBBATitleView = [[PBBAButtonTitleView alloc] initWithFrame:self.bounds];
-    }
-    
-    return _originalPBBATitleView;
-}
-
-- (UIView *)cobrandedTitleViewWithType:(PBBAThemeType)themeType
-{
-    NSString *imageName;
-    switch (themeType) {
-        case PBBAThemeTypePingitLight:
-            imageName = @"pbba-button-pingit-light";
-            break;
-        case PBBAThemeTypePingitDark:
-            imageName = @"pbba-button-pingit-dark";
-            break;
-        default:
-            break;
-    }
-    
-    UIImage *paymarkImage = [UIImage pbba_imageNamed:imageName];
-    UIImageView *paymarkImageView = [[UIImageView alloc] initWithImage:paymarkImage];
-    paymarkImageView.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    return paymarkImageView;
-}
-
-- (BOOL)tapControl
-{    
-    if (!self.enabled) return NO;
-    
-    if ([self.delegate respondsToSelector:@selector(pbbaButtonDidPress:)] &&
-        [self.delegate pbbaButtonDidPress:self]) {
+    [self.containerForPBBAView.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
-        self.enabled = NO;
-        [self startActivityTimer];
-        [self startAnimating];
+        if ([obj isKindOfClass:[UIView class]] && obj.tag == 1) {
+            // Main button
+            [obj addSubview:self.pbbaMainView];
+            [self.pbbaMainView pbba_centerInSuperview];
+        }
         
-        return YES;
+        
+        // Font and text for details label under the button
+        if ([obj isKindOfClass:[UILabel class]]) {
+            UILabel* label =obj;
+            [label setText: PBBALocalizedString(@"com.zapp.pbba.button.details")];
+        }
+        
+        // Font and text for "More about" button
+        if ([obj isKindOfClass:[UIButton class]]) {
+            UIButton* moreAboutButton = obj;
+            [moreAboutButton setTitle:PBBALocalizedString(@"com.zapp.pbba.button.moreAbout") forState:UIControlStateNormal];
+            [moreAboutButton addTarget:self action:@selector(openMoreAbout) forControlEvents:UIControlEventTouchUpInside];
+        }
+    }];
+}
+
+-(void)setEnabled:(BOOL)enabled {
+    [self.pbbaMainView setEnabled:enabled];
+}
+
+#pragma mark - Custom View Initialization
+
+- (PBBAButtonMain *)pbbaMainView
+{
+    if (!_pbbaMainView) {
+        _pbbaMainView = [[PBBAButtonMain alloc] initWithLogosService:self.logosService
+                                                            delegate:self];
+    };
+    return _pbbaMainView;
+}
+
+- (UIView*) containerForPBBAView
+{
+    if (!_containerForPBBAView) {
+        NSString* nibName = NSStringFromClass(self.class);
+        NSBundle *bundle = [NSBundle pbba_merchantResourceBundle];
+        NSString *nibPath = [bundle pathForResource:nibName ofType:@"nib"];
+        
+        if (nibPath) {
+            NSArray* elements = [bundle loadNibNamed:nibName owner:nil options:nil];
+            for (UIView* view in elements) {
+                _containerForPBBAView = view;
+                return _containerForPBBAView;
+            }
+        }
     }
-    
-    return NO;
+    return _containerForPBBAView;
 }
 
-- (void)startActivityTimer
+#pragma mark - IBActions
+
+// More about button action
+
+- (void)openMoreAbout
 {
-    self.activityTimer = [NSTimer scheduledTimerWithTimeInterval:kPBBAButtonActivityTimerTimeInterval
-                                                          target:self
-                                                        selector:@selector(activityTimerDidFire:)
-                                                        userInfo:nil
-                                                         repeats:NO];
+    [PBBAAppUtils showPBBAMoreAboutPopup:[UIApplication sharedApplication].keyWindow.rootViewController withLogosService:self.logosService];
 }
 
-- (void)activityTimerDidFire:(NSTimer *)activityTimer
+// PBBAButtonMainDelegate protocol implementation
+
+- (BOOL)notifyPbbaButtonDidPress {
+    return ([self.delegate respondsToSelector:@selector(pbbaButtonDidPress:)] && [self.delegate pbbaButtonDidPress:self]);
+}
+
+#pragma mark - PBBAUIElementAppearance
+
+//   Redirect all the UI costomization calls to the real button
+
+@synthesize backgroundColor,
+borderColor,
+borderWidth,
+cornerRadius,
+foregroundColor,
+secondaryForegroundColor;
+
+
+-(void)setBackgroundColor:(UIColor *)backgroundColor
 {
-    self.enabled = YES;
+    [_pbbaMainView setBackgroundColor:backgroundColor];
 }
 
-#pragma mark - PBBAAnimatable
-
-- (void)startAnimating
+-(void)setBorderColor:(UIColor *)borderColor
 {
-    [self.originalPBBATitleView startAnimating];
+    [_pbbaMainView setBorderColor:borderColor];
 }
 
-- (void)stopAnimating
+-(void)setBorderWidth:(CGFloat)borderWidth
 {
-    [self.originalPBBATitleView stopAnimating];
+    [_pbbaMainView setBorderWidth:borderWidth];
 }
 
-- (BOOL)isAnimating
+-(void)setCornerRadius:(CGFloat)cornerRadius
 {
-    return [self.originalPBBATitleView isAnimating];
+    [_pbbaMainView setCornerRadius:cornerRadius];
 }
 
-#pragma mark - UIControlState
-
-- (void)setHighlighted:(BOOL)highlighted
+-(void)setForegroundColor:(UIColor *)foregroundColor
 {
-    if (self.highlighted == highlighted) return;
-    
-    [super setHighlighted:highlighted];
-    
-    if (self.enabled) {
-        self.backgroundColor = (highlighted)
-            ? self.highlightedBackgroundColor
-            : self.originalBackgroundColor;
-    }
+    [_pbbaMainView setForegroundColor:foregroundColor];
 }
 
-- (void)setEnabled:(BOOL)enabled
+-(void)setSecondaryForegroundColor:(UIColor *)secondaryForegroundColor
 {
-    if (self.enabled == enabled) return;
-    
-    [super setEnabled:enabled];
-
-    if (enabled) {
-        [self stopAnimating];
-        [self.activityTimer invalidate];
-        [UIView animateWithDuration:0.2 animations:^{
-            self.backgroundColor = self.originalBackgroundColor;
-        }];
-    } else {
-        [UIView animateWithDuration:0.2 animations:^{
-            self.backgroundColor = self.highlightedBackgroundColor;
-        }];
-    }
+    [_pbbaMainView setSecondaryForegroundColor:secondaryForegroundColor];
 }
 
-#pragma mark - UIAppearance
-
-- (void)setCornerRadius:(CGFloat)cornerRadius
-{
-    _cornerRadius = cornerRadius;
-    self.layer.cornerRadius = _cornerRadius;
+- (void)pbbaPopupViewControllerRetryPaymentRequest:(nonnull PBBAPopupViewController *)pbbaPopupViewController {
 }
 
-- (void)setBorderColor:(UIColor *)borderColor
-{
-    _borderColor = borderColor;
-    self.layer.borderColor = borderColor.CGColor;
-}
-
-- (void)setBorderWidth:(CGFloat)borderWidth
-{
-    _borderWidth = borderWidth;
-    self.layer.borderWidth = borderWidth;
-}
-
-- (void)setForegroundColor:(UIColor *)foregroundColor
-{
-    _foregroundColor = foregroundColor;
-    self.tintColor = foregroundColor;
-    self.currentPBBATitleView.tintColor = foregroundColor;
-}
 
 @end

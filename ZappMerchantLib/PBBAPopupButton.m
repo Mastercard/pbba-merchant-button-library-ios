@@ -66,13 +66,4 @@
     [self setImage:templateImage forState:UIControlStateNormal];
 }
 
-- (void)setAppearance:(PBBAAppearance *)appearance
-{
-    _appearance = appearance;
-    
-    self.backgroundColor = appearance.secondaryForegroundColor;
-    [self setTitleColor:appearance.backgroundColor forState:UIControlStateNormal];
-    self.tintColor = appearance.backgroundColor;
-}
-
 @end

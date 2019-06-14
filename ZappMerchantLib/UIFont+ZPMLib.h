@@ -23,8 +23,8 @@
 @interface UIFont (ZPMLib)
 
 + (UIFont *)pbba_boldFontWithSize:(CGFloat)size;
-+ (UIFont *)pbba_semiBoldFontWithSize:(CGFloat)size;
++ (UIFont *)pbba_mediumFontWithSize:(CGFloat)size;
 + (UIFont *)pbba_regularFontWithSize:(CGFloat)size;
-+ (UIFont *)pbba_lightFontWithSize:(CGFloat)size;
++ (UIFont *)pbba_heavyFontWithSize:(CGFloat)size;
 
 @end

@@ -20,7 +20,6 @@
 
 #import <UIKit/UIKit.h>
 #import "PBBAPopupContentViewController.h"
-#import "PBBAAppearance.h"
 
 /**
  *  The popup container view controller which holds all content (child) view controllers.
@@ -28,23 +27,10 @@
 @interface PBBAPopupContainerController : UIViewController
 
 /**
- *  The appearance which will be forwarded to the child view controllers.
- */
-@property (nonatomic, strong) PBBAAppearance *appearance;
-
-/**
  *  The active content (child) view controller
  */
 @property (nonatomic, strong) PBBAPopupContentViewController *activeViewController;
 
-/**
- *  Get an instance of popup container view controller for given content controller.
- *
- *  @param viewController The instance of popup content view controller.
- *
- *  @return An instance of popup container view controller.
- */
-- (instancetype)initWithContentViewController:(PBBAPopupContentViewController *)viewController;
 
 /**
  *  Push new content (child) view controller to container controller.

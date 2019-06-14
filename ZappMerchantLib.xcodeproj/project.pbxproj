@@ -35,9 +35,48 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		043C9DA4215946F7002E9162 /* PBBACustomUXConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 043C9DA2215946F7002E9162 /* PBBACustomUXConfig.h */; };
+		043C9DA5215946F7002E9162 /* PBBACustomUXConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 043C9DA3215946F7002E9162 /* PBBACustomUXConfig.m */; };
+		04C376C1216D4C1000E5755A /* PBBAPopup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C376BE216D10B100E5755A /* PBBAPopup.storyboard */; };
 		5AF003B21B8DEE4F007C7980 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5AF003B01B8DEB9B007C7980 /* Localizable.strings */; };
 		744148916F89CDBD1AEF0D3D /* libPods-ZappMerchantLibTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D861D4DC033ECC43D19F83F /* libPods-ZappMerchantLibTests.a */; };
+		8A34BB12219ED1DE00AF8787 /* MarkOffcForMC.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A34BB0E219ED1DD00AF8787 /* MarkOffcForMC.ttf */; };
+		8A34BB13219ED1DE00AF8787 /* MarkOffcForMC-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A34BB0F219ED1DE00AF8787 /* MarkOffcForMC-Bold.ttf */; };
+		8A34BB14219ED1DE00AF8787 /* MarkOffcForMC-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A34BB10219ED1DE00AF8787 /* MarkOffcForMC-Heavy.ttf */; };
+		8A34BB15219ED1DE00AF8787 /* MarkOffcForMC-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A34BB11219ED1DE00AF8787 /* MarkOffcForMC-Medium.ttf */; };
+		8A3AB260218B259D005FF72A /* PBBAPopupContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3AB25E218B259D005FF72A /* PBBAPopupContentViewController.m */; };
+		8A3AB261218B259D005FF72A /* PBBAPopupContentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A3AB25F218B259D005FF72A /* PBBAPopupContentViewController.h */; };
+		8A3AB268218B32ED005FF72A /* PBBAErrorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A3AB266218B32ED005FF72A /* PBBAErrorView.h */; };
+		8A3AB269218B32ED005FF72A /* PBBAErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3AB267218B32ED005FF72A /* PBBAErrorView.m */; };
+		8A3AB26C218B49F0005FF72A /* NSError+ZPMLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A3AB26A218B49F0005FF72A /* NSError+ZPMLib.h */; };
+		8A3AB26D218B49F0005FF72A /* NSError+ZPMLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3AB26B218B49F0005FF72A /* NSError+ZPMLib.m */; };
+		8A8D89CF216DCEAE005B580E /* PBBAButtonMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D89CC216DCEAD005B580E /* PBBAButtonMain.m */; };
+		8A8D89D0216DCEAE005B580E /* PBBAButtonMain.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A8D89CD216DCEAE005B580E /* PBBAButtonMain.h */; };
+		8A8D89D1216DCEB9005B580E /* PBBAButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D89CB216DCEAD005B580E /* PBBAButton.xib */; };
+		8A8D89D2216DCEB9005B580E /* PBBAButtonMain.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D89CE216DCEAE005B580E /* PBBAButtonMain.xib */; };
+		8A8D89DA216DD3C7005B580E /* PBBABankLogo.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A8D89D4216DD3C6005B580E /* PBBABankLogo.h */; };
+		8A8D89DB216DD3C7005B580E /* PBBABankLogosService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D89D5216DD3C6005B580E /* PBBABankLogosService.m */; };
+		8A8D89DC216DD3C7005B580E /* PBBANetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D89D6216DD3C6005B580E /* PBBANetworkService.m */; };
+		8A8D89DD216DD3C7005B580E /* PBBANetworkService.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A8D89D7216DD3C6005B580E /* PBBANetworkService.h */; };
+		8A8D89DE216DD3C7005B580E /* PBBABankLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D89D8216DD3C7005B580E /* PBBABankLogo.m */; };
+		8A8D89DF216DD3C7005B580E /* PBBABankLogosService.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A8D89D9216DD3C7005B580E /* PBBABankLogosService.h */; };
+		8AA851342149276100B4556F /* PBBABankLogosContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA8512D2149276000B4556F /* PBBABankLogosContainer.m */; };
+		8AA851352149276100B4556F /* PBBABankLogosContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AA8512F2149276000B4556F /* PBBABankLogosContainer.h */; };
+		8AA851362149276100B4556F /* PBBAMoreAboutViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AA851302149276000B4556F /* PBBAMoreAboutViewController.h */; };
+		8AA851372149276100B4556F /* PBBAMoreAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA851332149276100B4556F /* PBBAMoreAboutViewController.m */; };
+		8AA851462149281D00B4556F /* PBBABankLogosLayouts.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AA851322149276100B4556F /* PBBABankLogosLayouts.xib */; };
+		8AA851472149282000B4556F /* PBBABankLogosContainer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AA8512E2149276000B4556F /* PBBABankLogosContainer.xib */; };
+		8AC78D7121763DAB00405FF3 /* PBBAExpiryTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AC78D6F21763DAB00405FF3 /* PBBAExpiryTimer.h */; };
+		8AC78D7221763DAB00405FF3 /* PBBAExpiryTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC78D7021763DAB00405FF3 /* PBBAExpiryTimer.m */; };
+		8AD714CF219D660C0083C296 /* PBBABankLogosCommonLayout.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AD714CE219D660C0083C296 /* PBBABankLogosCommonLayout.xib */; };
 		A2D12A8519640BE30064590B /* UIImage+ZPMLib.m in Sources */ = {isa = PBXBuildFile; fileRef = A2D12A8419640BE30064590B /* UIImage+ZPMLib.m */; };
+		A2FC5E1321AC1D1A000625F6 /* PBBACustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A2FC5E0F21AC1D1A000625F6 /* PBBACustomButton.m */; };
+		A2FC5E1421AC1D1A000625F6 /* PBBACustomButton.h in Headers */ = {isa = PBXBuildFile; fileRef = A2FC5E1221AC1D1A000625F6 /* PBBACustomButton.h */; };
+		A2FC5E1521AC1D36000625F6 /* PBBACustomButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2FC5E1121AC1D1A000625F6 /* PBBACustomButton.xib */; };
+		A2FC5E1C21AC3BFF000625F6 /* PBBACustomButtonBankLogosContainer.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2FC5E1B21AC3BFF000625F6 /* PBBACustomButtonBankLogosContainer.xib */; };
+		A2FC5E2B21AC3F84000625F6 /* PBBACustomButtonBankLogosLayouts.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2FC5E2A21AC3F84000625F6 /* PBBACustomButtonBankLogosLayouts.xib */; };
+		A2FC5E2E21AC42D8000625F6 /* PBBACustomButtonBankLogosContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = A2FC5E2C21AC42D8000625F6 /* PBBACustomButtonBankLogosContainer.m */; };
+		A2FC5E2F21AC42D8000625F6 /* PBBACustomButtonBankLogosContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = A2FC5E2D21AC42D8000625F6 /* PBBACustomButtonBankLogosContainer.h */; };
 		A76635D0188D3AB300D6C26C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A76635CF188D3AB300D6C26C /* Foundation.framework */; };
 		A76635DF188D3AB300D6C26C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A76635CF188D3AB300D6C26C /* Foundation.framework */; };
 		A76635EA188D3AB300D6C26C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A76635E8188D3AB300D6C26C /* InfoPlist.strings */; };
@@ -52,67 +91,40 @@
 		C81AB95D1B6A81D500B621A2 /* PBBACodeView.h in Headers */ = {isa = PBXBuildFile; fileRef = C818C1D81B5653CC00A7514A /* PBBACodeView.h */; };
 		C81AB9621B6A81D500B621A2 /* PBBAButton.h in Headers */ = {isa = PBXBuildFile; fileRef = CDC4374518D306E8004DBB05 /* PBBAButton.h */; };
 		C81AB9631B6A81D500B621A2 /* PBBASquiggleView.h in Headers */ = {isa = PBXBuildFile; fileRef = CDB9274C1B57AC6700A8EDFD /* PBBASquiggleView.h */; };
-		C81AB9641B6A81D500B621A2 /* PBBAButtonTitleView.h in Headers */ = {isa = PBXBuildFile; fileRef = CD08D4FE1B5CEE4A00F53C4F /* PBBAButtonTitleView.h */; };
-		C81BAE621B5E39C300E441B2 /* PBBACodeInstructionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = C81BAE611B5E39C300E441B2 /* PBBACodeInstructionsView.m */; };
-		C81BAE641B5E39DF00E441B2 /* PBBACodeInstructionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C81BAE631B5E39DF00E441B2 /* PBBACodeInstructionsView.xib */; };
 		C84BD0D01B625E1E00B7B1B1 /* PBBACodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C818C1D91B5653CC00A7514A /* PBBACodeView.m */; };
-		C875F5DA1B623D2000684494 /* SourceSansPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C875F5D61B623D2000684494 /* SourceSansPro-Bold.otf */; };
-		C875F5DB1B623D2000684494 /* SourceSansPro-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = C875F5D71B623D2000684494 /* SourceSansPro-Light.otf */; };
-		C875F5DC1B623D2000684494 /* SourceSansPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C875F5D81B623D2000684494 /* SourceSansPro-Regular.otf */; };
-		C875F5DD1B623D2000684494 /* SourceSansPro-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C875F5D91B623D2000684494 /* SourceSansPro-Semibold.otf */; };
 		C88B84EA1B62972B00FEB5A7 /* PBBAButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC4374618D306E8004DBB05 /* PBBAButton.m */; };
 		C88DA6D51B70C5E600EAFC81 /* PBBAPopupButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C88DA6D31B70C5E600EAFC81 /* PBBAPopupButton.m */; };
-		CD08D5001B5CEE4A00F53C4F /* PBBAButtonTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD08D4FF1B5CEE4A00F53C4F /* PBBAButtonTitleView.m */; };
-		CD0F4FB11D241C2D002620BF /* PBBACodeInstructionsView.h in Headers */ = {isa = PBXBuildFile; fileRef = CD0F4FB01D241C2D002620BF /* PBBACodeInstructionsView.h */; };
-		CD1B26691E267CA50075CBA2 /* Localizable-Pingit.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD1B26671E267CA50075CBA2 /* Localizable-Pingit.strings */; };
 		CD21761C1D24273000DA032D /* PBBAMComViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = CD2176191D24273000DA032D /* PBBAMComViewController.h */; };
 		CD21761D1D24273000DA032D /* PBBAMComViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD21761A1D24273000DA032D /* PBBAMComViewController.m */; };
-		CD21761E1D24273F00DA032D /* PBBAMComViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD21761B1D24273000DA032D /* PBBAMComViewController.xib */; };
-		CD26BCB41D241D26009EDD16 /* PBBAPopupMessageView.h in Headers */ = {isa = PBXBuildFile; fileRef = CD26BCB31D241D26009EDD16 /* PBBAPopupMessageView.h */; };
 		CD3A0B3C18D75C4C002994E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD3A0B3B18D75C4C002994E4 /* UIKit.framework */; };
 		CD3BBEA11C90607D0096B732 /* PBBAPopupCoordinator.h in Headers */ = {isa = PBXBuildFile; fileRef = CD3BBE9F1C90607D0096B732 /* PBBAPopupCoordinator.h */; };
 		CD3BBEA21C90607D0096B732 /* PBBAPopupCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3BBEA01C90607D0096B732 /* PBBAPopupCoordinator.m */; };
 		CD3E3CE51D25375600EB58EB /* PBBAPopupAnimator.h in Headers */ = {isa = PBXBuildFile; fileRef = CD3F2B9C1D23FA27008A5D0D /* PBBAPopupAnimator.h */; };
 		CD3E3CE61D25375600EB58EB /* PBBAPopupScaleAspectFitAnimationContext.h in Headers */ = {isa = PBXBuildFile; fileRef = CD7444F31D23FB5600768225 /* PBBAPopupScaleAspectFitAnimationContext.h */; };
-		CD3E3CE71D25375600EB58EB /* PBBACodeInstructions.h in Headers */ = {isa = PBXBuildFile; fileRef = CDDD34621D23FC1200AE04FA /* PBBACodeInstructions.h */; };
 		CD3E3CE81D25375600EB58EB /* PBBAAppearance.h in Headers */ = {isa = PBXBuildFile; fileRef = CD7461F21D23FCE1007EB6D3 /* PBBAAppearance.h */; };
 		CD3E3CE91D25375600EB58EB /* PBBAAutoLoadableView.h in Headers */ = {isa = PBXBuildFile; fileRef = CD493C5D1D2418C700FC3E5A /* PBBAAutoLoadableView.h */; };
-		CD3E3CEA1D25375600EB58EB /* PBBAPopupHeaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = CDF8AE181D24191D0053C7A8 /* PBBAPopupHeaderView.h */; };
-		CD3E3CEB1D25375600EB58EB /* PBBACodeInstructionsView.h in Headers */ = {isa = PBXBuildFile; fileRef = CD0F4FB01D241C2D002620BF /* PBBACodeInstructionsView.h */; };
-		CD3E3CEC1D25375600EB58EB /* PBBAPopupMessageView.h in Headers */ = {isa = PBXBuildFile; fileRef = CD26BCB31D241D26009EDD16 /* PBBAPopupMessageView.h */; };
 		CD3E3CED1D25375600EB58EB /* PBBAPopupButton.h in Headers */ = {isa = PBXBuildFile; fileRef = CDF165A01D241D7D00E70873 /* PBBAPopupButton.h */; };
 		CD3E3CEE1D25375600EB58EB /* PBBAPopupContainerController.h in Headers */ = {isa = PBXBuildFile; fileRef = CDBC35111D2424BB00B5A235 /* PBBAPopupContainerController.h */; };
-		CD3E3CEF1D25375600EB58EB /* PBBAPopupContentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = CD9CDB251D24266D00204F72 /* PBBAPopupContentViewController.h */; };
-		CD3E3CF01D25375600EB58EB /* PBBAErrorViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = CD85014B1D2426B900C06582 /* PBBAErrorViewController.h */; };
 		CD3E3CF11D25375600EB58EB /* PBBAMComViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = CD2176191D24273000DA032D /* PBBAMComViewController.h */; };
-		CD3E3CF21D25375600EB58EB /* PBBAEComViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = CDED2C8B1D24278B0004FECE /* PBBAEComViewController.h */; };
 		CD3F2B9E1D23FA27008A5D0D /* PBBAPopupAnimator.h in Headers */ = {isa = PBXBuildFile; fileRef = CD3F2B9C1D23FA27008A5D0D /* PBBAPopupAnimator.h */; };
 		CD3F2B9F1D23FA27008A5D0D /* PBBAPopupAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3F2B9D1D23FA27008A5D0D /* PBBAPopupAnimator.m */; };
-		CD426BA81C8F24D3001A2843 /* PBBAPopupMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD426BA61C8F24D3001A2843 /* PBBAPopupMessageView.m */; };
-		CD426BAA1C8F24E6001A2843 /* PBBAPopupMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD426BA91C8F24E6001A2843 /* PBBAPopupMessageView.xib */; };
 		CD43B7121CFDCE4700A85880 /* PBBAAnimatable.h in Headers */ = {isa = PBXBuildFile; fileRef = CD43B70C1CFDCE3800A85880 /* PBBAAnimatable.h */; };
 		CD43B7151CFDCEA400A85880 /* PBBAAnimatable.h in Headers */ = {isa = PBXBuildFile; fileRef = CD43B70C1CFDCE3800A85880 /* PBBAAnimatable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD43B7161CFDCEA400A85880 /* UIView+ZPMLib.h in Headers */ = {isa = PBXBuildFile; fileRef = CD8CCE5F1C8847BB00F27CC2 /* UIView+ZPMLib.h */; };
 		CD43B7191CFDCEA400A85880 /* PBBAPopupContentViewControllerTransitionContext.h in Headers */ = {isa = PBXBuildFile; fileRef = CD8CCE811C889A2F00F27CC2 /* PBBAPopupContentViewControllerTransitionContext.h */; };
 		CD43B71A1CFDCEA400A85880 /* PBBAAppearanceProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = CD4F89A21C981EEC009DE460 /* PBBAAppearanceProxy.h */; };
-		CD43B71D1CFDCEA400A85880 /* PBBAPopupFooterView.h in Headers */ = {isa = PBXBuildFile; fileRef = CD660DDF1C8D8DB8000D550B /* PBBAPopupFooterView.h */; };
 		CD43B71F1CFDCEA400A85880 /* PBBAPopupViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = CD8CCE4C1C88409000F27CC2 /* PBBAPopupViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD43B7211CFDCEA400A85880 /* PBBAPopupCoordinator.h in Headers */ = {isa = PBXBuildFile; fileRef = CD3BBE9F1C90607D0096B732 /* PBBAPopupCoordinator.h */; };
-		CD460B831D241B5900E61803 /* PBBAPopupFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD460B821D241B5900E61803 /* PBBAPopupFooterView.m */; };
 		CD493C5F1D2418C700FC3E5A /* PBBAAutoLoadableView.h in Headers */ = {isa = PBXBuildFile; fileRef = CD493C5D1D2418C700FC3E5A /* PBBAAutoLoadableView.h */; };
 		CD493C601D2418C700FC3E5A /* PBBAAutoLoadableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD493C5E1D2418C700FC3E5A /* PBBAAutoLoadableView.m */; };
 		CD4F89A41C981EEC009DE460 /* PBBAAppearanceProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = CD4F89A21C981EEC009DE460 /* PBBAAppearanceProxy.h */; };
 		CD4F89A51C981EEC009DE460 /* PBBAAppearanceProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = CD4F89A31C981EEC009DE460 /* PBBAAppearanceProxy.m */; };
 		CD63787D1D2FF6AF0073D14F /* PBBAAppUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD63787C1D2FF6AF0073D14F /* PBBAAppUtilsTests.m */; };
-		CD660DE11C8D8DB8000D550B /* PBBAPopupFooterView.h in Headers */ = {isa = PBXBuildFile; fileRef = CD660DDF1C8D8DB8000D550B /* PBBAPopupFooterView.h */; };
-		CD660DE61C8D8E96000D550B /* PBBAPopupFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD660DE41C8D8E87000D550B /* PBBAPopupFooterView.xib */; };
 		CD71EE111D23E42C007135B8 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD71EE101D23E42C007135B8 /* Media.xcassets */; };
 		CD7444F51D23FB5600768225 /* PBBAPopupScaleAspectFitAnimationContext.h in Headers */ = {isa = PBXBuildFile; fileRef = CD7444F31D23FB5600768225 /* PBBAPopupScaleAspectFitAnimationContext.h */; };
 		CD7444F61D23FB5600768225 /* PBBAPopupScaleAspectFitAnimationContext.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7444F41D23FB5600768225 /* PBBAPopupScaleAspectFitAnimationContext.m */; };
 		CD7461F31D23FCE1007EB6D3 /* PBBAAppearance.h in Headers */ = {isa = PBXBuildFile; fileRef = CD7461F21D23FCE1007EB6D3 /* PBBAAppearance.h */; };
-		CD85014E1D2426B900C06582 /* PBBAErrorViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = CD85014B1D2426B900C06582 /* PBBAErrorViewController.h */; };
-		CD85014F1D2426B900C06582 /* PBBAErrorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD85014C1D2426B900C06582 /* PBBAErrorViewController.m */; };
-		CD8501501D2426CE00C06582 /* PBBAErrorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD85014D1D2426B900C06582 /* PBBAErrorViewController.xib */; };
+		CD8501501D2426CE00C06582 /* PBBAErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD85014D1D2426B900C06582 /* PBBAErrorView.xib */; };
 		CD8CCE4E1C88409000F27CC2 /* PBBAPopupViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = CD8CCE4C1C88409000F27CC2 /* PBBAPopupViewController.h */; };
 		CD8CCE4F1C88409000F27CC2 /* PBBAPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8CCE4D1C88409000F27CC2 /* PBBAPopupViewController.m */; };
 		CD8CCE611C8847BB00F27CC2 /* UIView+ZPMLib.h in Headers */ = {isa = PBXBuildFile; fileRef = CD8CCE5F1C8847BB00F27CC2 /* UIView+ZPMLib.h */; };
@@ -128,7 +140,6 @@
 		CD8F88B11BB5A12000E754B6 /* PBBACodeView.h in Headers */ = {isa = PBXBuildFile; fileRef = C818C1D81B5653CC00A7514A /* PBBACodeView.h */; };
 		CD8F88B61BB5A12000E754B6 /* PBBAButton.h in Headers */ = {isa = PBXBuildFile; fileRef = CDC4374518D306E8004DBB05 /* PBBAButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD8F88B71BB5A12000E754B6 /* PBBASquiggleView.h in Headers */ = {isa = PBXBuildFile; fileRef = CDB9274C1B57AC6700A8EDFD /* PBBASquiggleView.h */; };
-		CD8F88B81BB5A12000E754B6 /* PBBAButtonTitleView.h in Headers */ = {isa = PBXBuildFile; fileRef = CD08D4FE1B5CEE4A00F53C4F /* PBBAButtonTitleView.h */; };
 		CD8F88BD1BB5A12000E754B6 /* ZappMerchantLib.h in Headers */ = {isa = PBXBuildFile; fileRef = A76635D4188D3AB300D6C26C /* ZappMerchantLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD9C6FDF1D214C9D00D207EF /* PBBAAppUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = CD9C6FDD1D214C9D00D207EF /* PBBAAppUtils.h */; };
 		CD9C6FE01D214C9D00D207EF /* PBBAAppUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9C6FDE1D214C9D00D207EF /* PBBAAppUtils.m */; };
@@ -136,27 +147,17 @@
 		CD9C6FE41D214F7A00D207EF /* PBBALibraryUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9C6FE21D214F7A00D207EF /* PBBALibraryUtils.m */; };
 		CD9C6FF11D21767200D207EF /* PBBAAppUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = CD9C6FDD1D214C9D00D207EF /* PBBAAppUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD9C6FF21D21767200D207EF /* PBBALibraryUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = CD9C6FE11D214F7A00D207EF /* PBBALibraryUtils.h */; };
-		CD9CDB271D24266D00204F72 /* PBBAPopupContentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = CD9CDB251D24266D00204F72 /* PBBAPopupContentViewController.h */; };
-		CD9CDB281D24266D00204F72 /* PBBAPopupContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9CDB261D24266D00204F72 /* PBBAPopupContentViewController.m */; };
 		CDB9274E1B57AC6700A8EDFD /* PBBASquiggleView.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB9274D1B57AC6700A8EDFD /* PBBASquiggleView.m */; };
 		CDBC35131D2424BB00B5A235 /* PBBAPopupContainerController.h in Headers */ = {isa = PBXBuildFile; fileRef = CDBC35111D2424BB00B5A235 /* PBBAPopupContainerController.h */; };
 		CDBC35141D2424BB00B5A235 /* PBBAPopupContainerController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBC35121D2424BB00B5A235 /* PBBAPopupContainerController.m */; };
 		CDBF18CD1CFF13110002883C /* libZappMerchantLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A76635CC188D3AB300D6C26C /* libZappMerchantLib.a */; };
 		CDC4374018D305F5004DBB05 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CDC4373E18D305F5004DBB05 /* InfoPlist.strings */; };
 		CDD2D5891C999265005B097A /* PBBAAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD2D5871C999265005B097A /* PBBAAppearance.m */; };
-		CDD4756B1C8F2A5600E3D92A /* PBBAEComViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD475681C8F2A5600E3D92A /* PBBAEComViewController.m */; };
 		CDD988FD199A342E008A082A /* UIFont+ZPMLib.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD988FC199A342E008A082A /* UIFont+ZPMLib.m */; };
 		CDD98900199A4A90008A082A /* NSAttributedString+ZPMLib.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD988FF199A4A90008A082A /* NSAttributedString+ZPMLib.m */; };
 		CDD98902199A5018008A082A /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDD98901199A5018008A082A /* CoreText.framework */; };
-		CDDD34641D23FC1200AE04FA /* PBBACodeInstructions.h in Headers */ = {isa = PBXBuildFile; fileRef = CDDD34621D23FC1200AE04FA /* PBBACodeInstructions.h */; };
-		CDDD34651D23FC1200AE04FA /* PBBACodeInstructions.m in Sources */ = {isa = PBXBuildFile; fileRef = CDDD34631D23FC1200AE04FA /* PBBACodeInstructions.m */; };
-		CDED2C8D1D24278B0004FECE /* PBBAEComViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = CDED2C8B1D24278B0004FECE /* PBBAEComViewController.h */; };
-		CDED2C8E1D2427A40004FECE /* PBBAEComViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDED2C8C1D24278B0004FECE /* PBBAEComViewController.xib */; };
 		CDF165A11D241D7D00E70873 /* PBBAPopupButton.h in Headers */ = {isa = PBXBuildFile; fileRef = CDF165A01D241D7D00E70873 /* PBBAPopupButton.h */; };
-		CDF165A21D2423AD00E70873 /* PBBAPopupHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDF8AE1A1D24191D0053C7A8 /* PBBAPopupHeaderView.xib */; };
 		CDF165A31D2423AD00E70873 /* PBBACodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD413E071D241BD700474397 /* PBBACodeView.xib */; };
-		CDF8AE1B1D24191D0053C7A8 /* PBBAPopupHeaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = CDF8AE181D24191D0053C7A8 /* PBBAPopupHeaderView.h */; };
-		CDF8AE1C1D24191D0053C7A8 /* PBBAPopupHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF8AE191D24191D0053C7A8 /* PBBAPopupHeaderView.m */; };
 		F14E72FE199A546100818A7C /* UIColor+ZPMLib.m in Sources */ = {isa = PBXBuildFile; fileRef = F14E72FD199A546100818A7C /* UIColor+ZPMLib.m */; };
 /* End PBXBuildFile section */
 
@@ -199,13 +200,52 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		043C9DA2215946F7002E9162 /* PBBACustomUXConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PBBACustomUXConfig.h; sourceTree = "<group>"; };
+		043C9DA3215946F7002E9162 /* PBBACustomUXConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PBBACustomUXConfig.m; sourceTree = "<group>"; };
+		04C376BE216D10B100E5755A /* PBBAPopup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PBBAPopup.storyboard; sourceTree = "<group>"; };
 		5AF003B01B8DEB9B007C7980 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		69880497BC0F436956D58E21 /* Pods-ZappMerchantLibTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZappMerchantLibTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZappMerchantLibTests/Pods-ZappMerchantLibTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7743DFBF8A632ACF2F874AF4 /* Pods-ZappMerchantLibTests.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZappMerchantLibTests.development.xcconfig"; path = "Pods/Target Support Files/Pods-ZappMerchantLibTests/Pods-ZappMerchantLibTests.development.xcconfig"; sourceTree = "<group>"; };
+		8A34BB0E219ED1DD00AF8787 /* MarkOffcForMC.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MarkOffcForMC.ttf; sourceTree = "<group>"; };
+		8A34BB0F219ED1DE00AF8787 /* MarkOffcForMC-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MarkOffcForMC-Bold.ttf"; sourceTree = "<group>"; };
+		8A34BB10219ED1DE00AF8787 /* MarkOffcForMC-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MarkOffcForMC-Heavy.ttf"; sourceTree = "<group>"; };
+		8A34BB11219ED1DE00AF8787 /* MarkOffcForMC-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MarkOffcForMC-Medium.ttf"; sourceTree = "<group>"; };
+		8A3AB25E218B259D005FF72A /* PBBAPopupContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBBAPopupContentViewController.m; sourceTree = "<group>"; };
+		8A3AB25F218B259D005FF72A /* PBBAPopupContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBBAPopupContentViewController.h; sourceTree = "<group>"; };
+		8A3AB266218B32ED005FF72A /* PBBAErrorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PBBAErrorView.h; sourceTree = "<group>"; };
+		8A3AB267218B32ED005FF72A /* PBBAErrorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PBBAErrorView.m; sourceTree = "<group>"; };
+		8A3AB26A218B49F0005FF72A /* NSError+ZPMLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSError+ZPMLib.h"; sourceTree = "<group>"; };
+		8A3AB26B218B49F0005FF72A /* NSError+ZPMLib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSError+ZPMLib.m"; sourceTree = "<group>"; };
+		8A8D89CB216DCEAD005B580E /* PBBAButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PBBAButton.xib; sourceTree = "<group>"; };
+		8A8D89CC216DCEAD005B580E /* PBBAButtonMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBBAButtonMain.m; sourceTree = "<group>"; };
+		8A8D89CD216DCEAE005B580E /* PBBAButtonMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBBAButtonMain.h; sourceTree = "<group>"; };
+		8A8D89CE216DCEAE005B580E /* PBBAButtonMain.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PBBAButtonMain.xib; sourceTree = "<group>"; };
+		8A8D89D4216DD3C6005B580E /* PBBABankLogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBBABankLogo.h; sourceTree = "<group>"; };
+		8A8D89D5216DD3C6005B580E /* PBBABankLogosService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBBABankLogosService.m; sourceTree = "<group>"; };
+		8A8D89D6216DD3C6005B580E /* PBBANetworkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBBANetworkService.m; sourceTree = "<group>"; };
+		8A8D89D7216DD3C6005B580E /* PBBANetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBBANetworkService.h; sourceTree = "<group>"; };
+		8A8D89D8216DD3C7005B580E /* PBBABankLogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBBABankLogo.m; sourceTree = "<group>"; };
+		8A8D89D9216DD3C7005B580E /* PBBABankLogosService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBBABankLogosService.h; sourceTree = "<group>"; };
+		8AA8512D2149276000B4556F /* PBBABankLogosContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBBABankLogosContainer.m; sourceTree = "<group>"; };
+		8AA8512E2149276000B4556F /* PBBABankLogosContainer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PBBABankLogosContainer.xib; sourceTree = "<group>"; };
+		8AA8512F2149276000B4556F /* PBBABankLogosContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBBABankLogosContainer.h; sourceTree = "<group>"; };
+		8AA851302149276000B4556F /* PBBAMoreAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBBAMoreAboutViewController.h; sourceTree = "<group>"; };
+		8AA851322149276100B4556F /* PBBABankLogosLayouts.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PBBABankLogosLayouts.xib; sourceTree = "<group>"; };
+		8AA851332149276100B4556F /* PBBAMoreAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBBAMoreAboutViewController.m; sourceTree = "<group>"; };
+		8AC78D6F21763DAB00405FF3 /* PBBAExpiryTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PBBAExpiryTimer.h; sourceTree = "<group>"; };
+		8AC78D7021763DAB00405FF3 /* PBBAExpiryTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PBBAExpiryTimer.m; sourceTree = "<group>"; };
+		8AD714CE219D660C0083C296 /* PBBABankLogosCommonLayout.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PBBABankLogosCommonLayout.xib; sourceTree = "<group>"; };
 		8D861D4DC033ECC43D19F83F /* libPods-ZappMerchantLibTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZappMerchantLibTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A114EA0819D5E7EE000EF7CE /* ZappMerchantLib.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ZappMerchantLib.podspec; sourceTree = "<group>"; };
 		A2D12A8319640BE30064590B /* UIImage+ZPMLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ZPMLib.h"; sourceTree = "<group>"; };
 		A2D12A8419640BE30064590B /* UIImage+ZPMLib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ZPMLib.m"; sourceTree = "<group>"; };
+		A2FC5E0F21AC1D1A000625F6 /* PBBACustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBBACustomButton.m; sourceTree = "<group>"; };
+		A2FC5E1121AC1D1A000625F6 /* PBBACustomButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PBBACustomButton.xib; sourceTree = "<group>"; };
+		A2FC5E1221AC1D1A000625F6 /* PBBACustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBBACustomButton.h; sourceTree = "<group>"; };
+		A2FC5E1B21AC3BFF000625F6 /* PBBACustomButtonBankLogosContainer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PBBACustomButtonBankLogosContainer.xib; sourceTree = "<group>"; };
+		A2FC5E2A21AC3F84000625F6 /* PBBACustomButtonBankLogosLayouts.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PBBACustomButtonBankLogosLayouts.xib; sourceTree = "<group>"; };
+		A2FC5E2C21AC42D8000625F6 /* PBBACustomButtonBankLogosContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBBACustomButtonBankLogosContainer.m; sourceTree = "<group>"; };
+		A2FC5E2D21AC42D8000625F6 /* PBBACustomButtonBankLogosContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBBACustomButtonBankLogosContainer.h; sourceTree = "<group>"; };
 		A76635CC188D3AB300D6C26C /* libZappMerchantLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libZappMerchantLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A76635CF188D3AB300D6C26C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A76635D4188D3AB300D6C26C /* ZappMerchantLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZappMerchantLib.h; sourceTree = "<group>"; };
@@ -215,21 +255,9 @@
 		BF208AE5E2E714F833B94520 /* Pods-ZappMerchantLibTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZappMerchantLibTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZappMerchantLibTests/Pods-ZappMerchantLibTests.release.xcconfig"; sourceTree = "<group>"; };
 		C818C1D81B5653CC00A7514A /* PBBACodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBBACodeView.h; sourceTree = "<group>"; };
 		C818C1D91B5653CC00A7514A /* PBBACodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBBACodeView.m; sourceTree = "<group>"; };
-		C81BAE611B5E39C300E441B2 /* PBBACodeInstructionsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBBACodeInstructionsView.m; sourceTree = "<group>"; };
-		C81BAE631B5E39DF00E441B2 /* PBBACodeInstructionsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PBBACodeInstructionsView.xib; sourceTree = "<group>"; };
-		C875F5D61B623D2000684494 /* SourceSansPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Bold.otf"; sourceTree = "<group>"; };
-		C875F5D71B623D2000684494 /* SourceSansPro-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Light.otf"; sourceTree = "<group>"; };
-		C875F5D81B623D2000684494 /* SourceSansPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.otf"; sourceTree = "<group>"; };
-		C875F5D91B623D2000684494 /* SourceSansPro-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Semibold.otf"; sourceTree = "<group>"; };
 		C88DA6D31B70C5E600EAFC81 /* PBBAPopupButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBBAPopupButton.m; sourceTree = "<group>"; };
-		CD08D4FE1B5CEE4A00F53C4F /* PBBAButtonTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBBAButtonTitleView.h; sourceTree = "<group>"; };
-		CD08D4FF1B5CEE4A00F53C4F /* PBBAButtonTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBBAButtonTitleView.m; sourceTree = "<group>"; };
-		CD0F4FB01D241C2D002620BF /* PBBACodeInstructionsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBBACodeInstructionsView.h; sourceTree = "<group>"; };
-		CD1B26681E267CA50075CBA2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "en.lproj/Localizable-Pingit.strings"; sourceTree = "<group>"; };
 		CD2176191D24273000DA032D /* PBBAMComViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBBAMComViewController.h; sourceTree = "<group>"; };
 		CD21761A1D24273000DA032D /* PBBAMComViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBBAMComViewController.m; sourceTree = "<group>"; };
-		CD21761B1D24273000DA032D /* PBBAMComViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PBBAMComViewController.xib; sourceTree = "<group>"; };
-		CD26BCB31D241D26009EDD16 /* PBBAPopupMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBBAPopupMessageView.h; sourceTree = "<group>"; };
 		CD3A0B3B18D75C4C002994E4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CD3A0B3E18D7659B002994E4 /* NSBundle+ZPMLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+ZPMLib.h"; sourceTree = "<group>"; };
 		CD3A0B3F18D7659B002994E4 /* NSBundle+ZPMLib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+ZPMLib.m"; sourceTree = "<group>"; };
@@ -238,24 +266,17 @@
 		CD3F2B9C1D23FA27008A5D0D /* PBBAPopupAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBBAPopupAnimator.h; sourceTree = "<group>"; };
 		CD3F2B9D1D23FA27008A5D0D /* PBBAPopupAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBBAPopupAnimator.m; sourceTree = "<group>"; };
 		CD413E071D241BD700474397 /* PBBACodeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PBBACodeView.xib; sourceTree = "<group>"; };
-		CD426BA61C8F24D3001A2843 /* PBBAPopupMessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBBAPopupMessageView.m; sourceTree = "<group>"; };
-		CD426BA91C8F24E6001A2843 /* PBBAPopupMessageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PBBAPopupMessageView.xib; sourceTree = "<group>"; };
 		CD43B70C1CFDCE3800A85880 /* PBBAAnimatable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PBBAAnimatable.h; sourceTree = "<group>"; };
-		CD460B821D241B5900E61803 /* PBBAPopupFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBBAPopupFooterView.m; sourceTree = "<group>"; };
 		CD493C5D1D2418C700FC3E5A /* PBBAAutoLoadableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBBAAutoLoadableView.h; sourceTree = "<group>"; };
 		CD493C5E1D2418C700FC3E5A /* PBBAAutoLoadableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBBAAutoLoadableView.m; sourceTree = "<group>"; };
 		CD4F89A21C981EEC009DE460 /* PBBAAppearanceProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBBAAppearanceProxy.h; sourceTree = "<group>"; };
 		CD4F89A31C981EEC009DE460 /* PBBAAppearanceProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBBAAppearanceProxy.m; sourceTree = "<group>"; };
 		CD63787C1D2FF6AF0073D14F /* PBBAAppUtilsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBBAAppUtilsTests.m; sourceTree = "<group>"; };
-		CD660DDF1C8D8DB8000D550B /* PBBAPopupFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBBAPopupFooterView.h; sourceTree = "<group>"; };
-		CD660DE41C8D8E87000D550B /* PBBAPopupFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PBBAPopupFooterView.xib; sourceTree = "<group>"; };
 		CD71EE101D23E42C007135B8 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		CD7444F31D23FB5600768225 /* PBBAPopupScaleAspectFitAnimationContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBBAPopupScaleAspectFitAnimationContext.h; sourceTree = "<group>"; };
 		CD7444F41D23FB5600768225 /* PBBAPopupScaleAspectFitAnimationContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBBAPopupScaleAspectFitAnimationContext.m; sourceTree = "<group>"; };
 		CD7461F21D23FCE1007EB6D3 /* PBBAAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBBAAppearance.h; sourceTree = "<group>"; };
-		CD85014B1D2426B900C06582 /* PBBAErrorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBBAErrorViewController.h; sourceTree = "<group>"; };
-		CD85014C1D2426B900C06582 /* PBBAErrorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBBAErrorViewController.m; sourceTree = "<group>"; };
-		CD85014D1D2426B900C06582 /* PBBAErrorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PBBAErrorViewController.xib; sourceTree = "<group>"; };
+		CD85014D1D2426B900C06582 /* PBBAErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PBBAErrorView.xib; sourceTree = "<group>"; };
 		CD8CCE4C1C88409000F27CC2 /* PBBAPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBBAPopupViewController.h; sourceTree = "<group>"; };
 		CD8CCE4D1C88409000F27CC2 /* PBBAPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBBAPopupViewController.m; sourceTree = "<group>"; };
 		CD8CCE5F1C8847BB00F27CC2 /* UIView+ZPMLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZPMLib.h"; sourceTree = "<group>"; };
@@ -267,8 +288,6 @@
 		CD9C6FDE1D214C9D00D207EF /* PBBAAppUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBBAAppUtils.m; sourceTree = "<group>"; };
 		CD9C6FE11D214F7A00D207EF /* PBBALibraryUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBBALibraryUtils.h; sourceTree = "<group>"; };
 		CD9C6FE21D214F7A00D207EF /* PBBALibraryUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBBALibraryUtils.m; sourceTree = "<group>"; };
-		CD9CDB251D24266D00204F72 /* PBBAPopupContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBBAPopupContentViewController.h; sourceTree = "<group>"; };
-		CD9CDB261D24266D00204F72 /* PBBAPopupContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBBAPopupContentViewController.m; sourceTree = "<group>"; };
 		CDB9274C1B57AC6700A8EDFD /* PBBASquiggleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBBASquiggleView.h; sourceTree = "<group>"; };
 		CDB9274D1B57AC6700A8EDFD /* PBBASquiggleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBBASquiggleView.m; sourceTree = "<group>"; };
 		CDBC35111D2424BB00B5A235 /* PBBAPopupContainerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBBAPopupContainerController.h; sourceTree = "<group>"; };
@@ -280,21 +299,13 @@
 		CDC4374618D306E8004DBB05 /* PBBAButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBBAButton.m; sourceTree = "<group>"; };
 		CDCA596C1D35410E002308C9 /* PBBATestEnvironment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PBBATestEnvironment.h; sourceTree = "<group>"; };
 		CDD2D5871C999265005B097A /* PBBAAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBBAAppearance.m; sourceTree = "<group>"; };
-		CDD475681C8F2A5600E3D92A /* PBBAEComViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBBAEComViewController.m; sourceTree = "<group>"; };
 		CDD988FB199A342E008A082A /* UIFont+ZPMLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+ZPMLib.h"; sourceTree = "<group>"; };
 		CDD988FC199A342E008A082A /* UIFont+ZPMLib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+ZPMLib.m"; sourceTree = "<group>"; };
 		CDD988FE199A4A90008A082A /* NSAttributedString+ZPMLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+ZPMLib.h"; sourceTree = "<group>"; };
 		CDD988FF199A4A90008A082A /* NSAttributedString+ZPMLib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+ZPMLib.m"; sourceTree = "<group>"; };
 		CDD98901199A5018008A082A /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		CDDC6E191B4AC8FE0000E10C /* PBBAUIElementAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBBAUIElementAppearance.h; sourceTree = "<group>"; };
-		CDDD34621D23FC1200AE04FA /* PBBACodeInstructions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBBACodeInstructions.h; sourceTree = "<group>"; };
-		CDDD34631D23FC1200AE04FA /* PBBACodeInstructions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBBACodeInstructions.m; sourceTree = "<group>"; };
-		CDED2C8B1D24278B0004FECE /* PBBAEComViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBBAEComViewController.h; sourceTree = "<group>"; };
-		CDED2C8C1D24278B0004FECE /* PBBAEComViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PBBAEComViewController.xib; sourceTree = "<group>"; };
 		CDF165A01D241D7D00E70873 /* PBBAPopupButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBBAPopupButton.h; sourceTree = "<group>"; };
-		CDF8AE181D24191D0053C7A8 /* PBBAPopupHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBBAPopupHeaderView.h; sourceTree = "<group>"; };
-		CDF8AE191D24191D0053C7A8 /* PBBAPopupHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBBAPopupHeaderView.m; sourceTree = "<group>"; };
-		CDF8AE1A1D24191D0053C7A8 /* PBBAPopupHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PBBAPopupHeaderView.xib; sourceTree = "<group>"; };
 		F14E72FC199A546100818A7C /* UIColor+ZPMLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ZPMLib.h"; sourceTree = "<group>"; };
 		F14E72FD199A546100818A7C /* UIColor+ZPMLib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ZPMLib.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -337,6 +348,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		049711C921A6CABC00E10781 /* CustomButton */ = {
+			isa = PBXGroup;
+			children = (
+				A2FC5E1221AC1D1A000625F6 /* PBBACustomButton.h */,
+				A2FC5E0F21AC1D1A000625F6 /* PBBACustomButton.m */,
+				A2FC5E1121AC1D1A000625F6 /* PBBACustomButton.xib */,
+				A2FC5E2D21AC42D8000625F6 /* PBBACustomButtonBankLogosContainer.h */,
+				A2FC5E2C21AC42D8000625F6 /* PBBACustomButtonBankLogosContainer.m */,
+				A2FC5E1B21AC3BFF000625F6 /* PBBACustomButtonBankLogosContainer.xib */,
+				A2FC5E2A21AC3F84000625F6 /* PBBACustomButtonBankLogosLayouts.xib */,
+			);
+			name = CustomButton;
+			sourceTree = "<group>";
+		};
 		61DF66CE63B7A108B224F0A8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -345,6 +370,39 @@
 				7743DFBF8A632ACF2F874AF4 /* Pods-ZappMerchantLibTests.development.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		8A8D89D3216DCF30005B580E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8A8D89E0216DD419005B580E /* Models */,
+				8A8D89D9216DD3C7005B580E /* PBBABankLogosService.h */,
+				8A8D89D5216DD3C6005B580E /* PBBABankLogosService.m */,
+				8A8D89D7216DD3C6005B580E /* PBBANetworkService.h */,
+				8A8D89D6216DD3C6005B580E /* PBBANetworkService.m */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		8A8D89E0216DD419005B580E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8A8D89D4216DD3C6005B580E /* PBBABankLogo.h */,
+				8A8D89D8216DD3C7005B580E /* PBBABankLogo.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		8AA8512C2149274400B4556F /* Bank logos */ = {
+			isa = PBXGroup;
+			children = (
+				8AA8512F2149276000B4556F /* PBBABankLogosContainer.h */,
+				8AA8512D2149276000B4556F /* PBBABankLogosContainer.m */,
+				8AA8512E2149276000B4556F /* PBBABankLogosContainer.xib */,
+				8AA851322149276100B4556F /* PBBABankLogosLayouts.xib */,
+				8AD714CE219D660C0083C296 /* PBBABankLogosCommonLayout.xib */,
+			);
+			name = "Bank logos";
 			sourceTree = "<group>";
 		};
 		A2A01A4E196ED99A00EBBD68 /* Resources */ = {
@@ -394,6 +452,7 @@
 		A76635D1188D3AB300D6C26C /* ZappMerchantLib */ = {
 			isa = PBXGroup;
 			children = (
+				8A8D89D3216DCF30005B580E /* Services */,
 				CD15056418D212B10029BE56 /* Utils */,
 				CD12FE011C8EED7A008EC2FA /* Protocols */,
 				CD8CCE5E1C88478800F27CC2 /* Categories */,
@@ -425,7 +484,6 @@
 		CD0238C11C8F096D00E06B00 /* Localisation */ = {
 			isa = PBXGroup;
 			children = (
-				CD1B26671E267CA50075CBA2 /* Localizable-Pingit.strings */,
 				5AF003B01B8DEB9B007C7980 /* Localizable.strings */,
 			);
 			name = Localisation;
@@ -447,6 +505,8 @@
 				CD9C6FDE1D214C9D00D207EF /* PBBAAppUtils.m */,
 				CD9C6FE11D214F7A00D207EF /* PBBALibraryUtils.h */,
 				CD9C6FE21D214F7A00D207EF /* PBBALibraryUtils.m */,
+				8AC78D6F21763DAB00405FF3 /* PBBAExpiryTimer.h */,
+				8AC78D7021763DAB00405FF3 /* PBBAExpiryTimer.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -469,6 +529,8 @@
 				CDBC35121D2424BB00B5A235 /* PBBAPopupContainerController.m */,
 				CD3BBE9F1C90607D0096B732 /* PBBAPopupCoordinator.h */,
 				CD3BBEA01C90607D0096B732 /* PBBAPopupCoordinator.m */,
+				8A3AB25F218B259D005FF72A /* PBBAPopupContentViewController.h */,
+				8A3AB25E218B259D005FF72A /* PBBAPopupContentViewController.m */,
 			);
 			name = "Container Controllers";
 			sourceTree = "<group>";
@@ -497,17 +559,8 @@
 		CD660DC61C8A0140000D550B /* Content View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CD9CDB251D24266D00204F72 /* PBBAPopupContentViewController.h */,
-				CD9CDB261D24266D00204F72 /* PBBAPopupContentViewController.m */,
-				CD85014B1D2426B900C06582 /* PBBAErrorViewController.h */,
-				CD85014C1D2426B900C06582 /* PBBAErrorViewController.m */,
-				CD85014D1D2426B900C06582 /* PBBAErrorViewController.xib */,
 				CD2176191D24273000DA032D /* PBBAMComViewController.h */,
 				CD21761A1D24273000DA032D /* PBBAMComViewController.m */,
-				CD21761B1D24273000DA032D /* PBBAMComViewController.xib */,
-				CDED2C8B1D24278B0004FECE /* PBBAEComViewController.h */,
-				CDD475681C8F2A5600E3D92A /* PBBAEComViewController.m */,
-				CDED2C8C1D24278B0004FECE /* PBBAEComViewController.xib */,
 			);
 			name = "Content View Controllers";
 			sourceTree = "<group>";
@@ -515,6 +568,7 @@
 		CD660DD71C8D8D83000D550B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				049711C921A6CABC00E10781 /* CustomButton */,
 				CD776AFB1C90202E00F0D28E /* Button */,
 				CD776AF71C90201900F0D28E /* Popup */,
 			);
@@ -524,25 +578,20 @@
 		CD776AF71C90201900F0D28E /* Popup */ = {
 			isa = PBXGroup;
 			children = (
+				8AA8512C2149274400B4556F /* Bank logos */,
 				CD493C5D1D2418C700FC3E5A /* PBBAAutoLoadableView.h */,
 				CD493C5E1D2418C700FC3E5A /* PBBAAutoLoadableView.m */,
-				CDF8AE181D24191D0053C7A8 /* PBBAPopupHeaderView.h */,
-				CDF8AE191D24191D0053C7A8 /* PBBAPopupHeaderView.m */,
-				CDF8AE1A1D24191D0053C7A8 /* PBBAPopupHeaderView.xib */,
-				CD660DDF1C8D8DB8000D550B /* PBBAPopupFooterView.h */,
-				CD460B821D241B5900E61803 /* PBBAPopupFooterView.m */,
-				CD660DE41C8D8E87000D550B /* PBBAPopupFooterView.xib */,
 				C818C1D81B5653CC00A7514A /* PBBACodeView.h */,
 				C818C1D91B5653CC00A7514A /* PBBACodeView.m */,
 				CD413E071D241BD700474397 /* PBBACodeView.xib */,
-				CD0F4FB01D241C2D002620BF /* PBBACodeInstructionsView.h */,
-				C81BAE611B5E39C300E441B2 /* PBBACodeInstructionsView.m */,
-				C81BAE631B5E39DF00E441B2 /* PBBACodeInstructionsView.xib */,
-				CD26BCB31D241D26009EDD16 /* PBBAPopupMessageView.h */,
-				CD426BA61C8F24D3001A2843 /* PBBAPopupMessageView.m */,
-				CD426BA91C8F24E6001A2843 /* PBBAPopupMessageView.xib */,
 				CDF165A01D241D7D00E70873 /* PBBAPopupButton.h */,
 				C88DA6D31B70C5E600EAFC81 /* PBBAPopupButton.m */,
+				8A3AB266218B32ED005FF72A /* PBBAErrorView.h */,
+				8A3AB267218B32ED005FF72A /* PBBAErrorView.m */,
+				CD85014D1D2426B900C06582 /* PBBAErrorView.xib */,
+				8AA851302149276000B4556F /* PBBAMoreAboutViewController.h */,
+				8AA851332149276100B4556F /* PBBAMoreAboutViewController.m */,
+				04C376BE216D10B100E5755A /* PBBAPopup.storyboard */,
 			);
 			name = Popup;
 			sourceTree = "<group>";
@@ -554,8 +603,10 @@
 				CDC4374618D306E8004DBB05 /* PBBAButton.m */,
 				CDB9274C1B57AC6700A8EDFD /* PBBASquiggleView.h */,
 				CDB9274D1B57AC6700A8EDFD /* PBBASquiggleView.m */,
-				CD08D4FE1B5CEE4A00F53C4F /* PBBAButtonTitleView.h */,
-				CD08D4FF1B5CEE4A00F53C4F /* PBBAButtonTitleView.m */,
+				8A8D89CB216DCEAD005B580E /* PBBAButton.xib */,
+				8A8D89CD216DCEAE005B580E /* PBBAButtonMain.h */,
+				8A8D89CC216DCEAD005B580E /* PBBAButtonMain.m */,
+				8A8D89CE216DCEAE005B580E /* PBBAButtonMain.xib */,
 			);
 			name = Button;
 			sourceTree = "<group>";
@@ -586,6 +637,8 @@
 				A2D12A8419640BE30064590B /* UIImage+ZPMLib.m */,
 				CDD988FE199A4A90008A082A /* NSAttributedString+ZPMLib.h */,
 				CDD988FF199A4A90008A082A /* NSAttributedString+ZPMLib.m */,
+				8A3AB26A218B49F0005FF72A /* NSError+ZPMLib.h */,
+				8A3AB26B218B49F0005FF72A /* NSError+ZPMLib.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -593,10 +646,10 @@
 		CDBA1D071999036D000D4EF8 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				C875F5D61B623D2000684494 /* SourceSansPro-Bold.otf */,
-				C875F5D71B623D2000684494 /* SourceSansPro-Light.otf */,
-				C875F5D81B623D2000684494 /* SourceSansPro-Regular.otf */,
-				C875F5D91B623D2000684494 /* SourceSansPro-Semibold.otf */,
+				8A34BB0F219ED1DE00AF8787 /* MarkOffcForMC-Bold.ttf */,
+				8A34BB10219ED1DE00AF8787 /* MarkOffcForMC-Heavy.ttf */,
+				8A34BB11219ED1DE00AF8787 /* MarkOffcForMC-Medium.ttf */,
+				8A34BB0E219ED1DD00AF8787 /* MarkOffcForMC.ttf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -631,12 +684,12 @@
 		CDE129431C8F357E00DB555F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CDDD34621D23FC1200AE04FA /* PBBACodeInstructions.h */,
-				CDDD34631D23FC1200AE04FA /* PBBACodeInstructions.m */,
 				CD4F89A21C981EEC009DE460 /* PBBAAppearanceProxy.h */,
 				CD4F89A31C981EEC009DE460 /* PBBAAppearanceProxy.m */,
 				CD7461F21D23FCE1007EB6D3 /* PBBAAppearance.h */,
 				CDD2D5871C999265005B097A /* PBBAAppearance.m */,
+				043C9DA2215946F7002E9162 /* PBBACustomUXConfig.h */,
+				043C9DA3215946F7002E9162 /* PBBACustomUXConfig.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -649,38 +702,42 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD43B7121CFDCE4700A85880 /* PBBAAnimatable.h in Headers */,
+				043C9DA4215946F7002E9162 /* PBBACustomUXConfig.h in Headers */,
+				8A8D89DD216DD3C7005B580E /* PBBANetworkService.h in Headers */,
 				CD493C5F1D2418C700FC3E5A /* PBBAAutoLoadableView.h in Headers */,
+				A2FC5E1421AC1D1A000625F6 /* PBBACustomButton.h in Headers */,
+				8AC78D7121763DAB00405FF3 /* PBBAExpiryTimer.h in Headers */,
 				C81AB9281B6A799600B621A2 /* ZappMerchantLib.h in Headers */,
+				A2FC5E2F21AC42D8000625F6 /* PBBACustomButtonBankLogosContainer.h in Headers */,
 				CD7461F31D23FCE1007EB6D3 /* PBBAAppearance.h in Headers */,
-				CDF8AE1B1D24191D0053C7A8 /* PBBAPopupHeaderView.h in Headers */,
+				8AA851352149276100B4556F /* PBBABankLogosContainer.h in Headers */,
+				8A8D89D0216DCEAE005B580E /* PBBAButtonMain.h in Headers */,
+				8AA851362149276100B4556F /* PBBAMoreAboutViewController.h in Headers */,
 				CD7444F51D23FB5600768225 /* PBBAPopupScaleAspectFitAnimationContext.h in Headers */,
 				CD9C6FDF1D214C9D00D207EF /* PBBAAppUtils.h in Headers */,
 				C81AB95B1B6A81D500B621A2 /* PBBAUIElementAppearance.h in Headers */,
 				CD3F2B9E1D23FA27008A5D0D /* PBBAPopupAnimator.h in Headers */,
 				C81AB95D1B6A81D500B621A2 /* PBBACodeView.h in Headers */,
+				8A3AB268218B32ED005FF72A /* PBBAErrorView.h in Headers */,
 				CD8CCE831C889A2F00F27CC2 /* PBBAPopupContentViewControllerTransitionContext.h in Headers */,
 				C81AB9621B6A81D500B621A2 /* PBBAButton.h in Headers */,
 				C81AB9631B6A81D500B621A2 /* PBBASquiggleView.h in Headers */,
 				CD9C6FE31D214F7A00D207EF /* PBBALibraryUtils.h in Headers */,
-				C81AB9641B6A81D500B621A2 /* PBBAButtonTitleView.h in Headers */,
 				CDBC35131D2424BB00B5A235 /* PBBAPopupContainerController.h in Headers */,
-				CDDD34641D23FC1200AE04FA /* PBBACodeInstructions.h in Headers */,
+				8A8D89DA216DD3C7005B580E /* PBBABankLogo.h in Headers */,
+				8A8D89DF216DD3C7005B580E /* PBBABankLogosService.h in Headers */,
 				CD4F89A41C981EEC009DE460 /* PBBAAppearanceProxy.h in Headers */,
-				CD26BCB41D241D26009EDD16 /* PBBAPopupMessageView.h in Headers */,
 				CD3BBEA11C90607D0096B732 /* PBBAPopupCoordinator.h in Headers */,
 				CD8CCE4E1C88409000F27CC2 /* PBBAPopupViewController.h in Headers */,
-				CD9CDB271D24266D00204F72 /* PBBAPopupContentViewController.h in Headers */,
+				8A3AB261218B259D005FF72A /* PBBAPopupContentViewController.h in Headers */,
 				CD8CCE611C8847BB00F27CC2 /* UIView+ZPMLib.h in Headers */,
 				C81AB93A1B6A7E9200B621A2 /* NSAttributedString+ZPMLib.h in Headers */,
 				C81AB93B1B6A7E9200B621A2 /* NSBundle+ZPMLib.h in Headers */,
 				C81AB93D1B6A7E9300B621A2 /* UIColor+ZPMLib.h in Headers */,
-				CD0F4FB11D241C2D002620BF /* PBBACodeInstructionsView.h in Headers */,
-				CD85014E1D2426B900C06582 /* PBBAErrorViewController.h in Headers */,
-				CD660DE11C8D8DB8000D550B /* PBBAPopupFooterView.h in Headers */,
 				C81AB9401B6A7E9300B621A2 /* UIImage+ZPMLib.h in Headers */,
+				8A3AB26C218B49F0005FF72A /* NSError+ZPMLib.h in Headers */,
 				CDF165A11D241D7D00E70873 /* PBBAPopupButton.h in Headers */,
 				CD21761C1D24273000DA032D /* PBBAMComViewController.h in Headers */,
-				CDED2C8D1D24278B0004FECE /* PBBAEComViewController.h in Headers */,
 				C81AB93F1B6A7E9300B621A2 /* UIFont+ZPMLib.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -697,29 +754,20 @@
 				CD9C6FF11D21767200D207EF /* PBBAAppUtils.h in Headers */,
 				CD3E3CE51D25375600EB58EB /* PBBAPopupAnimator.h in Headers */,
 				CD3E3CE61D25375600EB58EB /* PBBAPopupScaleAspectFitAnimationContext.h in Headers */,
-				CD3E3CE71D25375600EB58EB /* PBBACodeInstructions.h in Headers */,
 				CD3E3CE81D25375600EB58EB /* PBBAAppearance.h in Headers */,
 				CD3E3CE91D25375600EB58EB /* PBBAAutoLoadableView.h in Headers */,
-				CD3E3CEA1D25375600EB58EB /* PBBAPopupHeaderView.h in Headers */,
-				CD3E3CEB1D25375600EB58EB /* PBBACodeInstructionsView.h in Headers */,
-				CD3E3CEC1D25375600EB58EB /* PBBAPopupMessageView.h in Headers */,
 				CD3E3CED1D25375600EB58EB /* PBBAPopupButton.h in Headers */,
 				CD3E3CEE1D25375600EB58EB /* PBBAPopupContainerController.h in Headers */,
-				CD3E3CEF1D25375600EB58EB /* PBBAPopupContentViewController.h in Headers */,
-				CD3E3CF01D25375600EB58EB /* PBBAErrorViewController.h in Headers */,
 				CD3E3CF11D25375600EB58EB /* PBBAMComViewController.h in Headers */,
-				CD3E3CF21D25375600EB58EB /* PBBAEComViewController.h in Headers */,
 				CD9C6FF21D21767200D207EF /* PBBALibraryUtils.h in Headers */,
 				CD43B7161CFDCEA400A85880 /* UIView+ZPMLib.h in Headers */,
 				CD43B7191CFDCEA400A85880 /* PBBAPopupContentViewControllerTransitionContext.h in Headers */,
 				CD43B71A1CFDCEA400A85880 /* PBBAAppearanceProxy.h in Headers */,
-				CD43B71D1CFDCEA400A85880 /* PBBAPopupFooterView.h in Headers */,
 				CD43B7211CFDCEA400A85880 /* PBBAPopupCoordinator.h in Headers */,
 				CD8F889F1BB5A12000E754B6 /* NSAttributedString+ZPMLib.h in Headers */,
 				CD8F88A01BB5A12000E754B6 /* NSBundle+ZPMLib.h in Headers */,
 				CD8F88B11BB5A12000E754B6 /* PBBACodeView.h in Headers */,
 				CD8F88B71BB5A12000E754B6 /* PBBASquiggleView.h in Headers */,
-				CD8F88B81BB5A12000E754B6 /* PBBAButtonTitleView.h in Headers */,
 				CD8F88A21BB5A12000E754B6 /* UIColor+ZPMLib.h in Headers */,
 				CD8F88A41BB5A12000E754B6 /* UIFont+ZPMLib.h in Headers */,
 				CD8F88A51BB5A12000E754B6 /* UIImage+ZPMLib.h in Headers */,
@@ -859,22 +907,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDED2C8E1D2427A40004FECE /* PBBAEComViewController.xib in Resources */,
-				CD1B26691E267CA50075CBA2 /* Localizable-Pingit.strings in Resources */,
-				CD21761E1D24273F00DA032D /* PBBAMComViewController.xib in Resources */,
-				CD8501501D2426CE00C06582 /* PBBAErrorViewController.xib in Resources */,
-				CDF165A21D2423AD00E70873 /* PBBAPopupHeaderView.xib in Resources */,
+				04C376C1216D4C1000E5755A /* PBBAPopup.storyboard in Resources */,
+				A2FC5E1521AC1D36000625F6 /* PBBACustomButton.xib in Resources */,
+				CD8501501D2426CE00C06582 /* PBBAErrorView.xib in Resources */,
 				CDF165A31D2423AD00E70873 /* PBBACodeView.xib in Resources */,
-				C875F5DD1B623D2000684494 /* SourceSansPro-Semibold.otf in Resources */,
+				8A34BB14219ED1DE00AF8787 /* MarkOffcForMC-Heavy.ttf in Resources */,
 				5AF003B21B8DEE4F007C7980 /* Localizable.strings in Resources */,
+				8A8D89D1216DCEB9005B580E /* PBBAButton.xib in Resources */,
+				A2FC5E2B21AC3F84000625F6 /* PBBACustomButtonBankLogosLayouts.xib in Resources */,
+				8A34BB12219ED1DE00AF8787 /* MarkOffcForMC.ttf in Resources */,
 				CDC4374018D305F5004DBB05 /* InfoPlist.strings in Resources */,
+				8A34BB15219ED1DE00AF8787 /* MarkOffcForMC-Medium.ttf in Resources */,
+				A2FC5E1C21AC3BFF000625F6 /* PBBACustomButtonBankLogosContainer.xib in Resources */,
 				CD71EE111D23E42C007135B8 /* Media.xcassets in Resources */,
-				CD660DE61C8D8E96000D550B /* PBBAPopupFooterView.xib in Resources */,
-				C875F5DC1B623D2000684494 /* SourceSansPro-Regular.otf in Resources */,
-				C875F5DA1B623D2000684494 /* SourceSansPro-Bold.otf in Resources */,
-				C81BAE641B5E39DF00E441B2 /* PBBACodeInstructionsView.xib in Resources */,
-				C875F5DB1B623D2000684494 /* SourceSansPro-Light.otf in Resources */,
-				CD426BAA1C8F24E6001A2843 /* PBBAPopupMessageView.xib in Resources */,
+				8A34BB13219ED1DE00AF8787 /* MarkOffcForMC-Bold.ttf in Resources */,
+				8AA851462149281D00B4556F /* PBBABankLogosLayouts.xib in Resources */,
+				8AD714CF219D660C0083C296 /* PBBABankLogosCommonLayout.xib in Resources */,
+				8AA851472149282000B4556F /* PBBABankLogosContainer.xib in Resources */,
+				8A8D89D2216DCEB9005B580E /* PBBAButtonMain.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -978,37 +1028,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDD4756B1C8F2A5600E3D92A /* PBBAEComViewController.m in Sources */,
-				CD460B831D241B5900E61803 /* PBBAPopupFooterView.m in Sources */,
+				8A3AB260218B259D005FF72A /* PBBAPopupContentViewController.m in Sources */,
 				CD8CCE621C8847BB00F27CC2 /* UIView+ZPMLib.m in Sources */,
 				CDD988FD199A342E008A082A /* UIFont+ZPMLib.m in Sources */,
 				CDBC35141D2424BB00B5A235 /* PBBAPopupContainerController.m in Sources */,
-				CDDD34651D23FC1200AE04FA /* PBBACodeInstructions.m in Sources */,
-				C81BAE621B5E39C300E441B2 /* PBBACodeInstructionsView.m in Sources */,
-				CDF8AE1C1D24191D0053C7A8 /* PBBAPopupHeaderView.m in Sources */,
+				8AA851342149276100B4556F /* PBBABankLogosContainer.m in Sources */,
+				A2FC5E1321AC1D1A000625F6 /* PBBACustomButton.m in Sources */,
+				043C9DA5215946F7002E9162 /* PBBACustomUXConfig.m in Sources */,
 				A2D12A8519640BE30064590B /* UIImage+ZPMLib.m in Sources */,
 				CD4F89A51C981EEC009DE460 /* PBBAAppearanceProxy.m in Sources */,
 				CD9C6FE41D214F7A00D207EF /* PBBALibraryUtils.m in Sources */,
 				CD8CCE4F1C88409000F27CC2 /* PBBAPopupViewController.m in Sources */,
 				CD7444F61D23FB5600768225 /* PBBAPopupScaleAspectFitAnimationContext.m in Sources */,
 				CD3F2B9F1D23FA27008A5D0D /* PBBAPopupAnimator.m in Sources */,
-				CD9CDB281D24266D00204F72 /* PBBAPopupContentViewController.m in Sources */,
+				8A8D89CF216DCEAE005B580E /* PBBAButtonMain.m in Sources */,
 				CDD2D5891C999265005B097A /* PBBAAppearance.m in Sources */,
+				8A8D89DB216DD3C7005B580E /* PBBABankLogosService.m in Sources */,
+				8AA851372149276100B4556F /* PBBAMoreAboutViewController.m in Sources */,
 				C84BD0D01B625E1E00B7B1B1 /* PBBACodeView.m in Sources */,
 				CD493C601D2418C700FC3E5A /* PBBAAutoLoadableView.m in Sources */,
 				CDB9274E1B57AC6700A8EDFD /* PBBASquiggleView.m in Sources */,
+				8A8D89DC216DD3C7005B580E /* PBBANetworkService.m in Sources */,
 				C88B84EA1B62972B00FEB5A7 /* PBBAButton.m in Sources */,
 				C88DA6D51B70C5E600EAFC81 /* PBBAPopupButton.m in Sources */,
 				CD8CCE841C889A2F00F27CC2 /* PBBAPopupContentViewControllerTransitionContext.m in Sources */,
-				CD426BA81C8F24D3001A2843 /* PBBAPopupMessageView.m in Sources */,
 				CDD98900199A4A90008A082A /* NSAttributedString+ZPMLib.m in Sources */,
 				C81AB9421B6A7EC200B621A2 /* NSBundle+ZPMLib.m in Sources */,
 				CD21761D1D24273000DA032D /* PBBAMComViewController.m in Sources */,
+				A2FC5E2E21AC42D8000625F6 /* PBBACustomButtonBankLogosContainer.m in Sources */,
 				F14E72FE199A546100818A7C /* UIColor+ZPMLib.m in Sources */,
 				CD3BBEA21C90607D0096B732 /* PBBAPopupCoordinator.m in Sources */,
+				8AC78D7221763DAB00405FF3 /* PBBAExpiryTimer.m in Sources */,
 				CD9C6FE01D214C9D00D207EF /* PBBAAppUtils.m in Sources */,
-				CD85014F1D2426B900C06582 /* PBBAErrorViewController.m in Sources */,
-				CD08D5001B5CEE4A00F53C4F /* PBBAButtonTitleView.m in Sources */,
+				8A8D89DE216DD3C7005B580E /* PBBABankLogo.m in Sources */,
+				8A3AB269218B32ED005FF72A /* PBBAErrorView.m in Sources */,
+				8A3AB26D218B49F0005FF72A /* NSError+ZPMLib.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1064,14 +1118,6 @@
 				A76635E9188D3AB300D6C26C /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		CD1B26671E267CA50075CBA2 /* Localizable-Pingit.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CD1B26681E267CA50075CBA2 /* en */,
-			);
-			name = "Localizable-Pingit.strings";
 			sourceTree = "<group>";
 		};
 		CDC4373E18D305F5004DBB05 /* InfoPlist.strings */ = {

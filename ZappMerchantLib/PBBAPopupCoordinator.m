@@ -26,10 +26,12 @@
 @interface PBBAPopupCoordinator ()
 
 @property (nonatomic, readonly) BOOL isBankAppInstalled;
+@property (nonatomic, assign) BOOL isPopupLaunchedFromMComLayout;//YES - if More About Popup is launched from Intermidiate screen
 
 @end
 
 @implementation PBBAPopupCoordinator
+
 
 - (void)dealloc
 {
@@ -75,6 +77,13 @@
     return self;
 }
 
+-(PBBABankLogosService *)logosService {
+    if (!_logosService) {
+        _logosService =  [[PBBABankLogosService alloc] initLogosServiceWithSuccessBlock:nil errorBlock:nil];
+    }
+    return _logosService;
+}
+
 - (BOOL)isBankAppInstalled
 {
     return [PBBALibraryUtils isCFIAppAvailable];
@@ -87,16 +96,18 @@
 
 - (void)updateLayout
 {
-    if (self.secureToken && self.brn) {
-        
+    if (self.secureToken && self.brn)
+    {
         if (self.isBankAppInstalled) {
             [self updateToLayout:PBBAPopupLayoutTypeMCom];
         } else {
             [self updateToLayout:PBBAPopupLayoutTypeECom];
         }
-        
-    } else if (self.errorMessage) {
+    }
+    else if (self.errorMessage) {
         [self updateToLayout:PBBAPopupLayoutTypeError];
+    } else {
+        [self updateToLayout:PBBAPopupLayoutTypeMoreAbout];
     }
 }
 
@@ -111,6 +122,9 @@
             break;
         case PBBAPopupLayoutTypeError:
             [self updateToErrorLayout];
+            break;
+        case PBBAPopupLayoutTypeMoreAbout:
+            [self updateToMoreAboutLayout];
             break;
     }
     
@@ -150,13 +164,33 @@
         [self.delegate popupCoordinatorUpdateToErrorLayout:self errorTitle:self.errorTitle errorMessage:errorMessage];
     }
 }
+- (void)updateToMoreAboutLayout
+{
+    if (self.currentPopupLayout == PBBAPopupLayoutTypeMCom) {
+        self.isPopupLaunchedFromMComLayout = YES;
+    }
+    if ([self.delegate respondsToSelector:@selector(popupCoordinatorUpdateToMoreAboutLayout:)]) {
+         [self.delegate popupCoordinatorUpdateToMoreAboutLayout:self];
+    }
+}
 
 - (void)closePopupAnimated:(BOOL)animated
                  initiator:(PBBAPopupCloseActionInitiator)initiator
                 completion:(dispatch_block_t)completion
 {
+    if (self.isPopupLaunchedFromMComLayout)
+    {
+        initiator = PBBAPopupCloseActionInitiatorMComLayoutMoreAbout;
+        self.isPopupLaunchedFromMComLayout  = NO;
+    }
     if ([self.delegate respondsToSelector:@selector(popupCoordinatorClosePopup:initiator:animated:completion:)]) {
         [self.delegate popupCoordinatorClosePopup:self initiator:initiator animated:animated completion:completion];
+    }
+}
+
+- (void)setPopupExpired {
+    if ([self.delegate respondsToSelector:@selector(popupCoordinatorPopupDidExpire:)]) {
+        [self.delegate popupCoordinatorPopupDidExpire:self];
     }
 }
 
@@ -168,11 +202,6 @@
 - (void)registerCFIAppLaunch
 {
     [PBBALibraryUtils registerCFIAppLaunch];
-}
-
-- (void)openTellMeMoreLink
-{
-    [PBBALibraryUtils openTellMeMoreLink];
 }
 
 - (void)retryPaymentRequest
@@ -187,7 +216,7 @@
 - (void)applicationDidBecomeActive:(NSNotification *)notification
 {
     // Detect if bank app was installed/uninstalled until the app was in background and update to the proper layout
-    if (self.currentPopupLayout != PBBAPopupLayoutTypeError) {
+    if (self.currentPopupLayout == PBBAPopupLayoutTypeMCom) {
         [self updateLayout];
     }
 }

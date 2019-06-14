@@ -21,9 +21,7 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
-#import "PBBAUIElementAppearance.h"
-
-@class PBBAPopupViewController;
+@class PBBAPopupViewController, PBBABankLogosService;
 
 /**
  *  The PBBA popup view controller delegate protocol.
@@ -38,6 +36,13 @@
 - (void)pbbaPopupViewControllerRetryPaymentRequest:(nonnull PBBAPopupViewController *)pbbaPopupViewController;
 
 @optional
+
+/**
+ *  Inform delegate that popup expired. (expiry interval is 0)
+ *
+ *  @param pbbaPopupViewController The instance of popup view controller.
+ */
+- (void)pbbaPopupViewControllerDidExpire:(nonnull PBBAPopupViewController *)pbbaPopupViewController;
 
 /**
  *  Inform delegate that user has decided to close the popup by pressing the close button.
@@ -81,7 +86,11 @@
 /**
  *  PBBA popup view controller.
  */
-@interface PBBAPopupViewController : UIViewController <PBBAUIElementAppearance>
+@interface PBBAPopupViewController : UIViewController
+/**
+ *  The expiration interval to be shown in the popup
+ */
+@property (nonatomic) NSUInteger expiryInterval;
 
 /**
  *  The human friendly transaction retrieval identifier issued by Zapp.
@@ -122,7 +131,7 @@
  *
  *  @return An instance of PBBAPopupViewController.
  */
-- (nonnull instancetype)initWithSecureToken:(nonnull NSString *)secureToken
+- (void)setSecureToken:(nonnull NSString *)secureToken
                                         brn:(nonnull NSString *)brn
                                    delegate:(nullable id<PBBAPopupViewControllerDelegate>)delegate;
 
@@ -136,7 +145,7 @@
  *
  *  @return An instance of PBBAPopupViewController.
  */
-- (nonnull instancetype)initWithErrorCode:(nullable NSString *)errorCode
+- (void)setErrorCode:(nullable NSString *)errorCode
                                errorTitle:(nullable NSString *)errorTitle
                              errorMessage:(nonnull NSString *)errorMessage
                                  delegate:(nullable id<PBBAPopupViewControllerDelegate>)delegate;
@@ -149,7 +158,7 @@
  *
  *  @return The instance of PBBAPopupViewController.
  */
-- (nonnull instancetype)updateWithSecureToken:(nonnull NSString *)secureToken
+- (void)updateSecureToken:(nonnull NSString *)secureToken
                                           brn:(nonnull NSString *)brn;
 
 /**
@@ -161,8 +170,15 @@
  *
  *  @return The instance of PBBAPopupViewController.
  */
-- (nonnull instancetype)updateWithErrorCode:(nullable NSString *)errorCode
+- (void)updateErrorCode:(nullable NSString *)errorCode
                                  errorTitle:(nullable NSString *)errorTitle
                                errorMessage:(nonnull NSString *)errorMessage NS_SWIFT_NAME(update(withErrorCode:errorTitle:errorMessage:));
+/**
+ *  Update the instance of PBBA popup view controller
+ *  for More About Layout.
+ *  @param logosService    The logosService
+ */
+- (void)updateForMoreAboutWithBankLogosService: (PBBABankLogosService*) logosService;
+
 
 @end
