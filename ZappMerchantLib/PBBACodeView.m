@@ -19,19 +19,54 @@
 //
 
 #import "PBBACodeView.h"
+#import "NSBundle+ZPMLib.h"
+#import "PBBAExpiryTimer.h"
 #import "UIFont+ZPMLib.h"
 
-@interface PBBACodeView()
+@interface PBBACodeView() <PBBAExpiryTimerDelegate>
 
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *zappCodeLabelCollection;
-@property (strong, nonatomic) IBOutletCollection(UIView) NSArray *zappCodeLabelMarginViewCollection;
 
-@property (weak, nonatomic) IBOutlet UIView *groupOne;
-@property (weak, nonatomic) IBOutlet UIView *groupTwo;
+@property (weak, nonatomic) IBOutlet UILabel *brnTimerLabel;
+
+@property (strong,nonatomic) PBBAExpiryTimer* timer;
+@property (weak, nonatomic) IBOutlet UIView *brnAccessibilityReferenceView;
+@property (weak, nonatomic) IBOutlet UIView *brnCodeView;
+@property (weak, nonatomic) IBOutlet UIView *timerHolderView;
 
 @end
 
 @implementation PBBACodeView
+
+-(instancetype) initWithBRN: (NSString*) brn
+          andExpiryInterval: (NSUInteger)expiryInterval{
+    if (self = [super init]){
+        self = [[[NSBundle pbba_merchantResourceBundle] loadNibNamed:NSStringFromClass(self.class) owner:self options:nil] objectAtIndex:0];
+        self.brn = brn;
+        self.expiryInterval = expiryInterval;
+        self.brnTimerLabel.accessibilityTraits |= UIAccessibilityTraitUpdatesFrequently;
+        self.shouldGroupAccessibilityChildren = YES;
+        if (_brnAccessibilityReferenceView && _brnCodeView && _timerHolderView) {
+            self.accessibilityElements = @[_brnAccessibilityReferenceView,_brnCodeView,_timerHolderView];
+        }
+    };
+    
+    return self;
+}
+
+-(void)setBrn:(NSString *)brn
+andExpiryInterval: (NSUInteger) expiryInterval {
+    [self setBrn:brn];
+    [self setExpiryInterval:expiryInterval];
+}
+
+-(void)setExpiryInterval:(NSUInteger)expiryInterval {
+    _expiryInterval = expiryInterval;
+    self.brnTimerLabel.text =  [NSString stringWithFormat:@"%lu",(unsigned long)self.expiryInterval];
+    self.timer = [[PBBAExpiryTimer alloc] initWithExpiryInterval:self.expiryInterval];
+    self.timer.subscriber = self ;
+}
+
 
 - (void)setBrn:(NSString *)brn
 {
@@ -43,46 +78,35 @@
     
     NSAssert(brn.length == self.zappCodeLabelCollection.count,
              @"PBBACodeView: Unbalanced BRN: %@ length with label outlet collection length: %tu", brn, self.zappCodeLabelCollection.count);
-    
-    UIFont *zappCodeFont = [UIFont pbba_semiBoldFontWithSize:17.0f];
-    
+        
     [self.zappCodeLabelCollection enumerateObjectsUsingBlock:^(UILabel *label, NSUInteger idx, BOOL *stop) {
         
         range.location = idx;
         
         NSString *letter = [brn substringWithRange:range];
-        
+        label.clipsToBounds = YES;
+        label.layer.cornerRadius = 3.5;
         label.text = letter;
-        label.font = zappCodeFont;
         label.textAlignment = NSTextAlignmentCenter;
+        label.font = [UIFont pbba_heavyFontWithSize:14];
+        label.minimumFontSize = 6;
+        label.accessibilityTraits |= UIAccessibilityTraitUpdatesFrequently;
     }];
 }
 
-#pragma mark - UIAppearance
+#pragma mark - PBBAExpiryTimerDelegate
 
-- (void)setAppearance:(PBBAAppearance *)appearance
+- (void)timerDidUpdateWithValue:(NSUInteger)timerValue
 {
-    [super setAppearance:appearance];
-    
-    self.backgroundColor = appearance.backgroundColor;
-    
-    self.groupOne.layer.borderColor = appearance.secondaryForegroundColor.CGColor;
-    self.groupTwo.layer.borderColor = appearance.secondaryForegroundColor.CGColor;
-    self.groupOne.layer.cornerRadius = appearance.cornerRadius;
-    self.groupTwo.layer.cornerRadius = appearance.cornerRadius;
-    self.groupOne.layer.borderWidth = appearance.borderWidth;
-    self.groupTwo.layer.borderWidth = appearance.borderWidth;
-    
-    for (UILabel *label in self.zappCodeLabelCollection) {
-        label.backgroundColor = appearance.backgroundColor;
+    self.brnTimerLabel.text = [NSString stringWithFormat:@"%lu",(unsigned long)timerValue];
+    if (timerValue<=30) {
+        [self.brnTimerLabel setBackgroundColor:[UIColor redColor]];
     }
-    
-    for (UILabel *label in self.zappCodeLabelCollection) {
-        [label setTextColor:appearance.foregroundColor];
-    }
-    
-    for (UIView *marginView in self.zappCodeLabelMarginViewCollection){
-        marginView.backgroundColor = [appearance.foregroundColor colorWithAlphaComponent:0.15f];
+}
+
+-(void)timerExpired {
+    if ([self.subscriber respondsToSelector:@selector(codeViewExpired)]) {
+        [self.subscriber codeViewExpired];
     }
 }
 

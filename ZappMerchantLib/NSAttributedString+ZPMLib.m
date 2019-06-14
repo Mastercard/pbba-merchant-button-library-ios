@@ -21,7 +21,6 @@
 #import "NSAttributedString+ZPMLib.h"
 
 @implementation NSAttributedString (ZPMLib)
-
 + (NSAttributedString *)pbba_highlightFragments:(NSArray *)fragments
                                          inText:(NSString *)text
                                        withFont:(UIFont *)standardFont
@@ -52,4 +51,44 @@
     return attributedString;
 }
 
++ (NSAttributedString *)pbba_highlightByFontFragment:(NSString*)fontFragment
+                                     byColorFragment:(NSString*)colorFragment
+                                              inText:(NSString *)text
+                                            withFont:(UIFont *)standardFont
+                                      hightlightFont:(UIFont *)highlightFont
+                                      highlightColor:(UIColor*)highlightColor
+                                           alignment:(NSTextAlignment)textAlignment
+{
+    if (text == nil) return nil;
+    
+    NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
+    paragraphStyle.alignment = textAlignment;
+    
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:text
+                                                                                         attributes:@{NSParagraphStyleAttributeName:paragraphStyle}];
+    NSRange textRange = {0, text.length};
+    [attributedString addAttribute:NSFontAttributeName
+                             value:standardFont
+                             range:textRange];
+    
+    // Color string
+    if (colorFragment) {
+        NSRange range = [text rangeOfString:colorFragment];
+        if (range.length != NSNotFound) {
+            [attributedString addAttribute:NSForegroundColorAttributeName value:highlightColor range:range];
+            [attributedString addAttribute:NSFontAttributeName value:highlightFont range:range];
+        }
+    }
+    
+    // Font string
+    if (fontFragment) {
+        NSRange range = [text rangeOfString:fontFragment];
+        if (range.length != NSNotFound) {
+             [attributedString addAttribute:NSFontAttributeName value:highlightFont range:range];
+        }
+    }
+    
+    return attributedString;
+}
+ 
 @end

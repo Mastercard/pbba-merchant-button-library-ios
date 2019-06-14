@@ -18,27 +18,44 @@
   limitations under the License.
 */
 
-"com.zapp.view.tellMeMoreFooterMessage" = "What is Pay by Bank app?";
+// PBBA Button
+"com.zapp.pbba.button.details" = "Pay securely using your own banking app.";
+"com.zapp.pbba.button.moreAbout" = "More about Pay by Bank app";
 
-"com.zapp.mcom.codeInstructionsTitle"   = "Pay on another device";
-"com.zapp.mcom.getZappCodeTitle"        = "Pay with another device";
-"com.zapp.mcom.getZappCodeMessage"      = "Tap the button below if your mobile banking app is on another device";
+// Bank logos view
+"com.zapp.moreAboutPopup.logosContainerAvailability"   = "Works with these banking apps:";
 
-"com.zapp.mcom.openBankAppMessage"              = "Tap the button below to open your mobile banking app and log in to complete your purchase";
+// Main popup view
+"com.zapp.view.codeInstructionsStep1"       = "Log in to your mobile banking app.";
+"com.zapp.view.codeInstructionsStep1Colored"= "Log in";
+
+"com.zapp.view.codeInstructionsStep2.landscape" = "Find the Pay by Bank app\n option.";
+"com.zapp.view.codeInstructionsStep2.portrait"  = "Find the Pay by Bank app option.";
+
+"com.zapp.view.codeInstructionsStep2Colored"= "Find";
+"com.zapp.view.codeInstructionsStep2Bold"   = "Pay by Bank app";
+
+"com.zapp.view.codeInstructionsStep3"       = "Enter the above code for secure payment.";
+"com.zapp.view.codeInstructionsStep3Colored"= "Enter";
+
+// More about
+
+"com.zapp.moreAboutPopup.information1.landscape" ="Use the bank app on your phone to pay at online checkouts.";
+"com.zapp.moreAboutPopup.information1.portrait" ="Use the bank app on your phone\n to pay at online checkouts.";
+"com.zapp.moreAboutPopup.information2" ="No payment details required.";
+"com.zapp.moreAboutPopup.howItWorks" ="It works like this:";
+"com.zapp.moreAboutPopup.howItWorks1" ="You choose Pay by Bank app \n at the checkout.";
+"com.zapp.moreAboutPopup.howItWorks1Bold"   = "Pay by Bank app";
+"com.zapp.moreAboutPopup.howItWorks2" ="Confirm payment amount\n in your mobile bank app.";
+"com.zapp.moreAboutPopup.howItWorks3" ="Happy with everything?\nComplete payment.";
+
+
+// Intermediary Screen
+// ---- Open bank app
+"com.zapp.mcom.openBankAppTitle"   = "Continue with current device";
+"com.zapp.mcom.openBankAppMessage"              = "Tap the button below to open your mobile banking app and log in to complete your request";
 "com.zapp.mcom.openBankAppButtonTitle"          = "Open banking app";
-"com.zapp.mcom.openBankAppTitle"                = "Pay on this device";
 
-"com.zapp.ecom.codeInstructionsTitle"   = "Pay on another device";
-"com.zapp.ecom.noBankAppWarningMessage" = "None of the apps on this device currently support Pay by Bank app.";
-"com.zapp.ecom.noBankAppAdviceMessage"  = "Follow the steps below to complete this purchase on another device:";
-"com.zapp.ecom.noBankAppAdviceMessage2" = "Follow the steps on the right to complete this purchase on another device:";
-
-"com.zapp.view.codeInstructionsStep1"       = "Pick up your phone or tablet";
-"com.zapp.view.codeInstructionsStep1Bold"   = "Pick";
-"com.zapp.view.codeInstructionsStep2"       = "Log in to your mobile banking app";
-"com.zapp.view.codeInstructionsStep2Bold"   = "Log in";
-"com.zapp.view.codeInstructionsStep3"       = "Select Pay by Bank app";
-"com.zapp.view.codeInstructionsStep3Bold"   = "Select";
-"com.zapp.view.codeInstructionsStep4A"      = "Enter the";
-"com.zapp.view.codeInstructionsStep4B"      = "below";
-"com.zapp.view.codeInstructionsStep4Bold"   = "Enter";
+// ----- Get BRN
+"com.zapp.mcom.getZappCodeTitle"        = "Continue with another device";
+"com.zapp.mcom.getZappCodeMessage"      = "Tap this button if you use another device for your mobile banking app";

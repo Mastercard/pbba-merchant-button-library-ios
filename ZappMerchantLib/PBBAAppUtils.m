@@ -20,6 +20,14 @@
 
 #import "PBBAAppUtils.h"
 #import "PBBALibraryUtils.h"
+#import "UIImage+ZPMLib.h"
+#import "PBBABankLogosService.h"
+#import "PBBAExpiryTimer.h"
+#import "NSBundle+ZPMLib.h"
+#import "PBBABankLogo.h"
+#import "PBBACustomButton.h"
+#import "PBBAMoreAboutViewController.h"
+#import "PBBACustomUXConfig.h"
 
 @implementation PBBAAppUtils
 
@@ -35,10 +43,30 @@
     return [PBBALibraryUtils openBankingApp:secureToken];
 }
 
-+ (PBBAPopupViewController *)showPBBAPopup:(UIViewController *)presenter
-                               secureToken:(NSString *)secureToken
-                                       brn:(NSString *)brn
-                                  delegate:(id<PBBAPopupViewControllerDelegate>)delegate
++ (nullable PBBAPopupViewController *)showPBBAPopup:(nonnull UIViewController *)presenter
+                                        secureToken:(nonnull NSString *)secureToken
+                                                brn:(nonnull NSString *)brn
+                                           delegate:(nullable id<PBBAPopupViewControllerDelegate>)delegate {
+    return [self showPBBAPopup:presenter
+                   secureToken:secureToken
+                           brn:brn
+                expiryInterval:0
+                      delegate:delegate];
+}
+
++(id)instantiateControllerFromStoryboard:(NSString*)storyboard forIdentifier:(NSString*)identifier
+{
+    UIStoryboard *storyboardInstance = [UIStoryboard storyboardWithName:storyboard
+                                                         bundle:[NSBundle pbba_merchantResourceBundle]];
+    return [storyboardInstance instantiateViewControllerWithIdentifier:identifier];
+}
+
+
++ (nullable PBBAPopupViewController *)showPBBAPopup:(nonnull UIViewController *)presenter
+                                        secureToken:(nonnull NSString *)secureToken
+                                                brn:(nonnull NSString *)brn
+                                     expiryInterval:(NSUInteger ) expiryInterval
+                                           delegate:(nullable id<PBBAPopupViewControllerDelegate>)delegate
 {
     NSAssert(presenter, @"[PBBAAppUtils] 'presenter' is a mandatory parameter.");
     NSAssert(secureToken, @"[PBBAAppUtils] 'secureToken' is a mandatory parameter.");
@@ -57,11 +85,10 @@
             return nil;
         }
     }
-    
     // Update the already presented instance of PBBAPopupViewController instead of recreating it
     if ([presenter.presentedViewController isKindOfClass:[PBBAPopupViewController class]]) {
         PBBAPopupViewController *pbbaPopupVC = (PBBAPopupViewController *) presenter.presentedViewController;
-        [pbbaPopupVC updateWithSecureToken:secureToken
+        [pbbaPopupVC updateSecureToken:secureToken
                                        brn:brn];
         
         pbbaPopupVC.delegate = delegate;
@@ -70,10 +97,11 @@
         return pbbaPopupVC;
     }
     
-    // Create a new instance of PBBAPopupViewController and try to present it
-    PBBAPopupViewController *pbbaPopupVC = [[PBBAPopupViewController alloc] initWithSecureToken:secureToken
-                                                                                            brn:brn
-                                                                                       delegate:delegate];
+    // Create a new instance of PBBAPopupViewController and try to present it    
+    PBBAPopupViewController *pbbaPopupVC = [self instantiateControllerFromStoryboard:@"PBBAPopup" forIdentifier:@"PBBAPopupViewController"];
+    pbbaPopupVC.expiryInterval = expiryInterval;
+    [pbbaPopupVC setSecureToken:secureToken brn:brn delegate:delegate];
+
     return [self presentPBBAPopup:pbbaPopupVC presenter:presenter];
 }
 
@@ -89,7 +117,7 @@
     // Update the already presented instance of PBBAPopupViewController instead of recreating it
     if ([presenter.presentedViewController isKindOfClass:[PBBAPopupViewController class]]) {
         PBBAPopupViewController *pbbaPopupVC = (PBBAPopupViewController *) presenter.presentedViewController;
-        [pbbaPopupVC updateWithErrorCode:errorCode
+        [pbbaPopupVC updateErrorCode:errorCode
                               errorTitle:errorTitle
                             errorMessage:errorMessage];
         
@@ -99,12 +127,17 @@
         return pbbaPopupVC;
     }
     
-    // Create a new instance of PBBAPopupViewController and try to present it
-    PBBAPopupViewController *pbbaPopupVC = [[PBBAPopupViewController alloc] initWithErrorCode:errorCode
-                                                                                   errorTitle:errorTitle
-                                                                                 errorMessage:errorMessage
-                                                                                     delegate:delegate];
-    
+    PBBAPopupViewController *pbbaPopupVC = [self instantiateControllerFromStoryboard:@"PBBAPopup" forIdentifier:@"PBBAPopupViewController"];
+    [pbbaPopupVC setErrorCode:errorCode errorTitle:errorTitle errorMessage:errorMessage delegate:delegate];
+
+    return [self presentPBBAPopup:pbbaPopupVC presenter:presenter];
+}
+
++ (nullable PBBAPopupViewController *)showPBBAMoreAboutPopup:(nonnull UIViewController *)presenter
+                                            withLogosService:(PBBABankLogosService*) logosService
+{
+    PBBAPopupViewController *pbbaPopupVC = [self instantiateControllerFromStoryboard:@"PBBAPopup" forIdentifier:@"PBBAPopupViewController"];
+    [pbbaPopupVC updateForMoreAboutWithBankLogosService:logosService];
     return [self presentPBBAPopup:pbbaPopupVC presenter:presenter];
 }
 
@@ -115,6 +148,37 @@
     
     // Return nil if the attempt to present the PBBAPopupViewController has failed
     return (presenter.presentedViewController == pbbaPopupVC) ? pbbaPopupVC : nil;
+}
+
++(UIView*)getCustomUXConfigurationsWithWidth:(CGFloat)width andType:(PBBACustomUXType)customUXType
+{
+   static PBBACustomButton *customButton;
+    switch (customUXType)
+    {
+        case  PBBACustomButtonTypeNone:
+            customButton = [[PBBACustomButton alloc] initWithFrame:CGRectMake(0, 0, width, 41)];
+            break;
+        case  PBBACustomButtonTypeBankLogos:
+            customButton = [[PBBACustomButton alloc] initWithFrame:CGRectMake(0, 0, width, 171)];
+            break;
+        case  PBBACustomButtonTypeMoreAbout:
+            customButton = [[PBBACustomButton alloc] initWithFrame:CGRectMake(0, 0, width, 89)];
+            break;
+        case  PBBACustomButtonTypeMoreAboutAndBankLogos:
+            customButton = [[PBBACustomButton alloc] initWithFrame:CGRectMake(0, 0, width, 206)];
+            break;
+        default:
+            customButton = [[PBBACustomButton alloc] initWithFrame:CGRectMake(0, 0, width, 41)];
+            break;
+    }
+    [customButton setCustomUXConfigurationsForType:customUXType];
+    return customButton;
+}
+
++(NSArray*)getBankLogos
+{
+   PBBABankLogosService *logosService =  [[PBBABankLogosService alloc] initLogosServiceWithSuccessBlock:nil errorBlock:nil];
+    return logosService.smallLogos;
 }
 
 @end

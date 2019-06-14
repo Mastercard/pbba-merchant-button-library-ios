@@ -27,6 +27,7 @@
 /**
  *  PBBA payment button delegate.
  */
+
 @protocol PBBAButtonDelegate <NSObject>
 
 /**
@@ -41,11 +42,15 @@
 @end
 
 
-
 /**
  *  Pay by Bank app button.
  */
-@interface PBBAButton : UIControl <PBBAUIElementAppearance, PBBAAnimatable>
+@interface PBBAButton : UIView <PBBAUIElementAppearance>
+
+/**
+ * Simulated UIControl property "enabled"
+ */
+@property(nonatomic, getter=isEnabled) BOOL enabled;
 
 /**
  *  The payment button delegate.

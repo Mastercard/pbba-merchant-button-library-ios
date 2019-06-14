@@ -19,10 +19,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PBBAAppearance.h"
 
 @interface PBBAAutoLoadableView : UIView
-
-@property (nonatomic, strong) PBBAAppearance *appearance;
 
 @end

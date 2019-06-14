@@ -22,18 +22,11 @@
 
 @interface UIColor (ZPMLib)
 
++ (instancetype)pbba_pbbaBrandColor;
+
 + (instancetype)pbba_buttonBackgroundColor;
 + (instancetype)pbba_buttonHighlightedColor;
 + (instancetype)pbba_buttonForegroundColor;
-
-+ (instancetype)pbba_pbbaBrandColor;
 + (instancetype)pbba_overlayColor;
-
-+ (instancetype)pbba_pingitLightColor;
-+ (instancetype)pbba_pingitLightHighlightedColor;
-
-+ (instancetype)pbba_pingitDarkColor;
-+ (instancetype)pbba_pingitDarkHighlightedColor;
-
 @end
 

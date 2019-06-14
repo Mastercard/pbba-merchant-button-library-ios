@@ -22,24 +22,17 @@
 #import "PBBAPopupContainerController.h"
 #import "PBBAPopupCoordinator.h"
 #import "PBBAPopupScaleAspectFitAnimationContext.h"
-#import "PBBAPopupAnimator.h"
-#import "PBBAAppearanceProxy.h"
-#import "PBBAAppearance.h"
 #import "UIView+ZPMLib.h"
-
-#import "PBBAErrorViewController.h"
+#import "NSBundle+ZPMLib.h"
+#import "PBBAMoreAboutViewController.h"
+#import "PBBAErrorView.h"
 #import "PBBAMComViewController.h"
-#import "PBBAEComViewController.h"
-
-static UIEdgeInsets const kScreenMargins = {0, 20, 0, 20};
+#import "NSError+ZPMLib.h"
 
 @interface PBBAPopupViewController () <UIViewControllerTransitioningDelegate, PBBAPopupCoordinatorDelegate>
-
-@property (nonatomic, readonly) UIInterfaceOrientation currentInterfaceOrientation;
-
 @property (nonatomic, strong) PBBAPopupContainerController *containerViewController;
 @property (nonatomic, strong) PBBAPopupCoordinator *popupCoordinator;
-@property (nonatomic, strong) PBBAAppearance *appearance;
+@property (weak, nonatomic) IBOutlet UIView *containerView;
 
 @end
 
@@ -51,51 +44,45 @@ static UIEdgeInsets const kScreenMargins = {0, 20, 0, 20};
         self.modalPresentationStyle = UIModalPresentationCustom;
         self.transitioningDelegate = self;
     }
-    
     return self;
 }
 
-- (instancetype)initWithSecureToken:(NSString *)secureToken
-                                brn:(NSString *)brn
-                           delegate:(id<PBBAPopupViewControllerDelegate>)delegate
+- (IBAction)didPressCloseButton:(id)sender{
+    [self.popupCoordinator closePopupAnimated:YES
+                                        initiator:PBBAPopupCloseActionInitiatorUser
+                                       completion:nil];
+}
+
+- (void)setSecureToken:(NSString *)secureToken
+                        brn:(NSString *)brn
+                   delegate:(id<PBBAPopupViewControllerDelegate>)delegate
 {
-    if (self = [self init]) {
         self.delegate = delegate;
         self.popupCoordinator = [[PBBAPopupCoordinator alloc] initWithSecureToken:secureToken brn:brn];
         self.popupCoordinator.delegate = self;
-    }
-    
-    return self;
 }
 
-- (instancetype)initWithErrorCode:(NSString *)errorCode
-                       errorTitle:(NSString *)errorTitle
-                     errorMessage:(NSString *)errorMessage
-                         delegate:(id<PBBAPopupViewControllerDelegate>)delegate
+- (void)setErrorCode:(NSString *)errorCode
+               errorTitle:(NSString *)errorTitle
+             errorMessage:(NSString *)errorMessage
+                 delegate:(id<PBBAPopupViewControllerDelegate>)delegate
 {
-    if (self = [self init]) {
         self.delegate = delegate;
         self.popupCoordinator = [[PBBAPopupCoordinator alloc] initWithErrorCode:errorCode errorTitle:errorTitle errorMessage:errorMessage];
         self.popupCoordinator.delegate = self;
-    }
-    
-    return self;
 }
 
-- (instancetype)updateWithSecureToken:(NSString *)secureToken
-                                  brn:(NSString *)brn
+- (void)updateSecureToken:(NSString *)secureToken
+                          brn:(NSString *)brn
 {
     self.popupCoordinator.secureToken = secureToken;
     self.popupCoordinator.brn = brn;
-    
     [self.popupCoordinator updateLayout];
-    
-    return self;
 }
 
-- (instancetype)updateWithErrorCode:(NSString *)errorCode
-                         errorTitle:(NSString *)errorTitle
-                       errorMessage:(NSString *)errorMessage
+- (void)updateErrorCode:(NSString *)errorCode
+                 errorTitle:(NSString *)errorTitle
+               errorMessage:(NSString *)errorMessage
 {
     self.popupCoordinator.secureToken = nil;
     self.popupCoordinator.brn = nil;
@@ -105,8 +92,14 @@ static UIEdgeInsets const kScreenMargins = {0, 20, 0, 20};
     self.popupCoordinator.errorMessage = errorMessage;
     
     [self.popupCoordinator updateLayout];
-    
-    return self;
+}
+- (void)updateForMoreAboutWithBankLogosService: (PBBABankLogosService*) logosService {
+    if (!self.popupCoordinator) {
+        self.popupCoordinator = [PBBAPopupCoordinator new];
+        self.popupCoordinator.delegate = self;
+        self.popupCoordinator.logosService = logosService;
+    }
+    [self.popupCoordinator updateToMoreAboutLayout];
 }
 
 #pragma mark - Accessors
@@ -143,25 +136,8 @@ static UIEdgeInsets const kScreenMargins = {0, 20, 0, 20};
     [super viewDidLoad];
     
     // Configure main view
-    self.view.backgroundColor = [UIColor clearColor];
+    self.containerViewController = [self instantiateControllerFromStoryboard:@"PBBAPopup" forIdentifier:@"PBBAPopupContainerController"];
     
-    // Configure content view controller
-    self.containerViewController = [PBBAPopupContainerController new];
-    [self addChildViewController:self.containerViewController];
-    self.containerViewController.view.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.view addSubview:self.containerViewController.view];
-    [self.containerViewController didMoveToParentViewController:self];
-    
-    UIView *contentView = self.containerViewController.view;
-    [contentView pbba_centerInSuperview];
-    [contentView pbba_leftAlignToView:self.view constant:kScreenMargins.left relation:NSLayoutRelationGreaterThanOrEqual];
-    [contentView pbba_rightAlignToView:self.view constant:-kScreenMargins.right relation:NSLayoutRelationLessThanOrEqual];
-    
-    [self.popupCoordinator updateLayout];
-    
-    self.appearance = [PBBAAppearance new];
-    [[PBBAAppearanceProxy appearanceForClass:[self class]] startForwarding:self];
-    self.containerViewController.appearance = self.appearance;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -177,8 +153,20 @@ static UIEdgeInsets const kScreenMargins = {0, 20, 0, 20};
 {
     [super viewDidAppear:animated];
     
+    [self addChildViewController:self.containerViewController];
+    [self.containerView addSubview:self.containerViewController.view];
+    CGRect frame = CGRectMake(0, 0, self.containerView.frame.size.width, self.containerView.frame.size.height);
+    [self.containerViewController.view setFrame:frame];
+    [self.containerViewController didMoveToParentViewController:self];
+    [self.popupCoordinator updateLayout];
+    
     if ([self.delegate respondsToSelector:@selector(pbbaPopupViewControllerDidAppear:)]) {
         [self.delegate pbbaPopupViewControllerDidAppear:self];
+    }
+    if (@available(iOS 11, *))
+    {
+            UILayoutGuide *guide = self.containerViewController.view.safeAreaLayoutGuide;
+            self.containerViewController.activeViewController.view.frame = guide.layoutFrame;
     }
 }
 
@@ -200,114 +188,38 @@ static UIEdgeInsets const kScreenMargins = {0, 20, 0, 20};
     }
 }
 
-- (void)viewDidLayoutSubviews
-{
-    [super viewDidLayoutSubviews];
-    
-    [self updateAspectFitIfNeeded];
-}
-
-- (UIInterfaceOrientation)currentInterfaceOrientation
-{
-    // Due to a bug on iOS 8 the value for self.interfaceOrientation doesn't reflect the real interface orientation during rotation.
-    // Workaround: use system status bar orientation which always reflects proper interface orientation.
-    return [[UIApplication sharedApplication] statusBarOrientation];
-}
-
-- (BOOL)deviceIsTablet
-{
-    return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad;
-}
-
-- (void)updateAspectFitIfNeeded
-{
-    if ([self deviceIsTablet]) {
-        return;
-    }
-    
-    PBBAPopupScaleAspectFitAnimationContext *scaleContext =
-        [[PBBAPopupScaleAspectFitAnimationContext alloc] initWithPopupContainerController:self.containerViewController];
-    
-    PBBAPopupAnimator *animator = [[PBBAPopupAnimator alloc] initWithAnimationType:PBBAPopupAnimationTypeScaleAspectFit];
-    [animator animateTransition:scaleContext];
-}
-
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
-    if ([self deviceIsTablet]) {
-        return;
-    }
-    
-    UIView *targetView = self.containerViewController.activeViewController.contentView;
-    UIView *contentViewSnapshot = [targetView snapshotViewAfterScreenUpdates:NO];
-    [targetView addSubview:contentViewSnapshot];
-    
-    [UIView animateWithDuration:duration/2 animations:^{
-        targetView.alpha = 0;
-    } completion:^(BOOL finished) {
-        [contentViewSnapshot removeFromSuperview];
-        [self updateToMComLayoutIfNeeded];
-    }];
+     self.containerViewController.activeViewController.view.hidden = YES;
 }
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
-    if ([self deviceIsTablet]) {
-        return;
-    }
-    
-    [UIView animateWithDuration:.1 animations:^{
-        self.containerViewController.activeViewController.contentView.alpha = 1;
-    }];
-}
-
-- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection
-{
-    [super traitCollectionDidChange:previousTraitCollection];
-
-    if ([self deviceIsTablet]) {
-        return;
-    }
-    
-    if (UIInterfaceOrientationIsLandscape(self.currentInterfaceOrientation)) {
-        for (UIViewController *controller in self.childViewControllers) {
-            
-            UITraitCollection *regularHeightTraits = [UITraitCollection traitCollectionWithVerticalSizeClass:UIUserInterfaceSizeClassRegular];
-            UITraitCollection *regularWidthTraits = [UITraitCollection traitCollectionWithHorizontalSizeClass:UIUserInterfaceSizeClassRegular];
-            UITraitCollection *traits = [UITraitCollection traitCollectionWithTraitsFromCollections:@[regularWidthTraits, regularHeightTraits]];
-            [self setOverrideTraitCollection:traits forChildViewController:controller];
-        }
-    } else {
-        for (UIViewController *controller in self.childViewControllers) {
-            [self setOverrideTraitCollection:self.traitCollection forChildViewController:controller];
-        }
+    CGRect frame = CGRectMake(0, 0, self.containerView.frame.size.width, self.containerView.frame.size.height);
+    [self.containerViewController.view setFrame:frame];
+    [self.containerViewController.activeViewController.view setFrame:frame];
+    self.containerViewController.activeViewController.view.hidden = NO;
+    if (@available(iOS 11, *))
+    {
+        UILayoutGuide *guide = self.containerViewController.view.safeAreaLayoutGuide;
+        self.containerViewController.activeViewController.view.frame = guide.layoutFrame;
     }
 }
 
-- (void)updateToMComLayoutIfNeeded
+-(id)instantiateControllerFromStoryboard:(NSString*)storyboard forIdentifier:(NSString*)identifier
 {
-    if (UIInterfaceOrientationIsLandscape(self.currentInterfaceOrientation) &&
-        (self.popupCoordinator.currentPopupLayout == PBBAPopupLayoutTypeECom) &&
-        (self.popupCoordinator.currentEComLayout == PBBAPopupEComLayoutTypeDefault)) {
-            [self.popupCoordinator updateToLayout:PBBAPopupLayoutTypeMCom];
-    }
-}
-
-#pragma mark - UIViewControllerTransitioningDelegate
-
-- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
-                                                                  presentingController:(UIViewController *)presenting
-                                                                      sourceController:(UIViewController *)source
-{
-    return [[PBBAPopupAnimator alloc] initWithAnimationType:PBBAPopupAnimationTypePresention];
-}
-
-- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
-{
-    return [[PBBAPopupAnimator alloc] initWithAnimationType:PBBAPopupAnimationTypeDismissal];
+    UIStoryboard *storyboardInstance = [UIStoryboard storyboardWithName:storyboard
+                                                                 bundle:[NSBundle pbba_merchantResourceBundle]];
+    return [storyboardInstance instantiateViewControllerWithIdentifier:identifier];
 }
 
 #pragma mark - ZPMPopupCoordinatorDelegate
+
+-(void)popupCoordinatorPopupDidExpire:(PBBAPopupCoordinator *)coordinator {
+    if ([self.delegate respondsToSelector:@selector(pbbaPopupViewControllerDidExpire:)]) {
+        [self.delegate pbbaPopupViewControllerDidExpire:self];
+    }
+}
 
 - (void)popupCoordinatorRetryPaymentRequest:(PBBAPopupCoordinator *)coordinator
 {
@@ -321,130 +233,63 @@ static UIEdgeInsets const kScreenMargins = {0, 20, 0, 20};
                           animated:(BOOL)animated
                         completion:(dispatch_block_t)completion
 {
-    [self dismissViewControllerAnimated:animated completion:^{
-        
-        if (initiator == PBBAPopupCloseActionInitiatorUser &&
-            [self.delegate respondsToSelector:@selector(pbbaPopupViewControllerDidCloseByUser:)]) {
-            [self.delegate pbbaPopupViewControllerDidCloseByUser:self];
-        }
-        
-        if (completion) completion();
-    }];
+    if (initiator == PBBAPopupCloseActionInitiatorMComLayoutMoreAbout)
+    {
+        //update to previous layout
+        //if the popup is launched from MComLayout
+        [self popupCoordinatorUpdateToMComLayout:coordinator];
+    }
+    else
+    {
+        [self dismissViewControllerAnimated:animated completion:^{
+            
+            if (initiator == PBBAPopupCloseActionInitiatorUser &&
+                [self.delegate respondsToSelector:@selector(pbbaPopupViewControllerDidCloseByUser:)]) {
+                [self.delegate pbbaPopupViewControllerDidCloseByUser:self];
+            }
+            
+            if (completion) completion();
+        }];
+    }
 }
 
 - (void)popupCoordinatorUpdateToMComLayout:(PBBAPopupCoordinator *)coordinator
 {
-    PBBAMComViewController *mComVC = [PBBAMComViewController new];
+    PBBAMComViewController *mComVC = [self instantiateControllerFromStoryboard:@"PBBAPopup" forIdentifier:@"PBBAMComViewController"];
     mComVC.popupCoordinator = coordinator;
     mComVC.brn = self.brn;
-    
     [self.containerViewController pushViewController:mComVC];
+    UIAccessibilityPostNotification(UIAccessibilityLayoutChangedNotification, self);
 }
 
 - (void)popupCoordinator:(PBBAPopupCoordinator *)coordinator updateToEComLayout:(PBBAPopupEComLayoutType)ecomLayout
 {
-    PBBAEComViewController *eComVC = [PBBAEComViewController new];
+    PBBAPopupContentViewController *eComVC = [self instantiateControllerFromStoryboard:@"PBBAPopup" forIdentifier:@"PBBAPopupContentViewController"];
     eComVC.popupCoordinator = coordinator;
-    eComVC.brn = self.brn;
-    
-    if (ecomLayout == PBBAPopupEComLayoutTypeDefault) {
-        eComVC.hideNoBankWarningHeader = YES;
-    }
-    
+    [eComVC updateForBRN:self.brn andExpiryInterval: self.expiryInterval];
     [self.containerViewController pushViewController:eComVC];
+    UIAccessibilityPostNotification(UIAccessibilityLayoutChangedNotification, self);
 }
 
 - (void)popupCoordinatorUpdateToErrorLayout:(PBBAPopupCoordinator *)coordinator
                                  errorTitle:(NSString *)title
                                errorMessage:(NSString *)message
 {
-    PBBAErrorViewController *errorVC = [PBBAErrorViewController new];
+    PBBAPopupContentViewController *errorVC = [self instantiateControllerFromStoryboard:@"PBBAPopup" forIdentifier:@"PBBAPopupContentViewController"];
     errorVC.popupCoordinator = coordinator;
-    errorVC.errorTitle = title;
-    errorVC.errorMessage = message;
+    [errorVC updateForError:[NSError errorWithCode:self.errorCode
+                                             Title:self.errorTitle
+                                        andMessage:self.errorMessage]];
     [self.containerViewController pushViewController:errorVC];
 }
 
-#pragma mark - PBBAUIElementAppearance
-
-+ (instancetype)appearance
+- (void)popupCoordinatorUpdateToMoreAboutLayout:(PBBAPopupCoordinator *)coordinator
 {
-    return [PBBAAppearanceProxy appearanceForClass:[self class]];
-}
-
-+ (instancetype)appearanceWhenContainedIn:(Class<UIAppearanceContainer>)ContainerClass, ...
-{
-    return [self appearance];
-}
-
-+ (instancetype)appearanceForTraitCollection:(UITraitCollection *)trait
-{
-    return [self appearance];
-}
-
-+ (instancetype)appearanceForTraitCollection:(UITraitCollection *)trait whenContainedIn:(Class<UIAppearanceContainer>)ContainerClass, ...
-{
-    return [self appearance];
-}
-
-- (UIColor *)borderColor
-{
-    return self.appearance.borderColor;
-}
-
-- (void)setBorderColor:(UIColor *)borderColor
-{
-    self.appearance.borderColor = borderColor;
-}
-
-- (CGFloat)borderWidth
-{
-    return self.appearance.borderWidth;
-}
-
-- (void)setBorderWidth:(CGFloat)borderWidth
-{
-    self.appearance.borderWidth = borderWidth;
-}
-
-- (CGFloat)cornerRadius
-{
-    return self.appearance.cornerRadius;
-}
-
-- (void)setCornerRadius:(CGFloat)cornerRadius
-{
-    self.appearance.cornerRadius = cornerRadius;
-}
-
-- (UIColor *)backgroundColor
-{
-    return self.appearance.backgroundColor;
-}
-
-- (void)setBackgroundColor:(UIColor *)backgroundColor
-{
-    self.appearance.backgroundColor = backgroundColor;
-}
-
-- (UIColor *)foregroundColor
-{
-    return self.appearance.foregroundColor;
-}
-
-- (void)setForegroundColor:(UIColor *)foregroundColor
-{
-    self.appearance.foregroundColor = foregroundColor;
-}
-
-- (UIColor *)secondaryForegroundColor
-{
-    return self.appearance.secondaryForegroundColor;
-}
-
-- (void)setSecondaryForegroundColor:(UIColor *)secondaryForegroundColor
-{
-    self.appearance.secondaryForegroundColor = secondaryForegroundColor;
+    PBBAMoreAboutViewController *moreAboutVC = [self instantiateControllerFromStoryboard:@"PBBAPopup" forIdentifier:@"PBBAMoreAboutViewController"];
+    moreAboutVC.popupCoordinator = coordinator;
+    [self.containerViewController pushViewController:moreAboutVC];
+    UIAccessibilityPostNotification(UIAccessibilityLayoutChangedNotification, self);
 }
 
 @end
+

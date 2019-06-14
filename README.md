@@ -1,4 +1,4 @@
-# ZappMerchantLib-R2-iOS
+# PbBa Merchant Button Library - iOS
 
 The **Pay by Bank app** Merchant Library for iOS makes it easy for you to add Pay by Bank app as a new payment method.
  

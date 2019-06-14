@@ -19,10 +19,6 @@
 //
 
 #import "PBBAPopupContainerController.h"
-#import "PBBAPopupContentViewControllerTransitionContext.h"
-#import "PBBAPopupAnimator.h"
-#import "UIView+ZPMLib.h"
-#import "UIColor+ZPMLib.h"
 
 @interface PBBAPopupContainerController ()
 
@@ -30,83 +26,27 @@
 
 @implementation PBBAPopupContainerController
 
-- (instancetype)initWithContentViewController:(PBBAPopupContentViewController *)viewController
-{
-    if (self = [super init]) {
-        self.activeViewController = viewController;
-    }
-    
-    return self;
-}
-
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-        
-    self.view.clipsToBounds = YES;
 }
 
 - (void)pushViewController:(PBBAPopupContentViewController *)viewController
 {
-    if (self.activeViewController) {
-        [self transitionFromViewController:self.activeViewController
-                          toViewController:viewController];
-        
-        self.activeViewController = viewController;
-    } else {
-        self.activeViewController = viewController;
-        [self addChildViewController:self.activeViewController];
-        [self addContentView:self.activeViewController.view];
-        [self.activeViewController didMoveToParentViewController:self];
+    if(self.activeViewController)
+    {
+        [self.activeViewController.view removeFromSuperview];
+        [self.activeViewController removeFromParentViewController];
     }
-    
-    self.activeViewController.appearance = self.appearance;
-}
-
-- (void)addContentView:(UIView *)view
-{
-    view.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.view addSubview:view];
-    [view pbba_pinToSuperviewEdges];
-    
-    [view setNeedsLayout];
-    [view layoutIfNeeded];
-}
-
-- (void)setAppearance:(PBBAAppearance *)appearance
-{
-    _appearance = appearance;
-    
-    self.view.backgroundColor = self.appearance.backgroundColor;
-    self.view.layer.cornerRadius = self.appearance.cornerRadius;
-    self.view.layer.borderWidth = self.appearance.borderWidth;
-    self.view.layer.borderColor = self.appearance.borderColor.CGColor;
-    
-    self.activeViewController.appearance = appearance;
-}
-
-#pragma mark - Transitions
-
-- (void)transitionFromViewController:(UIViewController *)fromViewController
-                    toViewController:(UIViewController *)toViewController
-{
-    PBBAPopupContentViewControllerTransitionContext *transitionContext =
-        [[PBBAPopupContentViewControllerTransitionContext alloc] initWithFromViewController:fromViewController toViewController:toViewController];
-    
-    [fromViewController willMoveToParentViewController:nil];
-    [fromViewController.view pbba_unpinFromSuperview:NSLayoutAttributeBottom];
-    [fromViewController.view pbba_unpinFromSuperview:NSLayoutAttributeTrailing];
-    [self addChildViewController:toViewController];
-    [self addContentView:toViewController.view];
-    
-    transitionContext.completionBlock = ^(BOOL didComplete) {
-        [fromViewController.view removeFromSuperview];
-        [fromViewController removeFromParentViewController];
-        [toViewController didMoveToParentViewController:self];
-    };
-    
-    PBBAPopupAnimator *transitionAnimator = [[PBBAPopupAnimator alloc] initWithAnimationType:PBBAPopupAnimationTypeContentTransition];
-    [transitionAnimator animateTransition:transitionContext];
+    self.activeViewController = viewController;
+    [self addChildViewController:self.activeViewController];
+    [self.view addSubview:self.activeViewController.view];
+    [self.activeViewController.view setFrame:self.view.frame];
+    if (@available(iOS 11, *))
+    {
+        UILayoutGuide *guide = self.view.safeAreaLayoutGuide;
+        self.activeViewController.view.frame = guide.layoutFrame;
+    }
+    [self.activeViewController didMoveToParentViewController:self];
 }
 
 @end

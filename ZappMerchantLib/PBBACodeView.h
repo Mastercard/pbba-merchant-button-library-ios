@@ -20,8 +20,25 @@
 
 #import "PBBAAutoLoadableView.h"
 
-@interface PBBACodeView : PBBAAutoLoadableView
+@protocol PBBACodeViewProtocol <NSObject>
 
+- (void) codeViewExpired;
+
+@end
+
+@interface PBBACodeView : PBBAAutoLoadableView
+/**
+ 
+ *  The expiration interval to be shown in the popup
+ */
+@property (nonatomic) NSUInteger expiryInterval;
 @property (nonatomic, copy) NSString *brn;
+@property (nonatomic, weak) id<PBBACodeViewProtocol> subscriber;
+
+-(instancetype) initWithBRN: (NSString*) brn
+          andExpiryInterval: (NSUInteger) expiryInterval;
+
+-(void)setBrn:(NSString *)brn
+andExpiryInterval: (NSUInteger) expiryInterval;
 
 @end

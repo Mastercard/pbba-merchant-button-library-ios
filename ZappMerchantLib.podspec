@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "ZappMerchantLib"
-  s.version      = "1.1.3"
+  s.version      = "3.0.0"
   s.summary      = "The Pay by Bank app Merchant Library for iOS"
 
   s.description  = <<-DESC
@@ -11,10 +11,10 @@ Pod::Spec.new do |s|
 
   s.homepage = "http://paybybankapp.co.uk"
   s.license  = "Apache 2.0"
-  s.authors  = "Alex Maimescu"
+  s.authors  = "Ujjwal Chafle"
   s.platform = :ios, '8.0'
 
-  s.source = { :git => 'https://github.com/vocalinkzapp/ZappMerchantLib-R2-iOS.git', :tag => s.version.to_s }
+  s.source = { :git => 'https://github.com/vocalinkzapp/pbba-merchant-button-library-ios.git', :tag => s.version.to_s }
   
   s.public_header_files = [
     "ZappMerchantLib/ZappMerchantLib.h",
@@ -31,10 +31,11 @@ Pod::Spec.new do |s|
   s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-lObjC' }
 
   s.ios.resource_bundle = { 'ZappMerchantLibResources' => [
-      "ZappMerchantLibResources/**/*.otf", 
+      "ZappMerchantLibResources/**/*.ttf",
       "ZappMerchantLibResources/**/*.lproj", 
       "ZappMerchantLibResources/*.xcassets",
-      "ZappMerchantLib/**/*.xib"
+      "ZappMerchantLib/**/*.xib",
+      "ZappMerchantLib/**/*.storyboard"
     ] 
   }
 

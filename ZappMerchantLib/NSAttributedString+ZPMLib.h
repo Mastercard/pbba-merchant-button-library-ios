@@ -28,4 +28,12 @@
                                  hightlightFont:(UIFont *)highlightFont
                                       alignment:(NSTextAlignment)alignment;
 
++ (NSAttributedString *)pbba_highlightByFontFragment:(NSString*)fontFragment
+                                     byColorFragment:(NSString*)colorFragment
+                                              inText:(NSString *)text
+                                            withFont:(UIFont *)standardFont
+                                      hightlightFont:(UIFont *)highlightFont
+                                      highlightColor:(UIColor*)highlightColor
+                                           alignment:(NSTextAlignment)textAlignment;
+
 @end

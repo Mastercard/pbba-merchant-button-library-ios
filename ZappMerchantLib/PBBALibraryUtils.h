@@ -133,10 +133,10 @@ extern NSString * _Nonnull const kPBBACFIAppNameKey;
 + (void)registerCFIAppLaunch;
 
 /**
- *  Open information page about PBBA payments in browser.
+ *  Check if a PBBA button should CFI logos.
  *
- *  @return YES if Safari was launched.
+ *  @return YES PBBA button should CFI logos.
  */
-+ (BOOL)openTellMeMoreLink;
++(BOOL)shouldShowCFILogos;
 
 @end
