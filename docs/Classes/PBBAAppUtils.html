@@ -14,8 +14,8 @@
     <a title="PBBAAppUtils Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">ZappMerchantLib Docs</a> (100% documented)</p>
-        <p class="header-right"><a href="https://github.com/vocalinkzapp/ZappMerchantLib-R2-iOS"><img src="../img/gh.png"/>View on GitHub</a></p>
+        <p><a href="../index.html">ZappMerchantLib Docs</a> (73% documented)</p>
+        <p class="header-right"><a href="https://github.com/vocalinkzapp/pbba-merchant-button-library-ios"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -53,6 +53,14 @@
               </li>
             </ul>
           </li>
+          <li class="nav-group-name">
+            <a href="../Type Definitions.html">Type Definitions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Type Definitions/PBBACustomUXType.html">PBBACustomUXType</a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <article class="main-content">
@@ -61,7 +69,7 @@
             <h1>PBBAAppUtils</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">PBBAAppUtils</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+                  <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">PBBAAppUtils</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
 
                 </div>
               </div>
@@ -93,12 +101,12 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="n">isCFIAppAvailable</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="n">isCFIAppAvailable</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">isCFIAppAvailable</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">isCFIAppAvailable</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
@@ -129,12 +137,12 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">openBankingApp</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">secureToken</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">openBankingApp</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">secureToken</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">openBankingApp</span><span class="p">(</span><span class="nv">secureToken</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">openBankingApp</span><span class="p">(</span><span class="nv">secureToken</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
@@ -169,13 +177,18 @@
                     <code>
                     <a name="/c:objc(cs)PBBAAppUtils(cm)showPBBAPopup:secureToken:brn:delegate:"></a>
                     <a name="//apple_ref/objc/Method/+showPBBAPopup:secureToken:brn:delegate:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)PBBAAppUtils(cm)showPBBAPopup:secureToken:brn:delegate:">+showPBBAPopup:secureToken:brn:delegate:</a>
+                    <a class="token discouraged" href="#/c:objc(cs)PBBAAppUtils(cm)showPBBAPopup:secureToken:brn:delegate:">+showPBBAPopup:secureToken:brn:delegate:</a>
                     </code>
                   </div>
                   <div class="height-container">
                     <div class="pointer-container"></div>
                     <section class="section">
                       <div class="pointer"></div>
+                      <div class="aside aside-deprecated">
+                        <p class="aside-title">Deprecated</p>
+                        <p>Please use &lsquo;showPBBAPopup:secureToken:brn:expiryInterval:delegate:&rsquo; method instead.</p>
+
+                      </div>
                       <div class="abstract">
                         <p>Show PBBA popup view controller.</p>
 
@@ -187,16 +200,16 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n"><a href="../Classes/PBBAPopupViewController.html">PBBAPopupViewController</a></span> <span class="o">*</span><span class="p">)</span>
-<span class="nf">showPBBAPopup</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">UIViewController</span> <span class="o">*</span><span class="p">)</span><span class="nv">presenter</span>
-  <span class="nf">secureToken</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">secureToken</span>
-          <span class="nf">brn</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">brn</span>
-     <span class="nf">delegate</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/PBBAPopupViewControllerDelegate.html">PBBAPopupViewControllerDelegate</a></span><span class="o">&gt;</span><span class="p">)</span><span class="nv">delegate</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n"><a href="../Classes/PBBAPopupViewController.html">PBBAPopupViewController</a></span> <span class="o">*</span><span class="p">)</span>
+    <span class="nf">showPBBAPopup</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">UIViewController</span> <span class="o">*</span><span class="p">)</span><span class="nv">presenter</span>
+      <span class="nf">secureToken</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">secureToken</span>
+              <span class="nf">brn</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">brn</span>
+         <span class="nf">delegate</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/PBBAPopupViewControllerDelegate.html">PBBAPopupViewControllerDelegate</a></span><span class="o">&gt;</span><span class="p">)</span><span class="nv">delegate</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">showPBBAPopup</span><span class="p">(</span><span class="nv">presenter</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="nv">secureToken</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">brn</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/PBBAPopupViewControllerDelegate.html">PBBAPopupViewControllerDelegate</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/PBBAPopupViewController.html">PBBAPopupViewController</a></span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">showPBBAPopup</span><span class="p">(</span><span class="nv">presenter</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="nv">secureToken</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">brn</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/PBBAPopupViewControllerDelegate.html">PBBAPopupViewControllerDelegate</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/PBBAPopupViewController.html">PBBAPopupViewController</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -243,6 +256,18 @@
                             <tr>
                               <td>
                                 <code>
+                                <em>expiryInterval</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The time interval defined by the zapp core in order to confirm the payment.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
                                 <em>delegate</em>
                                 </code>
                               </td>
@@ -258,6 +283,43 @@
                       <div>
                         <h4>Return Value</h4>
                         <p>An instance of PBBAPopupViewController which has been presented.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)PBBAAppUtils(cm)showPBBAPopup:secureToken:brn:expiryInterval:delegate:"></a>
+                    <a name="//apple_ref/objc/Method/+showPBBAPopup:secureToken:brn:expiryInterval:delegate:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)PBBAAppUtils(cm)showPBBAPopup:secureToken:brn:expiryInterval:delegate:">+showPBBAPopup:secureToken:brn:expiryInterval:delegate:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n"><a href="../Classes/PBBAPopupViewController.html">PBBAPopupViewController</a></span> <span class="o">*</span><span class="p">)</span><span class="nf">showPBBAPopup</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">UIViewController</span> <span class="o">*</span><span class="p">)</span><span class="nv">presenter</span>
+                                        <span class="nf">secureToken</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">secureToken</span>
+                                                <span class="nf">brn</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">brn</span>
+                                     <span class="nf">expiryInterval</span><span class="p">:(</span><span class="n">NSUInteger</span><span class="p">)</span> <span class="n">expiryInterval</span>
+                                           <span class="n">delegate</span><span class="o">:</span><span class="p">(</span><span class="n">nullable</span> <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/PBBAPopupViewControllerDelegate.html">PBBAPopupViewControllerDelegate</a></span><span class="o">&gt;</span><span class="p">)</span><span class="n">delegate</span>
+<span class="nf">NS_SWIFT_NAME</span><span class="p">(</span><span class="n">showPBBAPopup</span><span class="p">(</span><span class="n">presenter</span><span class="o">:</span><span class="n">secureToken</span><span class="o">:</span><span class="n">brn</span><span class="o">:</span><span class="n">expiryInterval</span><span class="o">:</span><span class="n">delegate</span><span class="o">:</span><span class="p">));</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">showPBBAPopup</span><span class="p">(</span><span class="nv">presenter</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="nv">secureToken</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">brn</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">expiryInterval</span><span class="p">:</span> <span class="kt">UInt</span><span class="p">,</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/PBBAPopupViewControllerDelegate.html">PBBAPopupViewControllerDelegate</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/PBBAPopupViewController.html">PBBAPopupViewController</a></span><span class="p">?</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -282,17 +344,17 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n"><a href="../Classes/PBBAPopupViewController.html">PBBAPopupViewController</a></span> <span class="o">*</span><span class="p">)</span>
-<span class="nf">showPBBAErrorPopup</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">UIViewController</span> <span class="o">*</span><span class="p">)</span><span class="nv">presenter</span>
-         <span class="nf">errorCode</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">errorCode</span>
-        <span class="nf">errorTitle</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">errorTitle</span>
-      <span class="nf">errorMessage</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">errorMessage</span>
-          <span class="nf">delegate</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/PBBAPopupViewControllerDelegate.html">PBBAPopupViewControllerDelegate</a></span><span class="o">&gt;</span><span class="p">)</span><span class="nv">delegate</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n"><a href="../Classes/PBBAPopupViewController.html">PBBAPopupViewController</a></span> <span class="o">*</span><span class="p">)</span>
+    <span class="nf">showPBBAErrorPopup</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">UIViewController</span> <span class="o">*</span><span class="p">)</span><span class="nv">presenter</span>
+             <span class="nf">errorCode</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">errorCode</span>
+            <span class="nf">errorTitle</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">errorTitle</span>
+          <span class="nf">errorMessage</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">errorMessage</span>
+              <span class="nf">delegate</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/PBBAPopupViewControllerDelegate.html">PBBAPopupViewControllerDelegate</a></span><span class="o">&gt;</span><span class="p">)</span><span class="nv">delegate</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">showPBBAErrorPopup</span><span class="p">(</span><span class="nv">presenter</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="nv">errorCode</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">errorTitle</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">errorMessage</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/PBBAPopupViewControllerDelegate.html">PBBAPopupViewControllerDelegate</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/PBBAPopupViewController.html">PBBAPopupViewController</a></span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">showPBBAErrorPopup</span><span class="p">(</span><span class="nv">presenter</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="nv">errorCode</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">errorTitle</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">errorMessage</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/PBBAPopupViewControllerDelegate.html">PBBAPopupViewControllerDelegate</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/PBBAPopupViewController.html">PBBAPopupViewController</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -370,13 +432,153 @@
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)PBBAAppUtils(cm)showPBBAMoreAboutPopup:withLogosService:"></a>
+                    <a name="//apple_ref/objc/Method/+showPBBAMoreAboutPopup:withLogosService:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)PBBAAppUtils(cm)showPBBAMoreAboutPopup:withLogosService:">+showPBBAMoreAboutPopup:withLogosService:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Show PBBA More About popup view controller.</p>
+
+<p>It opens the <q>More about PBBA</q> popup, containing bank logos</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n"><a href="../Classes/PBBAPopupViewController.html">PBBAPopupViewController</a></span> <span class="o">*</span><span class="p">)</span>
+    <span class="nf">showPBBAMoreAboutPopup</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">UIViewController</span> <span class="o">*</span><span class="p">)</span><span class="nv">presenter</span>
+          <span class="nf">withLogosService</span><span class="p">:(</span><span class="n">PBBABankLogosService</span> <span class="o">*</span><span class="p">)</span><span class="nv">logosService</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">showPBBAMoreAboutPopup</span><span class="p">(</span><span class="nv">presenter</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="n">withLogosService</span> <span class="nv">logosService</span><span class="p">:</span> <span class="kt">PBBABankLogosService</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/PBBAPopupViewController.html">PBBAPopupViewController</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>presenter</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The presenter controller which will present the popup view controller.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>logosService</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The logos service which will provide the popup with bank logos.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An instance of PBBAMoreAboutViewController which has been presented.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)PBBAAppUtils(cm)getCustomUXConfigurationsWithWidth:andType:"></a>
+                    <a name="//apple_ref/objc/Method/+getCustomUXConfigurationsWithWidth:andType:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)PBBAAppUtils(cm)getCustomUXConfigurationsWithWidth:andType:">+getCustomUXConfigurationsWithWidth:andType:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>API to get PBBA integrated button component.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">UIView</span> <span class="o">*</span><span class="p">)</span><span class="nf">getCustomUXConfigurationsWithWidth</span><span class="p">:(</span><span class="n">CGFloat</span><span class="p">)</span><span class="nv">width</span>
+                                       <span class="nf">andType</span><span class="p">:(</span><span class="n"><a href="../Type Definitions/PBBACustomUXType.html">PBBACustomUXType</a></span><span class="p">)</span><span class="nv">customUXType</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">getCustomUXConfigurations</span><span class="p">(</span><span class="n">withWidth</span> <span class="nv">width</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="n">andType</span> <span class="nv">customUXType</span><span class="p">:</span> <span class="kt"><a href="../Type Definitions/PBBACustomUXType.html">PBBACustomUXType</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIView</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>width</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>for integrated button.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>customUXType</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>PBBACustomUXType enum for CustomUXType.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>UIVIew instance based on the configurations for PBBA branding logo
+cfi logos and More About button.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
           </section>
         </section>
         <section id="footer">
           <p>IPCO 2012 Limited</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
