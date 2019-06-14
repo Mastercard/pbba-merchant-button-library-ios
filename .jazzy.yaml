@@ -4,7 +4,7 @@ umbrella_header: ZappMerchantLib/ZappMerchantLib.h
 framework_root: .
 sdk: iphonesimulator
 copyright: IPCO 2012 Limited
-github_url: https://github.com/vocalinkzapp/ZappMerchantLib-R2-iOS
+github_url: https://github.com/vocalinkzapp/pbba-merchant-button-library-ios
 exclude: 
  - ZappMerchantLib/PBBAAnimatable.h
  - ZappMerchantLib/PBBAUIElementAppearance.h
