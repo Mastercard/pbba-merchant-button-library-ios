@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_0" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment version="2064" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -26,7 +26,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Nte-tH-LVQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZHw-qX-blT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YDC-CF-uq6" userLabel="Header">
@@ -157,14 +157,14 @@
                                 </variation>
                             </view>
                             <containerView opaque="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="uw6-hm-TbD">
-                                <rect key="frame" x="0.0" y="77" width="320" height="461"/>
+                                <rect key="frame" x="0.0" y="77" width="320" height="373"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iUT-Cn-K5O" userLabel="Footer">
-                                <rect key="frame" x="0.0" y="538" width="320" height="30"/>
+                                <rect key="frame" x="0.0" y="450" width="320" height="30"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="powered by mc" translatesAutoresizingMaskIntoConstraints="NO" id="cTy-5V-Ml9">
-                                        <rect key="frame" x="62.5" y="3" width="195" height="16"/>
+                                        <rect key="frame" x="126.5" y="3" width="67" height="24"/>
                                         <accessibility key="accessibilityConfiguration" label="powered by MasterCard">
                                             <accessibilityTraits key="traits" image="YES"/>
                                             <bool key="isElement" value="YES"/>
@@ -189,17 +189,13 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="cTy-5V-Ml9" firstAttribute="width" secondItem="iUT-Cn-K5O" secondAttribute="width" multiplier="0.415" id="0SF-FI-cqE">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="62.200000000000017"/>
-                                        <variation key="heightClass=regular-widthClass=regular" constant="-115.71999999999997"/>
-                                    </constraint>
                                     <constraint firstAttribute="trailing" secondItem="cTy-5V-Ml9" secondAttribute="trailing" constant="23.5" id="2bS-g7-RSx">
                                         <variation key="heightClass=compact" constant="12"/>
                                     </constraint>
-                                    <constraint firstItem="cTy-5V-Ml9" firstAttribute="height" secondItem="iUT-Cn-K5O" secondAttribute="height" multiplier="0.65" id="9xa-0V-ytc"/>
-                                    <constraint firstItem="cTy-5V-Ml9" firstAttribute="height" secondItem="iUT-Cn-K5O" secondAttribute="height" multiplier="0.45" id="Bcq-ZE-xbK">
+                                    <constraint firstItem="cTy-5V-Ml9" firstAttribute="height" secondItem="iUT-Cn-K5O" secondAttribute="height" multiplier="0.3" id="9xa-0V-ytc"/>
+                                    <constraint firstItem="cTy-5V-Ml9" firstAttribute="height" secondItem="iUT-Cn-K5O" secondAttribute="height" multiplier="0.8" id="Bcq-ZE-xbK">
                                         <variation key="heightClass=regular" constant="2.5"/>
-                                        <variation key="heightClass=regular-widthClass=compact" constant="2.5"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                     </constraint>
                                     <constraint firstAttribute="height" constant="25" id="Ddo-3k-1HK">
                                         <variation key="heightClass=regular" constant="30"/>
@@ -216,13 +212,12 @@
                                         <variation key="heightClass=regular" constant="0.0"/>
                                         <variation key="heightClass=regular-widthClass=compact" constant="3"/>
                                     </constraint>
-                                    <constraint firstItem="cTy-5V-Ml9" firstAttribute="width" secondItem="iUT-Cn-K5O" secondAttribute="width" multiplier="0.234" id="vuS-ns-25z">
-                                        <variation key="heightClass=compact" constant="57.087999999999994"/>
+                                    <constraint firstItem="cTy-5V-Ml9" firstAttribute="width" secondItem="iUT-Cn-K5O" secondAttribute="width" multiplier="0.1" id="vuS-ns-25z">
+                                        <variation key="heightClass=compact" constant="57.090000000000003"/>
                                     </constraint>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="0SF-FI-cqE"/>
                                         <exclude reference="2bS-g7-RSx"/>
                                         <exclude reference="9xa-0V-ytc"/>
                                         <exclude reference="Bcq-ZE-xbK"/>
@@ -234,7 +229,6 @@
                                 </variation>
                                 <variation key="heightClass=compact">
                                     <mask key="constraints">
-                                        <exclude reference="0SF-FI-cqE"/>
                                         <include reference="2bS-g7-RSx"/>
                                         <include reference="9xa-0V-ytc"/>
                                         <exclude reference="Bcq-ZE-xbK"/>
@@ -247,7 +241,6 @@
                                         <include reference="cTy-5V-Ml9"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="0SF-FI-cqE"/>
                                         <include reference="Bcq-ZE-xbK"/>
                                         <include reference="I21-mA-hcH"/>
                                         <include reference="RbQ-Ib-ZWt"/>
@@ -338,17 +331,17 @@
                         <viewControllerLayoutGuide type="bottom" id="lQf-fq-bzZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9Sf-Hs-6gn">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2L4-sK-r9S">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dI4-cg-9SR" userLabel="Holder View">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use the bank app on your phone to pay at online checkouts. " textAlignment="center" lineBreakMode="clip" numberOfLines="0" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="87a-VU-6is">
-                                                <rect key="frame" x="56" y="20" width="208" height="38.5"/>
+                                                <rect key="frame" x="56" y="20" width="208" height="32.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="28" id="0wn-nV-c1O"/>
                                                     <constraint firstAttribute="width" constant="229" id="5f4-z0-DG0"/>
@@ -416,7 +409,7 @@
                                                 </variation>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="more-about-artwork_svg" translatesAutoresizingMaskIntoConstraints="NO" id="ZWk-ML-c12">
-                                                <rect key="frame" x="287" y="37" width="0.0" height="369"/>
+                                                <rect key="frame" x="287" y="37" width="0.0" height="312"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="167" id="C02-df-Wb6">
                                                         <variation key="heightClass=compact-widthClass=compact" constant="195"/>
@@ -468,7 +461,7 @@
                                                 </variation>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No payment details required." textAlignment="center" lineBreakMode="clip" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S62-Ay-G6O">
-                                                <rect key="frame" x="75" y="68.5" width="170" height="31.5"/>
+                                                <rect key="frame" x="75" y="62.5" width="170" height="26.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="167" id="Cke-Pb-vR9"/>
                                                 </constraints>
@@ -487,7 +480,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It works like this:" textAlignment="center" lineBreakMode="clip" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ksh-q7-ZqI">
-                                                <rect key="frame" x="103" y="140" width="114" height="30.5"/>
+                                                <rect key="frame" x="103" y="129" width="114" height="26.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="108" id="hAg-mn-BtE"/>
                                                     <constraint firstAttribute="width" constant="118" id="ze4-ZQ-PYh"/>
@@ -513,13 +506,13 @@
                                                 </variation>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bRe-jX-HUW" userLabel="How it works container">
-                                                <rect key="frame" x="56" y="186" width="208" height="142"/>
+                                                <rect key="frame" x="56" y="171" width="208" height="120"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1HA-2f-2dE">
-                                                        <rect key="frame" x="0.0" y="0.0" width="208" height="41"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="208" height="33.5"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="step_1" translatesAutoresizingMaskIntoConstraints="NO" id="wWj-Ue-nre">
-                                                                <rect key="frame" x="0.0" y="6.5" width="27.5" height="28"/>
+                                                                <rect key="frame" x="0.0" y="5" width="23" height="23"/>
                                                                 <accessibility key="accessibilityConfiguration" label="Step 1">
                                                                     <accessibilityTraits key="traits" none="YES"/>
                                                                     <bool key="isElement" value="YES"/>
@@ -547,7 +540,7 @@
                                                                 </variation>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You choose Pay by Bank app at the checkout." textAlignment="natural" lineBreakMode="clip" numberOfLines="0" minimumFontSize="6" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HGx-fZ-MlF">
-                                                                <rect key="frame" x="36" y="4" width="168.5" height="33"/>
+                                                                <rect key="frame" x="31.5" y="3" width="168.5" height="27"/>
                                                                 <fontDescription key="fontDescription" name="MarkOffcForMC" family="Mark Offc For MC" pointSize="18"/>
                                                                 <color key="textColor" red="0.13725490200000001" green="0.1215686275" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -608,10 +601,10 @@
                                                         </variation>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oZj-vc-j9p">
-                                                        <rect key="frame" x="0.0" y="51" width="208" height="40.5"/>
+                                                        <rect key="frame" x="0.0" y="43.5" width="208" height="33.5"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="step_2" translatesAutoresizingMaskIntoConstraints="NO" id="KjG-dN-ydm">
-                                                                <rect key="frame" x="0.0" y="6.5" width="27.5" height="27.5"/>
+                                                                <rect key="frame" x="0.0" y="5.5" width="23" height="22.5"/>
                                                                 <accessibility key="accessibilityConfiguration" label="Step 2">
                                                                     <accessibilityTraits key="traits" none="YES"/>
                                                                     <bool key="isElement" value="YES"/>
@@ -621,7 +614,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm payment amount in your mobile bank app." textAlignment="natural" lineBreakMode="clip" numberOfLines="0" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UbT-kM-480">
-                                                                <rect key="frame" x="37.5" y="4" width="166.5" height="32.5"/>
+                                                                <rect key="frame" x="33" y="3.5" width="166.5" height="26.5"/>
                                                                 <fontDescription key="fontDescription" name="MarkOffcForMC" family="Mark Offc For MC" pointSize="20"/>
                                                                 <color key="textColor" red="0.13725490200000001" green="0.1215686275" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -658,10 +651,10 @@
                                                         </variation>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oJu-ad-dLP">
-                                                        <rect key="frame" x="0.0" y="101.5" width="208" height="41.5"/>
+                                                        <rect key="frame" x="0.0" y="87" width="208" height="34"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="step_3" translatesAutoresizingMaskIntoConstraints="NO" id="Kkt-aq-WFm">
-                                                                <rect key="frame" x="0.0" y="7" width="28" height="28"/>
+                                                                <rect key="frame" x="0.0" y="5.5" width="23" height="23"/>
                                                                 <accessibility key="accessibilityConfiguration" label="Step 3">
                                                                     <accessibilityTraits key="traits" none="YES"/>
                                                                     <bool key="isElement" value="YES"/>
@@ -671,7 +664,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Happy with everything?Complete payment." textAlignment="natural" lineBreakMode="clip" numberOfLines="0" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cnR-Nn-CMh">
-                                                                <rect key="frame" x="38" y="4.5" width="148" height="33"/>
+                                                                <rect key="frame" x="33" y="3.5" width="148" height="27.5"/>
                                                                 <fontDescription key="fontDescription" name="MarkOffcForMC" family="Mark Offc For MC" pointSize="20"/>
                                                                 <color key="textColor" red="0.13725490200000001" green="0.1215686275" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -807,7 +800,7 @@
                                                 </variation>
                                             </view>
                                             <view verifyAmbiguity="off" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ru-1z-JRU" customClass="PBBABankLogosContainer">
-                                                <rect key="frame" x="0.0" y="338" width="320" height="105"/>
+                                                <rect key="frame" x="0.0" y="301" width="320" height="89.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                         </subviews>
@@ -1070,30 +1063,30 @@
                         <viewControllerLayoutGuide type="bottom" id="6gG-H2-p8G"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ThU-4D-hHt">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EX2-bP-HwU">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                                 <subviews>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GYN-1e-7ea" userLabel="Holder View">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                         <subviews>
                                             <view clipsSubviews="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="feM-9r-wav" userLabel="Step 1,2 holder View">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="219"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="184"/>
                                                 <subviews>
                                                     <view clipsSubviews="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hkt-uK-Fi4" userLabel="Step 1 View">
-                                                        <rect key="frame" x="0.0" y="0.0" width="160" height="219"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="160" height="184"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="step_1_phone_banks" translatesAutoresizingMaskIntoConstraints="NO" id="rjR-po-xfR">
-                                                                <rect key="frame" x="42.5" y="0.0" width="75" height="160"/>
+                                                                <rect key="frame" x="42.5" y="0.0" width="75" height="134.5"/>
                                                                 <accessibility key="accessibilityConfiguration" label="step 1">
                                                                     <accessibilityTraits key="traits" none="YES"/>
                                                                     <bool key="isElement" value="YES"/>
                                                                 </accessibility>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="clip" numberOfLines="0" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mar-c1-Mog">
-                                                                <rect key="frame" x="16" y="172.5" width="144" height="44"/>
+                                                                <rect key="frame" x="16" y="147" width="144" height="36.5"/>
                                                                 <string key="text">Log in to your mobile 
 banking app.</string>
                                                                 <fontDescription key="fontDescription" name="MarkOffcForMC" family="Mark Offc For MC" pointSize="18"/>
@@ -1159,17 +1152,17 @@ banking app.</string>
                                                         </variation>
                                                     </view>
                                                     <view clipsSubviews="YES" tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILN-Ru-WDL" userLabel="Step 2 View">
-                                                        <rect key="frame" x="160" y="0.0" width="160" height="219"/>
+                                                        <rect key="frame" x="160" y="0.0" width="160" height="184"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="step_2_phone_menu" translatesAutoresizingMaskIntoConstraints="NO" id="6Er-0Z-k5d">
-                                                                <rect key="frame" x="42.5" y="0.0" width="75" height="160"/>
+                                                                <rect key="frame" x="42.5" y="0.0" width="75" height="134.5"/>
                                                                 <accessibility key="accessibilityConfiguration" label="step 2">
                                                                     <accessibilityTraits key="traits" none="YES"/>
                                                                     <bool key="isElement" value="YES"/>
                                                                 </accessibility>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="clip" numberOfLines="0" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ROf-aT-jiK">
-                                                                <rect key="frame" x="24" y="172.5" width="128" height="44"/>
+                                                                <rect key="frame" x="24" y="147" width="128" height="36.5"/>
                                                                 <string key="text">Find the Pay by Bank 
 app option.</string>
                                                                 <fontDescription key="fontDescription" name="MarkOffcForMC" family="Mark Offc For MC" pointSize="18"/>
@@ -1350,7 +1343,7 @@ app option.</string>
                                                 </variation>
                                             </view>
                                             <view verifyAmbiguity="off" tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rab-bL-xCy" userLabel="Step 3 holder view">
-                                                <rect key="frame" x="0.0" y="234" width="320" height="148.5"/>
+                                                <rect key="frame" x="0.0" y="199" width="320" height="124.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gi6-dG-l6m" userLabel="Top View">
                                                         <rect key="frame" x="43" y="0.0" width="234" height="105"/>
@@ -1565,7 +1558,7 @@ app option.</string>
                                                         </variation>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the above code for secure payment." textAlignment="center" lineBreakMode="clip" numberOfLines="0" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2ny-D3-kBO">
-                                                        <rect key="frame" x="104" y="117.5" width="128" height="37"/>
+                                                        <rect key="frame" x="104" y="117.5" width="128" height="31"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="146" id="54u-Jo-rRc"/>
                                                             <constraint firstAttribute="width" constant="153.5" id="Hf8-z4-gnN"/>
@@ -1748,7 +1741,7 @@ app option.</string>
                                                 </variation>
                                             </view>
                                             <view verifyAmbiguity="off" clipsSubviews="YES" tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EFl-Gt-3Oa" customClass="PBBABankLogosContainer">
-                                                <rect key="frame" x="0.0" y="384" width="320" height="94"/>
+                                                <rect key="frame" x="0.0" y="325" width="320" height="78.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                         </subviews>
@@ -2090,20 +2083,20 @@ app option.</string>
                         <viewControllerLayoutGuide type="bottom" id="Hvz-5U-tAy"/>
                     </layoutGuides>
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="l3A-XC-oFP" userLabel="Content View">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EwU-mE-asY">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qoH-0d-NUx" userLabel="Holder vIew">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                         <subviews>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cWw-Ed-D0c" userLabel="Open Banking App Section">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="284"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="240"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAM-X8-P2z" userLabel="Open Bank App Button" customClass="PBBAPopupButton">
-                                                        <rect key="frame" x="43.5" y="188" width="233" height="39"/>
+                                                        <rect key="frame" x="61.5" y="144" width="197" height="39"/>
                                                         <color key="backgroundColor" red="0.95294117649999999" green="0.43921568630000002" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="39" id="PVk-7M-IVe"/>
@@ -2117,7 +2110,7 @@ app option.</string>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="com.zapp.pbba.button.moreAbout" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ap9-wO-FLe">
-                                                        <rect key="frame" x="42" y="232" width="236" height="16"/>
+                                                        <rect key="frame" x="56" y="188" width="208" height="16"/>
                                                         <accessibility key="accessibilityConfiguration" identifier="com.zapp.pbba.button.moreAbout"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="24.5" id="aih-A3-fAS">
@@ -2135,7 +2128,7 @@ app option.</string>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" textAlignment="center" lineBreakMode="clip" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qym-vk-ojr" userLabel="Open Bank App Message Label">
-                                                        <rect key="frame" x="43" y="97" width="234" height="66"/>
+                                                        <rect key="frame" x="61" y="53" width="198" height="66"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="66" id="8dE-3h-Uiq"/>
@@ -2159,7 +2152,7 @@ to complete your request.</string>
                                                         </variation>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="Continue on current device" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" preferredMaxLayoutWidth="259" translatesAutoresizingMaskIntoConstraints="NO" id="vrF-sA-WjA" userLabel="Open Bank App Title Label">
-                                                        <rect key="frame" x="43.5" y="55.5" width="233" height="21.5"/>
+                                                        <rect key="frame" x="61.5" y="11.5" width="197" height="21.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="21.5" id="Hi7-2s-Uf8"/>
                                                             <constraint firstAttribute="height" constant="25.329999999999998" id="OOi-Gi-P06"/>
@@ -2183,7 +2176,7 @@ to complete your request.</string>
                                                         </variation>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3vS-yQ-PYW" userLabel="Separator View">
-                                                        <rect key="frame" x="510" y="67" width="2" height="219"/>
+                                                        <rect key="frame" x="382" y="67" width="2" height="219"/>
                                                         <color key="backgroundColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="208" id="0Vt-BJ-CsP">
@@ -2377,17 +2370,17 @@ to complete your request.</string>
                                                 </variation>
                                             </view>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XIt-Z3-NIf" userLabel="Get Zapp Code Section">
-                                                <rect key="frame" x="0.0" y="284" width="320" height="284"/>
+                                                <rect key="frame" x="0.0" y="240" width="320" height="240"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rw6-OP-vv8" userLabel="Separator View">
-                                                        <rect key="frame" x="43.5" y="0.0" width="233" height="1"/>
+                                                        <rect key="frame" x="61.5" y="0.0" width="197" height="1"/>
                                                         <color key="backgroundColor" red="0.22352941176470587" green="0.22352941176470587" blue="0.22352941176470587" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="mQu-af-X6L"/>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="Continue with another device" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" preferredMaxLayoutWidth="275" translatesAutoresizingMaskIntoConstraints="NO" id="rMP-jP-rTF" userLabel="Get Zapp Code Title Label">
-                                                        <rect key="frame" x="46" y="27.5" width="228" height="21.5"/>
+                                                        <rect key="frame" x="63.5" y="27.5" width="193" height="21.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="21.333333333333332" id="uCV-k1-QbQ"/>
                                                         </constraints>
@@ -2399,7 +2392,7 @@ to complete your request.</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Lo-91-7ZK" userLabel="Get Zapp Code Message Label">
-                                                        <rect key="frame" x="38.5" y="69" width="243" height="45"/>
+                                                        <rect key="frame" x="56.5" y="69" width="207" height="45"/>
                                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="45" id="2ds-Q5-gyR"/>
@@ -2425,7 +2418,7 @@ device for your mobile banking app</string>
                                                         </variation>
                                                     </label>
                                                     <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erM-dJ-E6B" userLabel="Get Zapp Code Button" customClass="PBBAPopupButton">
-                                                        <rect key="frame" x="43.5" y="139" width="233" height="39"/>
+                                                        <rect key="frame" x="61.5" y="139" width="197" height="39"/>
                                                         <color key="backgroundColor" red="0.89019607840000003" green="0.87450980389999999" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="39" id="v6I-um-wwV"/>
@@ -2814,10 +2807,10 @@ device for your mobile banking app</string>
     <resources>
         <image name="icon-closebutton" width="28" height="28"/>
         <image name="icon-more-about-pbba" width="16" height="16"/>
-        <image name="more-about-artwork_svg" width="1074" height="816"/>
+        <image name="more-about-artwork_svg" width="537" height="408"/>
         <image name="pbba-logo-black-horizontal" width="383" height="67"/>
         <image name="pbba_get_code" width="27" height="32"/>
-        <image name="powered by mc" width="267" height="33"/>
+        <image name="powered by mc" width="67" height="17"/>
         <image name="step_1" width="60" height="60"/>
         <image name="step_1_phone_banks" width="149" height="277"/>
         <image name="step_2" width="60" height="60"/>
