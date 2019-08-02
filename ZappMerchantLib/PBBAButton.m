@@ -158,7 +158,22 @@ containerForPBBAView = _containerForPBBAView;
 
 - (void)openMoreAbout
 {
-    [PBBAAppUtils showPBBAMoreAboutPopup:[UIApplication sharedApplication].keyWindow.rootViewController withLogosService:self.logosService];
+     [PBBAAppUtils showPBBAMoreAboutPopup:[self getVisibleViewControllerFrom:[UIApplication sharedApplication].keyWindow.rootViewController] withLogosService:self.logosService];
+}
+
+-(UIViewController *)getVisibleViewControllerFrom:(UIViewController *)viewController
+{
+    if ([viewController isKindOfClass:[UINavigationController class]]) {
+        return [self getVisibleViewControllerFrom:[((UINavigationController *) viewController) visibleViewController]];
+    } else if ([viewController isKindOfClass:[UITabBarController class]]) {
+        return [self getVisibleViewControllerFrom:[((UITabBarController *) viewController) selectedViewController]];
+    } else {
+        if (viewController.presentedViewController) {
+            return [self getVisibleViewControllerFrom:viewController.presentedViewController];
+        } else {
+            return viewController;
+        }
+    }
 }
 
 // PBBAButtonMainDelegate protocol implementation

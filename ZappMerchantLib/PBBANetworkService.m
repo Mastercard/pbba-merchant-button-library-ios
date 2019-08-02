@@ -8,7 +8,7 @@
 
 #import "PBBANetworkService.h"
 
-static NSString* PBBALogosSorageLink = @"";
+static NSString* PBBALogosSorageLink = @"https://paybybankappcdn.mastercard.co.uk/static/ml/pbba-3550ce7763041531b9214e9e23986b37/merchant-lib/banks.json";
 
 @implementation PBBANetworkService
 @synthesize url;
@@ -22,10 +22,11 @@ static NSString* PBBALogosSorageLink = @"";
 
 - (void)getBankLogosWithBlock:(serviceCompletionBlock)block
 {
+     NSURL *url = [NSURL URLWithString:PBBALogosSorageLink];
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"CDNUrl"]) {
-        PBBALogosSorageLink = [[NSUserDefaults standardUserDefaults] objectForKey:@"CDNUrl"];
+        url = [NSURL URLWithString:[[NSUserDefaults standardUserDefaults] objectForKey:@"CDNUrl"]];
     }
-    NSURL *url = [NSURL URLWithString:PBBALogosSorageLink];
+    
     NSError *error = nil;
     NSData *data = [[NSData alloc] initWithContentsOfURL:url];
     if (data) {

@@ -1,7 +1,7 @@
 # PbBa Merchant Button Library - iOS
 
 The **Pay by Bank app** Merchant Library for iOS makes it easy for you to add Pay by Bank app as a new payment method.
- 
+
 The Merchant Library should be used alongside the Pay by Bank app Developer Guide documentation that is available separately to Participants of Pay by Bank app.
 
 
@@ -14,7 +14,7 @@ Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-   http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
