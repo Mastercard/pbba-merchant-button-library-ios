@@ -281,7 +281,7 @@ This section describes a frame of a simplified sample implementation of the PBBA
 
 Note This is not compilable code as it assumes some of the Merchant specific codebase.
 
-```
+```python
 #import <ZappMerchantLib/ZappMerchantLib.h>
 #import "MerchantPaymentViewController.h"
 @interface MerchantPaymentViewController () <PBBAButtonDelegate, PBBAPopupViewControllerDelegate>
