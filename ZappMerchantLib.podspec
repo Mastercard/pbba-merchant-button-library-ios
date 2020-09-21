@@ -14,7 +14,7 @@ s.license  = "Apache 2.0"
 s.authors  = "Ujjwal Chafle"
 s.platform = :ios, '8.0'
 
-s.source = { :git => 'https://github.com/vocalinkzapp/pbba-merchant-button-library-ios.git', :tag => s.version.to_s }
+s.source = { :git => 'https://github.com/Mastercard/pbba-merchant-button-library-ios.git', :tag => s.version.to_s }
 
 s.public_header_files = [
 "ZappMerchantLib/ZappMerchantLib.h",
